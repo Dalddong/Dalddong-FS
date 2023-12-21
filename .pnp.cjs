@@ -31,6 +31,7 @@ const RAW_RUNTIME_STATE =
           ["@types/react", "npm:18.2.45"],\
           ["@types/react-dom", "npm:18.2.18"],\
           ["autoprefixer", "virtual:5fcaa3fe9e689768cc991b9fea8732f53d296e979fc076bd0168c7df011d53e468c399ba2e9ae8932fcccc0518e29c644f58515940b861684510690f7f046175#npm:10.4.16"],\
+          ["daisyui", "npm:4.4.23"],\
           ["eslint", "npm:8.56.0"],\
           ["eslint-config-next", "virtual:5fcaa3fe9e689768cc991b9fea8732f53d296e979fc076bd0168c7df011d53e468c399ba2e9ae8932fcccc0518e29c644f58515940b861684510690f7f046175#npm:14.0.4"],\
           ["next", "virtual:5fcaa3fe9e689768cc991b9fea8732f53d296e979fc076bd0168c7df011d53e468c399ba2e9ae8932fcccc0518e29c644f58515940b861684510690f7f046175#npm:14.0.4"],\
@@ -1337,6 +1338,17 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
+    ["css-selector-tokenizer", [\
+      ["npm:0.8.0", {\
+        "packageLocation": "../../../AppData/Local/Yarn/Berry/cache/css-selector-tokenizer-npm-0.8.0-b6bad298a3-10c0.zip/node_modules/css-selector-tokenizer/",\
+        "packageDependencies": [\
+          ["css-selector-tokenizer", "npm:0.8.0"],\
+          ["cssesc", "npm:3.0.0"],\
+          ["fastparse", "npm:1.1.2"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
     ["cssesc", [\
       ["npm:3.0.0", {\
         "packageLocation": "../../../AppData/Local/Yarn/Berry/cache/cssesc-npm-3.0.0-15ec56f86f-10c0.zip/node_modules/cssesc/",\
@@ -1351,6 +1363,28 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "../../../AppData/Local/Yarn/Berry/cache/csstype-npm-3.1.3-e9a1c85013-10c0.zip/node_modules/csstype/",\
         "packageDependencies": [\
           ["csstype", "npm:3.1.3"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["culori", [\
+      ["npm:3.3.0", {\
+        "packageLocation": "../../../AppData/Local/Yarn/Berry/cache/culori-npm-3.3.0-75ee2b3b84-10c0.zip/node_modules/culori/",\
+        "packageDependencies": [\
+          ["culori", "npm:3.3.0"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["daisyui", [\
+      ["npm:4.4.23", {\
+        "packageLocation": "../../../AppData/Local/Yarn/Berry/cache/daisyui-npm-4.4.23-4e56315138-10c0.zip/node_modules/daisyui/",\
+        "packageDependencies": [\
+          ["daisyui", "npm:4.4.23"],\
+          ["css-selector-tokenizer", "npm:0.8.0"],\
+          ["culori", "npm:3.3.0"],\
+          ["picocolors", "npm:1.0.0"],\
+          ["postcss-js", "virtual:4e5631513808ef99b07aa3c22584eadc5d76c63508f8341dbbb3eb662849f518ecd2c122a7b5c7d7edcccf555fc4c4a87c04624d4d2d714d9ce1a98f21232110#npm:4.0.1"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -1374,6 +1408,7 @@ const RAW_RUNTIME_STATE =
           ["@types/react", "npm:18.2.45"],\
           ["@types/react-dom", "npm:18.2.18"],\
           ["autoprefixer", "virtual:5fcaa3fe9e689768cc991b9fea8732f53d296e979fc076bd0168c7df011d53e468c399ba2e9ae8932fcccc0518e29c644f58515940b861684510690f7f046175#npm:10.4.16"],\
+          ["daisyui", "npm:4.4.23"],\
           ["eslint", "npm:8.56.0"],\
           ["eslint-config-next", "virtual:5fcaa3fe9e689768cc991b9fea8732f53d296e979fc076bd0168c7df011d53e468c399ba2e9ae8932fcccc0518e29c644f58515940b861684510690f7f046175#npm:14.0.4"],\
           ["next", "virtual:5fcaa3fe9e689768cc991b9fea8732f53d296e979fc076bd0168c7df011d53e468c399ba2e9ae8932fcccc0518e29c644f58515940b861684510690f7f046175#npm:14.0.4"],\
@@ -1807,7 +1842,7 @@ const RAW_RUNTIME_STATE =
           ["eslint-plugin-import", "virtual:3dfd68d075911159ab91c974da0faebf19b0efef9c95ffa66e572af04abba7e6520086b54d7684417aa6180224ec961828777ee3568841b22dae04ec77ab6e40#npm:2.29.1"],\
           ["eslint-plugin-jsx-a11y", "virtual:3dfd68d075911159ab91c974da0faebf19b0efef9c95ffa66e572af04abba7e6520086b54d7684417aa6180224ec961828777ee3568841b22dae04ec77ab6e40#npm:6.8.0"],\
           ["eslint-plugin-react", "virtual:3dfd68d075911159ab91c974da0faebf19b0efef9c95ffa66e572af04abba7e6520086b54d7684417aa6180224ec961828777ee3568841b22dae04ec77ab6e40#npm:7.33.2"],\
-          ["eslint-plugin-react-hooks", "virtual:3dfd68d075911159ab91c974da0faebf19b0efef9c95ffa66e572af04abba7e6520086b54d7684417aa6180224ec961828777ee3568841b22dae04ec77ab6e40#npm:4.6.0"],\
+          ["eslint-plugin-react-hooks", "virtual:3dfd68d075911159ab91c974da0faebf19b0efef9c95ffa66e572af04abba7e6520086b54d7684417aa6180224ec961828777ee3568841b22dae04ec77ab6e40#npm:5.0.0-canary-7118f5dd7-20230705"],\
           ["typescript", "patch:typescript@npm%3A5.3.3#optional!builtin<compat/typescript>::version=5.3.3&hash=e012d7"]\
         ],\
         "packagePeers": [\
@@ -2053,17 +2088,17 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["eslint-plugin-react-hooks", [\
-      ["npm:4.6.0", {\
-        "packageLocation": "../../../AppData/Local/Yarn/Berry/cache/eslint-plugin-react-hooks-npm-4.6.0-b429fac07f-10c0.zip/node_modules/eslint-plugin-react-hooks/",\
+      ["npm:5.0.0-canary-7118f5dd7-20230705", {\
+        "packageLocation": "../../../AppData/Local/Yarn/Berry/cache/eslint-plugin-react-hooks-npm-5.0.0-canary-7118f5dd7-20230705-2292094517-10c0.zip/node_modules/eslint-plugin-react-hooks/",\
         "packageDependencies": [\
-          ["eslint-plugin-react-hooks", "npm:4.6.0"]\
+          ["eslint-plugin-react-hooks", "npm:5.0.0-canary-7118f5dd7-20230705"]\
         ],\
         "linkType": "SOFT"\
       }],\
-      ["virtual:3dfd68d075911159ab91c974da0faebf19b0efef9c95ffa66e572af04abba7e6520086b54d7684417aa6180224ec961828777ee3568841b22dae04ec77ab6e40#npm:4.6.0", {\
-        "packageLocation": "./.yarn/__virtual__/eslint-plugin-react-hooks-virtual-d04b6b492a/4/AppData/Local/Yarn/Berry/cache/eslint-plugin-react-hooks-npm-4.6.0-b429fac07f-10c0.zip/node_modules/eslint-plugin-react-hooks/",\
+      ["virtual:3dfd68d075911159ab91c974da0faebf19b0efef9c95ffa66e572af04abba7e6520086b54d7684417aa6180224ec961828777ee3568841b22dae04ec77ab6e40#npm:5.0.0-canary-7118f5dd7-20230705", {\
+        "packageLocation": "./.yarn/__virtual__/eslint-plugin-react-hooks-virtual-74e0367558/4/AppData/Local/Yarn/Berry/cache/eslint-plugin-react-hooks-npm-5.0.0-canary-7118f5dd7-20230705-2292094517-10c0.zip/node_modules/eslint-plugin-react-hooks/",\
         "packageDependencies": [\
-          ["eslint-plugin-react-hooks", "virtual:3dfd68d075911159ab91c974da0faebf19b0efef9c95ffa66e572af04abba7e6520086b54d7684417aa6180224ec961828777ee3568841b22dae04ec77ab6e40#npm:4.6.0"],\
+          ["eslint-plugin-react-hooks", "virtual:3dfd68d075911159ab91c974da0faebf19b0efef9c95ffa66e572af04abba7e6520086b54d7684417aa6180224ec961828777ee3568841b22dae04ec77ab6e40#npm:5.0.0-canary-7118f5dd7-20230705"],\
           ["@types/eslint", null],\
           ["eslint", "npm:8.56.0"]\
         ],\
@@ -2204,6 +2239,15 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "../../../AppData/Local/Yarn/Berry/cache/fast-levenshtein-npm-2.0.6-fcd74b8df5-10c0.zip/node_modules/fast-levenshtein/",\
         "packageDependencies": [\
           ["fast-levenshtein", "npm:2.0.6"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["fastparse", [\
+      ["npm:1.1.2", {\
+        "packageLocation": "../../../AppData/Local/Yarn/Berry/cache/fastparse-npm-1.1.2-6a35154770-10c0.zip/node_modules/fastparse/",\
+        "packageDependencies": [\
+          ["fastparse", "npm:1.1.2"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -3966,6 +4010,20 @@ const RAW_RUNTIME_STATE =
           ["postcss-js", "npm:4.0.1"]\
         ],\
         "linkType": "SOFT"\
+      }],\
+      ["virtual:4e5631513808ef99b07aa3c22584eadc5d76c63508f8341dbbb3eb662849f518ecd2c122a7b5c7d7edcccf555fc4c4a87c04624d4d2d714d9ce1a98f21232110#npm:4.0.1", {\
+        "packageLocation": "./.yarn/__virtual__/postcss-js-virtual-161d7d8188/4/AppData/Local/Yarn/Berry/cache/postcss-js-npm-4.0.1-2c4ee70bf3-10c0.zip/node_modules/postcss-js/",\
+        "packageDependencies": [\
+          ["postcss-js", "virtual:4e5631513808ef99b07aa3c22584eadc5d76c63508f8341dbbb3eb662849f518ecd2c122a7b5c7d7edcccf555fc4c4a87c04624d4d2d714d9ce1a98f21232110#npm:4.0.1"],\
+          ["@types/postcss", null],\
+          ["camelcase-css", "npm:2.0.1"],\
+          ["postcss", null]\
+        ],\
+        "packagePeers": [\
+          "@types/postcss",\
+          "postcss"\
+        ],\
+        "linkType": "HARD"\
       }],\
       ["virtual:e59fbdee04a5e29c95e6a0a37cd49fbf30625c6d8bf5307dd71527c0fa2f9233fe75a52a538547de099dacf107d7b0840400d6dbfafb630d60b56650f42e3efe#npm:4.0.1", {\
         "packageLocation": "./.yarn/__virtual__/postcss-js-virtual-291bd6f2e3/4/AppData/Local/Yarn/Berry/cache/postcss-js-npm-4.0.1-2c4ee70bf3-10c0.zip/node_modules/postcss-js/",\
