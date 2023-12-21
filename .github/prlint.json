@@ -1,6 +1,8 @@
 {
-  "title":[
-    "pattern": "^(docs|feat|fix|refactor|chore)((.+))?:\\s.+",
-    "message": "타이틀 양식 확인!"
+  "title": [
+    {
+      "pattern": "^(docs|feat|fix|refactor|chore)((.+))?:\\s.+",
+      "message": "타이틀 양식 확인!"
+    }
   ]
 }
