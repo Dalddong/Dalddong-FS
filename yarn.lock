@@ -1210,11 +1210,8 @@ __metadata:
     "@types/react": "npm:^18.2.45"
     "@types/react-dom": "npm:^18.2.18"
     autoprefixer: "npm:^10.0.1"
-<<<<<<< HEAD
     axios: "npm:^1.6.2"
-=======
     daisyui: "npm:^4.4.23"
->>>>>>> d5198791e6e018101de6d5a8a0ec0875e4b70f14
     eslint: "npm:^8"
     eslint-config-next: "npm:14.0.4"
     next: "npm:14.0.4"
