@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 export async function GET() {
   const data = {
-    todos: "tossdos",
+    todos: "reactquery fetching 완료",
   };
   return NextResponse.json({ data });
 }
