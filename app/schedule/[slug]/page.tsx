@@ -5,7 +5,7 @@ import ScheduleContainer from "@/containers/schedule";
 const page = ({ params }: { params: { slug: string } }) => {
   return (
     <>
-      {params.slug}
+      {/* 주소:{params.slug} */}
       <ScheduleContainer />
     </>
   );

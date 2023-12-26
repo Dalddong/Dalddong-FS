@@ -18,6 +18,9 @@ export default function Home() {
         안녕
       </Button>
       <h1 className="text-dd-green">dd</h1>
+
+      <div className="animate-wiggle">돌아</div>
+      <div className="animate-fadesin">dd?</div>
       <HomeContainer />
       <Todos />
     </>
