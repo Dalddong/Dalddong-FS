@@ -1,0 +1,14 @@
+.container-main-layout {
+  @apply w-full h-[700px] mx-auto mt-[40px] text-[20px] font-bold lg:w-[500px];
+}
+.form-layout {
+  @apply w-[370px] h-[60px] lg:w-[480px];
+}
+
+.button-confirm {
+  @apply w-[200px] h-[50px];
+}
+
+.textlogo-header {
+  @apply w-[300px] h-[106px] relative;
+}

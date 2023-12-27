@@ -1,22 +1,21 @@
-// Button.tsx
 "use client";
 import React from "react";
 
 interface InputProps {
-  width: string;
-  height: string;
+  className: string;
+  content: string;
 }
 
-const Input: React.FC<InputProps> = ({ width, height }) => {
+const Input: React.FC<InputProps> = ({ className, content }) => {
   return (
-    <input
-      type="text"
-      className="text-dd-green border-2 border-solid rounded-lg border-dd-green box-border shadow-[0_6px_12px_0px_rgba(250,227,146,1)]"
-      style={{
-        width,
-        height,
-      }}
-    />
+    <div className={`${className} centered-content justify-evenly`}>
+      <span className="w-[40px]">{content}</span>
+      <input
+        type="text"
+        className="w-[270px] reset-all placeholder:text-gray-200"
+        placeholder={`${content}`}
+      />
+    </div>
   );
 };
 
