@@ -1,0 +1,19 @@
+.card-layout {
+  @apply text-dd-green border-[2px] border-solid rounded-[10px] my-[15px] border-dd-green box-border shadow-[0_6px_12px_0px_rgba(250,227,146,1)];
+}
+.card-layout-rounded-full {
+  @apply card-layout;
+  @apply rounded-full;
+}
+
+.centered-content {
+  @apply flex justify-center items-center;
+}
+
+.flex-col-center {
+  @apply flex flex-col items-center;
+}
+
+.reset-all {
+  all: unset;
+}
