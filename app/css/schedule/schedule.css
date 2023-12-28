@@ -1,0 +1,7 @@
+.container-schedule-layout {
+  @apply grid grid-cols-[1fr] text-dd-green gap-0 lg:grid-cols-[350px_600px_350px] max-w-[1300px] h-[900px] mx-auto;
+}
+
+.login-layout {
+  @apply w-[330px] h-[60px];
+}
