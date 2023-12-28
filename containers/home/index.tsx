@@ -18,8 +18,16 @@ const HomeContainer: React.FC<HomeContainerProps> = () => {
       <Header />
       <DayPicker />
       <TimePicker />
-      <Input className="form-layout card-layout-rounded-full" content="이름" />
-      <Input className="form-layout card-layout-rounded-full" content="장소" />
+      <Input
+        className="form-layout card-layout-rounded-full"
+        content="이름"
+        placeholder="이름"
+      />
+      <Input
+        className="form-layout card-layout-rounded-full"
+        content="장소"
+        placeholder="장소"
+      />
       <Button
         className="button-confirm card-layout centered-button"
         onClick={() => router.push("/schedule/123")}
