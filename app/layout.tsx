@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import TanstackProvider from "@/components/Providers/TanstackProvider";
-
+import RecoilRootProvider from "@/components/Providers/RecoilRootProvider";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -23,7 +23,9 @@ export default function RootLayout({
     <html lang="ko">
       <body className={inter.className}>
         <TanstackProvider>
-          <main>{children}</main>
+          <RecoilRootProvider>
+            <main>{children}</main>
+          </RecoilRootProvider>
         </TanstackProvider>
       </body>
     </html>

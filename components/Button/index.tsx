@@ -1,11 +1,6 @@
 "use client";
 import React from "react";
-
-interface ButtonProps {
-  children: React.ReactNode;
-  className: string;
-  onClick: () => void;
-}
+import type { ButtonProps } from "@/types/utils";
 
 const Button: React.FC<ButtonProps> = ({ children, className, onClick }) => {
   return (

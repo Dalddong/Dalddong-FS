@@ -1,11 +1,6 @@
 "use client";
 import React from "react";
-
-interface InputProps {
-  className: string;
-  content: string | React.ReactNode;
-  placeholder: string;
-}
+import type { InputProps } from "@/types/utils";
 
 const Input: React.FC<InputProps> = ({ className, content, placeholder }) => {
   return (

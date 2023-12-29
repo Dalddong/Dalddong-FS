@@ -42,6 +42,7 @@ const RAW_RUNTIME_STATE =
           ["postcss", "npm:8.4.32"],\
           ["react", "npm:18.2.0"],\
           ["react-dom", "virtual:5fcaa3fe9e689768cc991b9fea8732f53d296e979fc076bd0168c7df011d53e468c399ba2e9ae8932fcccc0518e29c644f58515940b861684510690f7f046175#npm:18.2.0"],\
+          ["recoil", "virtual:5fcaa3fe9e689768cc991b9fea8732f53d296e979fc076bd0168c7df011d53e468c399ba2e9ae8932fcccc0518e29c644f58515940b861684510690f7f046175#npm:0.7.7"],\
           ["tailwindcss", "npm:3.4.0"],\
           ["typescript", "patch:typescript@npm%3A5.3.3#optional!builtin<compat/typescript>::version=5.3.3&hash=e012d7"]\
         ],\
@@ -4519,6 +4520,7 @@ const RAW_RUNTIME_STATE =
           ["postcss", "npm:8.4.32"],\
           ["react", "npm:18.2.0"],\
           ["react-dom", "virtual:5fcaa3fe9e689768cc991b9fea8732f53d296e979fc076bd0168c7df011d53e468c399ba2e9ae8932fcccc0518e29c644f58515940b861684510690f7f046175#npm:18.2.0"],\
+          ["recoil", "virtual:5fcaa3fe9e689768cc991b9fea8732f53d296e979fc076bd0168c7df011d53e468c399ba2e9ae8932fcccc0518e29c644f58515940b861684510690f7f046175#npm:0.7.7"],\
           ["tailwindcss", "npm:3.4.0"],\
           ["typescript", "patch:typescript@npm%3A5.3.3#optional!builtin<compat/typescript>::version=5.3.3&hash=e012d7"]\
         ],\
@@ -5830,6 +5832,15 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "../../../AppData/Local/Yarn/Berry/cache/graphemer-npm-1.4.0-0627732d35-10c0.zip/node_modules/graphemer/",\
         "packageDependencies": [\
           ["graphemer", "npm:1.4.0"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["hamt_plus", [\
+      ["npm:1.0.2", {\
+        "packageLocation": "../../../AppData/Local/Yarn/Berry/cache/hamt_plus-npm-1.0.2-67a52ee1df-10c0.zip/node_modules/hamt_plus/",\
+        "packageDependencies": [\
+          ["hamt_plus", "npm:1.0.2"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -7639,6 +7650,37 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["readdirp", "npm:3.6.0"],\
           ["picomatch", "npm:2.3.1"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["recoil", [\
+      ["npm:0.7.7", {\
+        "packageLocation": "../../../AppData/Local/Yarn/Berry/cache/recoil-npm-0.7.7-4452f58b67-10c0.zip/node_modules/recoil/",\
+        "packageDependencies": [\
+          ["recoil", "npm:0.7.7"]\
+        ],\
+        "linkType": "SOFT"\
+      }],\
+      ["virtual:5fcaa3fe9e689768cc991b9fea8732f53d296e979fc076bd0168c7df011d53e468c399ba2e9ae8932fcccc0518e29c644f58515940b861684510690f7f046175#npm:0.7.7", {\
+        "packageLocation": "./.yarn/__virtual__/recoil-virtual-0dba04f02e/4/AppData/Local/Yarn/Berry/cache/recoil-npm-0.7.7-4452f58b67-10c0.zip/node_modules/recoil/",\
+        "packageDependencies": [\
+          ["recoil", "virtual:5fcaa3fe9e689768cc991b9fea8732f53d296e979fc076bd0168c7df011d53e468c399ba2e9ae8932fcccc0518e29c644f58515940b861684510690f7f046175#npm:0.7.7"],\
+          ["@types/react", "npm:18.2.45"],\
+          ["@types/react-dom", "npm:18.2.18"],\
+          ["@types/react-native", null],\
+          ["hamt_plus", "npm:1.0.2"],\
+          ["react", "npm:18.2.0"],\
+          ["react-dom", "virtual:5fcaa3fe9e689768cc991b9fea8732f53d296e979fc076bd0168c7df011d53e468c399ba2e9ae8932fcccc0518e29c644f58515940b861684510690f7f046175#npm:18.2.0"],\
+          ["react-native", null]\
+        ],\
+        "packagePeers": [\
+          "@types/react-dom",\
+          "@types/react-native",\
+          "@types/react",\
+          "react-dom",\
+          "react-native",\
+          "react"\
         ],\
         "linkType": "HARD"\
       }]\
