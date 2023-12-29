@@ -8,6 +8,7 @@ import DayPicker from "@/components/DayPicker";
 import Button from "@/components/Button";
 import TimePicker from "@/components/TimePicker";
 import PlacePicker from "@/components/PlacePicker";
+
 interface HomeContainerProps {}
 
 const HomeContainer: React.FC<HomeContainerProps> = () => {
