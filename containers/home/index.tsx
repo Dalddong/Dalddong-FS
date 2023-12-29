@@ -4,10 +4,10 @@ import React from "react";
 import { useRouter } from "next/navigation";
 
 import Header from "@/components/Header";
-import DayPicker from "@/components/DayPicker";
+import DayPicker from "@/components/Picker/DayPiceker";
+import TimePicker from "@/components/Picker/TimePicker";
+import PlacePicker from "@/components/Picker/PlacePicker";
 import Button from "@/components/Button";
-import TimePicker from "@/components/TimePicker";
-import PlacePicker from "@/components/PlacePicker";
 
 interface HomeContainerProps {}
 
