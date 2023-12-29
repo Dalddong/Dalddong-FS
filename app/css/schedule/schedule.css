@@ -2,6 +2,23 @@
   @apply grid grid-cols-[1fr] text-dd-green gap-0 lg:grid-cols-[350px_600px_350px] max-w-[1300px] h-[900px] mx-auto;
 }
 
+.box-schedule-layout {
+  @apply w-full h-[800px] border-2 border-black;
+}
+
+.box-schedule-side-layout {
+  @apply box-schedule-layout;
+  @apply lg:w-[350px];
+}
+.box-schedule-middle-layout {
+  @apply w-full h-[800px]  border-2 border-black;
+  @apply lg:w-[600px];
+}
+
 .login-layout {
   @apply w-[330px] h-[60px];
+}
+
+.calendar-scheduleIntro-layout {
+  @apply w-[220px] h-[220px] my-[20px] border-[2px] rounded-lg border-black;
 }
