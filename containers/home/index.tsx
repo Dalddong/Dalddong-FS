@@ -6,32 +6,27 @@ import { useRouter } from "next/navigation";
 import Header from "@/components/Header";
 import DayPicker from "@/components/DayPicker";
 import Button from "@/components/Button";
-import Input from "@/components/Input";
 import TimePicker from "@/components/TimePicker";
+import PlacePicker from "@/components/PlacePicker";
 
 interface HomeContainerProps {}
 
 const HomeContainer: React.FC<HomeContainerProps> = () => {
   const router = useRouter();
 
+  const handleRegisterButtonClick = () => {
+    router.push("/schedule/1234");
+  };
+
   return (
     <div className="container-main-layout flex-col-center">
       <Header />
       <DayPicker />
       <TimePicker />
-      <Input
-        className="form-layout card-layout-rounded-full"
-        content="이름"
-        placeholder="이름"
-      />
-      <Input
-        className="form-layout card-layout-rounded-full"
-        content="장소"
-        placeholder="장소"
-      />
+      <PlacePicker />
       <Button
         className="button-confirm card-layout centered-button"
-        onClick={() => router.push("/schedule/123")}
+        onClick={handleRegisterButtonClick}
       >
         등록하기
       </Button>
