@@ -1,10 +1,8 @@
-// api/todos.ts
-
 /**
  * @swagger
  * tags:
  *   name: Todos
- *   description: Todo 관리 API
+ *   description: Todo API
  */
 
 /**
