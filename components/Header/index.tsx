@@ -2,13 +2,20 @@
 import React from "react";
 import Link from "next/link";
 
-import sd from "@/public/images/img_logo_text.png";
+import Logo from "@/public/images/img_logo_text.png";
 import Image from "next/image";
 const Header = () => {
   return (
     <Link href="/">
       <header className="textlogo-header">
-        <Image src={sd} alt="ff" layout="fill" objectFit="cover" />
+        <Image
+          src={Logo}
+          alt="logo"
+          fill
+          sizes="(max-width: 300px) 100vw, 300px"
+          style={{ objectFit: "cover" }}
+          priority
+        />
       </header>
     </Link>
   );
