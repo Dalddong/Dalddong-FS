@@ -12,7 +12,7 @@ import Button from "@/components/Button";
 const ScheduleSummary = () => {
   return (
     <div className="box-schedule-side-layout flex-col-center">
-      <div className="w-[340px] mt-[30px]">
+      <div className="w-[340px] mt-[5px]">
         <p className="text-left font-bold">화/13 12:00 희망자</p>
         <div className="card-layout centered-content h-[160px] p-[20px]">
           사자,강아지,호랑이,오리,코끼리

@@ -17,6 +17,6 @@ const config: Config = {
       animation: animations,
     },
   },
-  plugins: [daisyui],
+  plugins: [daisyui, require("tailwind-scrollbar-hide")],
 };
 export default config;

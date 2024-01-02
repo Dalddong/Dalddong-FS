@@ -24,7 +24,7 @@ const Login = () => {
         placeholder="Password"
       />
       <Button
-        className="login-layout card-layout my-[10px]"
+        className="login-layout card-layout my-[10px] font-bold"
         onClick={handleLoginButtonClick}
       >
         LOGIN

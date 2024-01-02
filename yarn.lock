@@ -2927,6 +2927,7 @@ __metadata:
     react: "npm:^18"
     react-dom: "npm:^18"
     recoil: "npm:^0.7.7"
+    tailwind-scrollbar-hide: "npm:^1.1.7"
     tailwindcss: "npm:^3.3.0"
     typescript: "npm:^5.3.3"
   languageName: unknown
@@ -6117,6 +6118,13 @@ __metadata:
   bin:
     svgo: ./bin/svgo
   checksum: b3f00b3319dee6ddc53f8b8ac5acef581860e1708c98b492169e096621edc1bdf46e3778099e3dffb5116bf0d4c074a686099843dbc020c73b3ccfae7b6a88f0
+  languageName: node
+  linkType: hard
+
+"tailwind-scrollbar-hide@npm:^1.1.7":
+  version: 1.1.7
+  resolution: "tailwind-scrollbar-hide@npm:1.1.7"
+  checksum: 1027ca724c51a43da9a9a9f730f707652bcaded6f94d82fd445e349ee19bd34d8c1312e3e075193ec89c0524d824e716a06d646ca757913f4df0f4f5faec8fe4
   languageName: node
   linkType: hard
 

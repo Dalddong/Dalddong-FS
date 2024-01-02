@@ -43,6 +43,7 @@ const RAW_RUNTIME_STATE =
           ["react", "npm:18.2.0"],\
           ["react-dom", "virtual:5fcaa3fe9e689768cc991b9fea8732f53d296e979fc076bd0168c7df011d53e468c399ba2e9ae8932fcccc0518e29c644f58515940b861684510690f7f046175#npm:18.2.0"],\
           ["recoil", "virtual:5fcaa3fe9e689768cc991b9fea8732f53d296e979fc076bd0168c7df011d53e468c399ba2e9ae8932fcccc0518e29c644f58515940b861684510690f7f046175#npm:0.7.7"],\
+          ["tailwind-scrollbar-hide", "npm:1.1.7"],\
           ["tailwindcss", "npm:3.4.0"],\
           ["typescript", "patch:typescript@npm%3A5.3.3#optional!builtin<compat/typescript>::version=5.3.3&hash=e012d7"]\
         ],\
@@ -4521,6 +4522,7 @@ const RAW_RUNTIME_STATE =
           ["react", "npm:18.2.0"],\
           ["react-dom", "virtual:5fcaa3fe9e689768cc991b9fea8732f53d296e979fc076bd0168c7df011d53e468c399ba2e9ae8932fcccc0518e29c644f58515940b861684510690f7f046175#npm:18.2.0"],\
           ["recoil", "virtual:5fcaa3fe9e689768cc991b9fea8732f53d296e979fc076bd0168c7df011d53e468c399ba2e9ae8932fcccc0518e29c644f58515940b861684510690f7f046175#npm:0.7.7"],\
+          ["tailwind-scrollbar-hide", "npm:1.1.7"],\
           ["tailwindcss", "npm:3.4.0"],\
           ["typescript", "patch:typescript@npm%3A5.3.3#optional!builtin<compat/typescript>::version=5.3.3&hash=e012d7"]\
         ],\
@@ -8276,6 +8278,15 @@ const RAW_RUNTIME_STATE =
           ["css-what", "npm:6.1.0"],\
           ["csso", "npm:5.0.5"],\
           ["picocolors", "npm:1.0.0"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["tailwind-scrollbar-hide", [\
+      ["npm:1.1.7", {\
+        "packageLocation": "../../../AppData/Local/Yarn/Berry/cache/tailwind-scrollbar-hide-npm-1.1.7-537baa5b75-10c0.zip/node_modules/tailwind-scrollbar-hide/",\
+        "packageDependencies": [\
+          ["tailwind-scrollbar-hide", "npm:1.1.7"]\
         ],\
         "linkType": "HARD"\
       }]\
