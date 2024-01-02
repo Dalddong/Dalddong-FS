@@ -3,7 +3,7 @@
 }
 
 .box-schedule-layout {
-  @apply w-full h-[800px] border-2 border-black;
+  @apply w-full h-[800px];
 }
 
 .box-schedule-side-layout {
@@ -11,7 +11,7 @@
   @apply lg:w-[350px];
 }
 .box-schedule-middle-layout {
-  @apply w-full h-[800px]  border-2 border-black;
+  @apply w-full h-[800px];
   @apply lg:w-[600px];
 }
 
