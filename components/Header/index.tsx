@@ -8,7 +8,14 @@ const Header = () => {
   return (
     <Link href="/">
       <header className="textlogo-header">
-        <Image src={Logo} alt="logo" layout="fill" objectFit="cover" />
+        <Image
+          src={Logo}
+          alt="logo"
+          fill
+          sizes="(max-width: 300px) 100vw, 300px"
+          style={{ objectFit: "cover" }}
+          priority
+        />
       </header>
     </Link>
   );
