@@ -3,6 +3,8 @@
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 
+import "dotenv/config";
+
 export interface Todo {
   todos: string;
 }
@@ -11,9 +13,9 @@ export type todoString = string;
 
 const Todos = () => {
   const fetchTodos = async () => {
-    const { data } = await axios.get("/api/todos/fetch");
-    console.log(data.data.todos);
-    return data.data.todos as todoString;
+    const { data } = await axios.get("/api/todos");
+    console.log(data.data);
+    return data.data as any;
   };
 
   const { data, isLoading, isError } = useQuery({
@@ -26,7 +28,7 @@ const Todos = () => {
 
   return (
     <>
-      <div className="flex flex-col gap-2">{data}</div>
+      <div className="flex flex-col gap-2">ㅇㅇ</div>
     </>
   );
 };

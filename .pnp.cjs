@@ -36,8 +36,11 @@ const RAW_RUNTIME_STATE =
           ["autoprefixer", "virtual:5fcaa3fe9e689768cc991b9fea8732f53d296e979fc076bd0168c7df011d53e468c399ba2e9ae8932fcccc0518e29c644f58515940b861684510690f7f046175#npm:10.4.16"],\
           ["axios", "npm:1.6.2"],\
           ["daisyui", "npm:4.4.23"],\
+          ["dotenv", "npm:16.3.1"],\
           ["eslint", "npm:8.56.0"],\
           ["eslint-config-next", "virtual:5fcaa3fe9e689768cc991b9fea8732f53d296e979fc076bd0168c7df011d53e468c399ba2e9ae8932fcccc0518e29c644f58515940b861684510690f7f046175#npm:14.0.4"],\
+          ["mongodb", "virtual:5fcaa3fe9e689768cc991b9fea8732f53d296e979fc076bd0168c7df011d53e468c399ba2e9ae8932fcccc0518e29c644f58515940b861684510690f7f046175#npm:6.3.0"],\
+          ["mongoose", "npm:8.0.3"],\
           ["next", "virtual:5fcaa3fe9e689768cc991b9fea8732f53d296e979fc076bd0168c7df011d53e468c399ba2e9ae8932fcccc0518e29c644f58515940b861684510690f7f046175#npm:14.0.4"],\
           ["next-swagger-doc", "virtual:5fcaa3fe9e689768cc991b9fea8732f53d296e979fc076bd0168c7df011d53e468c399ba2e9ae8932fcccc0518e29c644f58515940b861684510690f7f046175#npm:0.4.0"],\
           ["postcss", "npm:8.4.32"],\
@@ -2909,6 +2912,16 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
+    ["@mongodb-js/saslprep", [\
+      ["npm:1.1.1", {\
+        "packageLocation": "../../../AppData/Local/Yarn/Berry/cache/@mongodb-js-saslprep-npm-1.1.1-73d5b62d41-10c0.zip/node_modules/@mongodb-js/saslprep/",\
+        "packageDependencies": [\
+          ["@mongodb-js/saslprep", "npm:1.1.1"],\
+          ["sparse-bitfield", "npm:3.0.3"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
     ["@next/env", [\
       ["npm:14.0.4", {\
         "packageLocation": "../../../AppData/Local/Yarn/Berry/cache/@next-env-npm-14.0.4-ef2c868564-10c0.zip/node_modules/@next/env/",\
@@ -4083,6 +4096,34 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
+    ["@types/webidl-conversions", [\
+      ["npm:7.0.3", {\
+        "packageLocation": "../../../AppData/Local/Yarn/Berry/cache/@types-webidl-conversions-npm-7.0.3-dab9692d39-10c0.zip/node_modules/@types/webidl-conversions/",\
+        "packageDependencies": [\
+          ["@types/webidl-conversions", "npm:7.0.3"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["@types/whatwg-url", [\
+      ["npm:11.0.3", {\
+        "packageLocation": "../../../AppData/Local/Yarn/Berry/cache/@types-whatwg-url-npm-11.0.3-628e7130bd-10c0.zip/node_modules/@types/whatwg-url/",\
+        "packageDependencies": [\
+          ["@types/whatwg-url", "npm:11.0.3"],\
+          ["@types/webidl-conversions", "npm:7.0.3"]\
+        ],\
+        "linkType": "HARD"\
+      }],\
+      ["npm:8.2.2", {\
+        "packageLocation": "../../../AppData/Local/Yarn/Berry/cache/@types-whatwg-url-npm-8.2.2-54c5c24e6c-10c0.zip/node_modules/@types/whatwg-url/",\
+        "packageDependencies": [\
+          ["@types/whatwg-url", "npm:8.2.2"],\
+          ["@types/node", "npm:20.10.5"],\
+          ["@types/webidl-conversions", "npm:7.0.3"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
     ["@types/yargs", [\
       ["npm:17.0.32", {\
         "packageLocation": "../../../AppData/Local/Yarn/Berry/cache/@types-yargs-npm-17.0.32-38712e567a-10c0.zip/node_modules/@types/yargs/",\
@@ -4780,6 +4821,15 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
+    ["bson", [\
+      ["npm:6.2.0", {\
+        "packageLocation": "../../../AppData/Local/Yarn/Berry/cache/bson-npm-6.2.0-3d364484ee-10c0.zip/node_modules/bson/",\
+        "packageDependencies": [\
+          ["bson", "npm:6.2.0"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
     ["buffer", [\
       ["npm:5.7.1", {\
         "packageLocation": "../../../AppData/Local/Yarn/Berry/cache/buffer-npm-5.7.1-513ef8259e-10c0.zip/node_modules/buffer/",\
@@ -5321,8 +5371,11 @@ const RAW_RUNTIME_STATE =
           ["autoprefixer", "virtual:5fcaa3fe9e689768cc991b9fea8732f53d296e979fc076bd0168c7df011d53e468c399ba2e9ae8932fcccc0518e29c644f58515940b861684510690f7f046175#npm:10.4.16"],\
           ["axios", "npm:1.6.2"],\
           ["daisyui", "npm:4.4.23"],\
+          ["dotenv", "npm:16.3.1"],\
           ["eslint", "npm:8.56.0"],\
           ["eslint-config-next", "virtual:5fcaa3fe9e689768cc991b9fea8732f53d296e979fc076bd0168c7df011d53e468c399ba2e9ae8932fcccc0518e29c644f58515940b861684510690f7f046175#npm:14.0.4"],\
+          ["mongodb", "virtual:5fcaa3fe9e689768cc991b9fea8732f53d296e979fc076bd0168c7df011d53e468c399ba2e9ae8932fcccc0518e29c644f58515940b861684510690f7f046175#npm:6.3.0"],\
+          ["mongoose", "npm:8.0.3"],\
           ["next", "virtual:5fcaa3fe9e689768cc991b9fea8732f53d296e979fc076bd0168c7df011d53e468c399ba2e9ae8932fcccc0518e29c644f58515940b861684510690f7f046175#npm:14.0.4"],\
           ["next-swagger-doc", "virtual:5fcaa3fe9e689768cc991b9fea8732f53d296e979fc076bd0168c7df011d53e468c399ba2e9ae8932fcccc0518e29c644f58515940b861684510690f7f046175#npm:0.4.0"],\
           ["postcss", "npm:8.4.32"],\
@@ -5583,6 +5636,15 @@ const RAW_RUNTIME_STATE =
           ["dot-case", "npm:3.0.4"],\
           ["no-case", "npm:3.0.4"],\
           ["tslib", "npm:2.6.2"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["dotenv", [\
+      ["npm:16.3.1", {\
+        "packageLocation": "../../../AppData/Local/Yarn/Berry/cache/dotenv-npm-16.3.1-e6d380a398-10c0.zip/node_modules/dotenv/",\
+        "packageDependencies": [\
+          ["dotenv", "npm:16.3.1"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -7681,6 +7743,15 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
+    ["kareem", [\
+      ["npm:2.5.1", {\
+        "packageLocation": "../../../AppData/Local/Yarn/Berry/cache/kareem-npm-2.5.1-79134fb43e-10c0.zip/node_modules/kareem/",\
+        "packageDependencies": [\
+          ["kareem", "npm:2.5.1"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
     ["keyv", [\
       ["npm:4.5.4", {\
         "packageLocation": "../../../AppData/Local/Yarn/Berry/cache/keyv-npm-4.5.4-4c8e2cf7f7-10c0.zip/node_modules/keyv/",\
@@ -7912,6 +7983,15 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
+    ["memory-pager", [\
+      ["npm:1.5.0", {\
+        "packageLocation": "../../../AppData/Local/Yarn/Berry/cache/memory-pager-npm-1.5.0-46e20e6c81-10c0.zip/node_modules/memory-pager/",\
+        "packageDependencies": [\
+          ["memory-pager", "npm:1.5.0"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
     ["merge2", [\
       ["npm:1.4.1", {\
         "packageLocation": "../../../AppData/Local/Yarn/Berry/cache/merge2-npm-1.4.1-a2507bd06c-10c0.zip/node_modules/merge2/",\
@@ -8107,6 +8187,157 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "../../../AppData/Local/Yarn/Berry/cache/mkdirp-classic-npm-0.5.3-3b5c991910-10c0.zip/node_modules/mkdirp-classic/",\
         "packageDependencies": [\
           ["mkdirp-classic", "npm:0.5.3"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["mongodb", [\
+      ["npm:6.2.0", {\
+        "packageLocation": "../../../AppData/Local/Yarn/Berry/cache/mongodb-npm-6.2.0-e710a7f8df-10c0.zip/node_modules/mongodb/",\
+        "packageDependencies": [\
+          ["mongodb", "npm:6.2.0"]\
+        ],\
+        "linkType": "SOFT"\
+      }],\
+      ["npm:6.3.0", {\
+        "packageLocation": "../../../AppData/Local/Yarn/Berry/cache/mongodb-npm-6.3.0-28854d0f74-10c0.zip/node_modules/mongodb/",\
+        "packageDependencies": [\
+          ["mongodb", "npm:6.3.0"]\
+        ],\
+        "linkType": "SOFT"\
+      }],\
+      ["virtual:5fcaa3fe9e689768cc991b9fea8732f53d296e979fc076bd0168c7df011d53e468c399ba2e9ae8932fcccc0518e29c644f58515940b861684510690f7f046175#npm:6.3.0", {\
+        "packageLocation": "./.yarn/__virtual__/mongodb-virtual-0353ec7fae/4/AppData/Local/Yarn/Berry/cache/mongodb-npm-6.3.0-28854d0f74-10c0.zip/node_modules/mongodb/",\
+        "packageDependencies": [\
+          ["mongodb", "virtual:5fcaa3fe9e689768cc991b9fea8732f53d296e979fc076bd0168c7df011d53e468c399ba2e9ae8932fcccc0518e29c644f58515940b861684510690f7f046175#npm:6.3.0"],\
+          ["@aws-sdk/credential-providers", null],\
+          ["@mongodb-js/saslprep", "npm:1.1.1"],\
+          ["@mongodb-js/zstd", null],\
+          ["@types/aws-sdk__credential-providers", null],\
+          ["@types/gcp-metadata", null],\
+          ["@types/kerberos", null],\
+          ["@types/mongodb-client-encryption", null],\
+          ["@types/mongodb-js__zstd", null],\
+          ["@types/snappy", null],\
+          ["@types/socks", null],\
+          ["bson", "npm:6.2.0"],\
+          ["gcp-metadata", null],\
+          ["kerberos", null],\
+          ["mongodb-client-encryption", null],\
+          ["mongodb-connection-string-url", "npm:3.0.0"],\
+          ["snappy", null],\
+          ["socks", null]\
+        ],\
+        "packagePeers": [\
+          "@aws-sdk/credential-providers",\
+          "@mongodb-js/zstd",\
+          "@types/aws-sdk__credential-providers",\
+          "@types/gcp-metadata",\
+          "@types/kerberos",\
+          "@types/mongodb-client-encryption",\
+          "@types/mongodb-js__zstd",\
+          "@types/snappy",\
+          "@types/socks",\
+          "gcp-metadata",\
+          "kerberos",\
+          "mongodb-client-encryption",\
+          "snappy",\
+          "socks"\
+        ],\
+        "linkType": "HARD"\
+      }],\
+      ["virtual:7055564854ee15b036fb28071da8a8bbf19036237b7a4568d50a60d0f30fe17d363a68a054bdcf9de52552e618a6aa13e799a0a4ec75ac2e9a27344737c3bec5#npm:6.2.0", {\
+        "packageLocation": "./.yarn/__virtual__/mongodb-virtual-bdc0aed392/4/AppData/Local/Yarn/Berry/cache/mongodb-npm-6.2.0-e710a7f8df-10c0.zip/node_modules/mongodb/",\
+        "packageDependencies": [\
+          ["mongodb", "virtual:7055564854ee15b036fb28071da8a8bbf19036237b7a4568d50a60d0f30fe17d363a68a054bdcf9de52552e618a6aa13e799a0a4ec75ac2e9a27344737c3bec5#npm:6.2.0"],\
+          ["@aws-sdk/credential-providers", null],\
+          ["@mongodb-js/saslprep", "npm:1.1.1"],\
+          ["@mongodb-js/zstd", null],\
+          ["@types/aws-sdk__credential-providers", null],\
+          ["@types/gcp-metadata", null],\
+          ["@types/kerberos", null],\
+          ["@types/mongodb-client-encryption", null],\
+          ["@types/mongodb-js__zstd", null],\
+          ["@types/snappy", null],\
+          ["@types/socks", null],\
+          ["bson", "npm:6.2.0"],\
+          ["gcp-metadata", null],\
+          ["kerberos", null],\
+          ["mongodb-client-encryption", null],\
+          ["mongodb-connection-string-url", "npm:2.6.0"],\
+          ["snappy", null],\
+          ["socks", null]\
+        ],\
+        "packagePeers": [\
+          "@aws-sdk/credential-providers",\
+          "@mongodb-js/zstd",\
+          "@types/aws-sdk__credential-providers",\
+          "@types/gcp-metadata",\
+          "@types/kerberos",\
+          "@types/mongodb-client-encryption",\
+          "@types/mongodb-js__zstd",\
+          "@types/snappy",\
+          "@types/socks",\
+          "gcp-metadata",\
+          "kerberos",\
+          "mongodb-client-encryption",\
+          "snappy",\
+          "socks"\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["mongodb-connection-string-url", [\
+      ["npm:2.6.0", {\
+        "packageLocation": "../../../AppData/Local/Yarn/Berry/cache/mongodb-connection-string-url-npm-2.6.0-af011ba17f-10c0.zip/node_modules/mongodb-connection-string-url/",\
+        "packageDependencies": [\
+          ["mongodb-connection-string-url", "npm:2.6.0"],\
+          ["@types/whatwg-url", "npm:8.2.2"],\
+          ["whatwg-url", "npm:11.0.0"]\
+        ],\
+        "linkType": "HARD"\
+      }],\
+      ["npm:3.0.0", {\
+        "packageLocation": "../../../AppData/Local/Yarn/Berry/cache/mongodb-connection-string-url-npm-3.0.0-a7f39bb823-10c0.zip/node_modules/mongodb-connection-string-url/",\
+        "packageDependencies": [\
+          ["mongodb-connection-string-url", "npm:3.0.0"],\
+          ["@types/whatwg-url", "npm:11.0.3"],\
+          ["whatwg-url", "npm:13.0.0"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["mongoose", [\
+      ["npm:8.0.3", {\
+        "packageLocation": "../../../AppData/Local/Yarn/Berry/cache/mongoose-npm-8.0.3-7055564854-10c0.zip/node_modules/mongoose/",\
+        "packageDependencies": [\
+          ["mongoose", "npm:8.0.3"],\
+          ["bson", "npm:6.2.0"],\
+          ["kareem", "npm:2.5.1"],\
+          ["mongodb", "virtual:7055564854ee15b036fb28071da8a8bbf19036237b7a4568d50a60d0f30fe17d363a68a054bdcf9de52552e618a6aa13e799a0a4ec75ac2e9a27344737c3bec5#npm:6.2.0"],\
+          ["mpath", "npm:0.9.0"],\
+          ["mquery", "npm:5.0.0"],\
+          ["ms", "npm:2.1.3"],\
+          ["sift", "npm:16.0.1"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["mpath", [\
+      ["npm:0.9.0", {\
+        "packageLocation": "../../../AppData/Local/Yarn/Berry/cache/mpath-npm-0.9.0-e79cc94aea-10c0.zip/node_modules/mpath/",\
+        "packageDependencies": [\
+          ["mpath", "npm:0.9.0"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["mquery", [\
+      ["npm:5.0.0", {\
+        "packageLocation": "../../../AppData/Local/Yarn/Berry/cache/mquery-npm-5.0.0-e714f098ee-10c0.zip/node_modules/mquery/",\
+        "packageDependencies": [\
+          ["mquery", "npm:5.0.0"],\
+          ["debug", "virtual:2f4f5d4be0c4271f81a756602d102e02c292a5b30d8b7f5dd19d5368d75df8bb2f1bf516e3f835c2b5501d1663eb437d4f00d6d057bcaee770b46e87267a0fa3#npm:4.3.4"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -9828,6 +10059,15 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
+    ["sift", [\
+      ["npm:16.0.1", {\
+        "packageLocation": "../../../AppData/Local/Yarn/Berry/cache/sift-npm-16.0.1-ad548f4923-10c0.zip/node_modules/sift/",\
+        "packageDependencies": [\
+          ["sift", "npm:16.0.1"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
     ["signal-exit", [\
       ["npm:4.1.0", {\
         "packageLocation": "../../../AppData/Local/Yarn/Berry/cache/signal-exit-npm-4.1.0-61fb957687-10c0.zip/node_modules/signal-exit/",\
@@ -9931,6 +10171,16 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "../../../AppData/Local/Yarn/Berry/cache/space-separated-tokens-npm-1.1.5-2352c83473-10c0.zip/node_modules/space-separated-tokens/",\
         "packageDependencies": [\
           ["space-separated-tokens", "npm:1.1.5"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["sparse-bitfield", [\
+      ["npm:3.0.3", {\
+        "packageLocation": "../../../AppData/Local/Yarn/Berry/cache/sparse-bitfield-npm-3.0.3-cb80d0c89f-10c0.zip/node_modules/sparse-bitfield/",\
+        "packageDependencies": [\
+          ["sparse-bitfield", "npm:3.0.3"],\
+          ["memory-pager", "npm:1.5.0"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -10487,6 +10737,24 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
+    ["tr46", [\
+      ["npm:3.0.0", {\
+        "packageLocation": "../../../AppData/Local/Yarn/Berry/cache/tr46-npm-3.0.0-e1ae1ea7c9-10c0.zip/node_modules/tr46/",\
+        "packageDependencies": [\
+          ["tr46", "npm:3.0.0"],\
+          ["punycode", "npm:2.3.1"]\
+        ],\
+        "linkType": "HARD"\
+      }],\
+      ["npm:4.1.1", {\
+        "packageLocation": "../../../AppData/Local/Yarn/Berry/cache/tr46-npm-4.1.1-3f695e44e5-10c0.zip/node_modules/tr46/",\
+        "packageDependencies": [\
+          ["tr46", "npm:4.1.1"],\
+          ["punycode", "npm:2.3.1"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
     ["traverse", [\
       ["npm:0.6.8", {\
         "packageLocation": "../../../AppData/Local/Yarn/Berry/cache/traverse-npm-0.6.8-f87522b8c2-10c0.zip/node_modules/traverse/",\
@@ -10918,6 +11186,35 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "../../../AppData/Local/Yarn/Berry/cache/web-tree-sitter-npm-0.20.3-2e99c76c98-10c0.zip/node_modules/web-tree-sitter/",\
         "packageDependencies": [\
           ["web-tree-sitter", "npm:0.20.3"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["webidl-conversions", [\
+      ["npm:7.0.0", {\
+        "packageLocation": "../../../AppData/Local/Yarn/Berry/cache/webidl-conversions-npm-7.0.0-e8c8e30c68-10c0.zip/node_modules/webidl-conversions/",\
+        "packageDependencies": [\
+          ["webidl-conversions", "npm:7.0.0"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["whatwg-url", [\
+      ["npm:11.0.0", {\
+        "packageLocation": "../../../AppData/Local/Yarn/Berry/cache/whatwg-url-npm-11.0.0-073529d93a-10c0.zip/node_modules/whatwg-url/",\
+        "packageDependencies": [\
+          ["whatwg-url", "npm:11.0.0"],\
+          ["tr46", "npm:3.0.0"],\
+          ["webidl-conversions", "npm:7.0.0"]\
+        ],\
+        "linkType": "HARD"\
+      }],\
+      ["npm:13.0.0", {\
+        "packageLocation": "../../../AppData/Local/Yarn/Berry/cache/whatwg-url-npm-13.0.0-9da9c74cbf-10c0.zip/node_modules/whatwg-url/",\
+        "packageDependencies": [\
+          ["whatwg-url", "npm:13.0.0"],\
+          ["tr46", "npm:4.1.1"],\
+          ["webidl-conversions", "npm:7.0.0"]\
         ],\
         "linkType": "HARD"\
       }]\
