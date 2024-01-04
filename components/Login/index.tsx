@@ -1,13 +1,22 @@
+"use client";
 import Input from "@/components/Input";
+
+import { signIn, signOut, useSession } from "next-auth/react";
 
 import React from "react";
 import Button from "../Button";
 import SVG_key from "@/public/svgs/key.svg";
 import SVG_person from "@/public/svgs/person.svg";
+import { useRouter } from "next/navigation";
 
 const Login = () => {
-  const handleLoginButtonClick = () => {
-    console.log("로그인 시도!");
+  const router = useRouter();
+  const { data: session } = useSession();
+
+  console.log(session, "session값");
+
+  const handleSignInTextClick = () => {
+    router.push("/api/auth/signin");
   };
 
   return (
@@ -19,18 +28,29 @@ const Login = () => {
         placeholder="Username"
       />
       <Input
-        className="login-layout card-layout my-[10px]"
+        className="login-layout card-layout shi my-[10px]"
         content={<SVG_key />}
         placeholder="Password"
       />
+      {session && session.user ? "로그아웃하기" : "로그인하기"}
       <Button
         className="login-layout card-layout my-[10px] font-bold"
-        onClick={handleLoginButtonClick}
+        onClick={() => signIn()}
       >
         LOGIN
       </Button>
-      <p className="text-[14px]">
-        회원가입이 필요하지 않습니다. & 로그인오류문자.
+
+      <Button
+        className="login-layout card-layout my-[10px] font-bold"
+        onClick={() => signOut()}
+      >
+        LOGOUT
+      </Button>
+      <p
+        className="text-[16px] underline cursor-pointer"
+        onClick={() => handleSignInTextClick}
+      >
+        회원가입
       </p>
     </>
   );
