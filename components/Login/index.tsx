@@ -1,13 +1,21 @@
+"use client";
 import Input from "@/components/Input";
 
 import React from "react";
 import Button from "../Button";
 import SVG_key from "@/public/svgs/key.svg";
 import SVG_person from "@/public/svgs/person.svg";
+import { useRouter } from "next/navigation";
 
 const Login = () => {
+  const router = useRouter();
+
   const handleLoginButtonClick = () => {
     console.log("로그인 시도!");
+  };
+
+  const handleSignInTextClick = () => {
+    router.push("/api/auth/signin");
   };
 
   return (
@@ -29,8 +37,11 @@ const Login = () => {
       >
         LOGIN
       </Button>
-      <p className="text-[14px]">
-        회원가입이 필요하지 않습니다. & 로그인오류문자.
+      <p
+        className="text-[16px] underline cursor-pointer"
+        onClick={() => handleSignInTextClick}
+      >
+        회원가입
       </p>
     </>
   );
