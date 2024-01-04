@@ -16,7 +16,7 @@
 }
 
 .login-layout {
-  @apply w-[330px] h-[60px];
+  @apply w-[330px] h-[60px] shrink-0;
 }
 
 .calendar-scheduleIntro-layout {

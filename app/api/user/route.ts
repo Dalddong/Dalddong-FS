@@ -1,4 +1,3 @@
-import { Schema, model, models } from "mongoose";
 import MongoDBConnect from "@/lib/mongodb";
 import User from "@/models/user";
 import { NextRequest, NextResponse } from "next/server";
@@ -6,10 +5,11 @@ import * as bcrypt from "bcrypt";
 
 export async function POST(request: Request) {
   try {
-    const { name, password } = await request.json();
+    const { name, password, email } = await request.json();
     const newUser = {
       name,
       password: await bcrypt.hash(password, 10),
+      email,
     };
 
     await MongoDBConnect();

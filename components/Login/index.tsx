@@ -1,6 +1,8 @@
 "use client";
 import Input from "@/components/Input";
 
+import { signIn, signOut, useSession } from "next-auth/react";
+
 import React from "react";
 import Button from "../Button";
 import SVG_key from "@/public/svgs/key.svg";
@@ -9,10 +11,9 @@ import { useRouter } from "next/navigation";
 
 const Login = () => {
   const router = useRouter();
+  const { data: session } = useSession();
 
-  const handleLoginButtonClick = () => {
-    console.log("로그인 시도!");
-  };
+  console.log(session, "session값");
 
   const handleSignInTextClick = () => {
     router.push("/api/auth/signin");
@@ -27,15 +28,23 @@ const Login = () => {
         placeholder="Username"
       />
       <Input
-        className="login-layout card-layout my-[10px]"
+        className="login-layout card-layout shi my-[10px]"
         content={<SVG_key />}
         placeholder="Password"
       />
+      {session && session.user ? "로그아웃하기" : "로그인하기"}
       <Button
         className="login-layout card-layout my-[10px] font-bold"
-        onClick={handleLoginButtonClick}
+        onClick={() => signIn()}
       >
         LOGIN
+      </Button>
+
+      <Button
+        className="login-layout card-layout my-[10px] font-bold"
+        onClick={() => signOut()}
+      >
+        LOGOUT
       </Button>
       <p
         className="text-[16px] underline cursor-pointer"

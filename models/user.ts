@@ -3,7 +3,7 @@ const userSchema = new Schema(
   {
     name: String,
     password: String,
-    uid: Schema.Types.ObjectId,
+    email: String,
   },
   {
     timestamps: true,

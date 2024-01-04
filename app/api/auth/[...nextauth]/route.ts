@@ -11,12 +11,27 @@ const handler = NextAuth({
       // e.g. domain, username, password, 2FA token, etc.
       // You can pass any HTML attribute to the <input> tag through the object.
       credentials: {
-        username: { label: "이메일", type: "text", placeholder: "이메일 주소" },
-        password: { label: "Password", type: "password" },
+        email: {
+          label: "이메일",
+          type: "text",
+          placeholder: "이메일 주소 입력 요망",
+        },
+        password: { label: "비밀번호", type: "password" },
       },
+
       async authorize(credentials, req) {
-        // Add logic here to look up the user from the credentials supplied
-        const user = { id: "1", name: "J Smith", email: "jsmith@example.com" };
+        const res = await fetch(`${process.env.NEXTAUTH_URL}/api/login`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            email: credentials?.email,
+            password: credentials?.password,
+          }),
+        });
+        const user = await res.json();
+        console.log(user);
 
         if (user) {
           // Any object returned will be saved in `user` property of the JWT
@@ -30,6 +45,15 @@ const handler = NextAuth({
       },
     }),
   ],
+  callbacks: {
+    async jwt({ token, user }) {
+      return { ...token, ...user };
+    },
+    async session({ session, token }) {
+      session.user = token as any;
+      return session;
+    },
+  },
 });
 
 export { handler as GET, handler as POST };
