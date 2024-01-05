@@ -44,6 +44,7 @@ const Login = () => {
       }
       if (data.message === "login success") {
         setIsLogedIn(true);
+        localStorage.setItem("acToken", data.accessToken);
       }
     } catch (error) {
       console.log("로그인 fetch실패");
