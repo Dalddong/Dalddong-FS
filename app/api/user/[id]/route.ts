@@ -1,6 +1,7 @@
 import { verifyJwt } from "@/lib/jwt";
 import MongoDBConnect from "@/lib/mongodb";
 import User from "@/models/user";
+import { NextResponse } from "next/server";
 
 export async function GET(
   request: Request,
@@ -9,9 +10,7 @@ export async function GET(
   // 추가된 부분
   const accessToken = request.headers.get("authorization");
   if (!accessToken || !verifyJwt(accessToken)) {
-    return new Response(JSON.stringify({ error: "No Authorization" }), {
-      status: 401,
-    });
+    return NextResponse.json({ error: "No Authorization" }, { status: 401 });
   }
 
   console.log(params);
@@ -20,5 +19,5 @@ export async function GET(
     _id: params.id,
   });
 
-  return new Response(JSON.stringify(user));
+  return NextResponse.json(user);
 }

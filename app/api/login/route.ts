@@ -2,45 +2,53 @@ import MongoDBConnect from "@/lib/mongodb";
 import User from "@/models/user";
 import { NextRequest, NextResponse } from "next/server";
 import * as bcrypt from "bcrypt";
-import { signJwtAccessToken } from "@/lib/jwt";
+import { signJwtAccessToken, signJwtRefreshToken } from "@/lib/jwt";
+
 export async function POST(request: Request) {
   try {
     await MongoDBConnect();
 
-    const { email, password } = await request.json();
-    const findUser = await User.findOne({ email });
+    const { name, password } = await request.json();
+    const findUser = await User.findOne({ name });
 
     if (!findUser) {
       return NextResponse.json(
         {
           message: "유저가존재하지않습니다.",
-          data: null,
         },
-        { status: 201 }
+        { status: 401 }
       );
     }
 
-    const emailCorrect = email === findUser.email;
+    const emailCorrect = name === findUser.name;
     const passwordCorrect = await bcrypt.compare(password, findUser.password);
 
     if (emailCorrect && passwordCorrect) {
-      const { email, name } = findUser;
-      const accessToken = signJwtAccessToken({ email, name });
+      const { name } = findUser;
+
+      // Generate a new refresh token
+      const refreshToken = signJwtRefreshToken({ name });
+
+      // Generate a new access token
+      const accessToken = signJwtAccessToken({ name });
+
       return NextResponse.json(
         {
-          message: "로그인 success",
+          message: "login success",
           name: findUser.name,
           accessToken,
+          refreshToken,
         },
         { status: 201 }
       );
     } else {
       return NextResponse.json(
         {
-          message: "아이디 비밀번호 불일치",
-          data: null,
+          message: "비밀번호가 일치하지 않습니다.",
         },
-        { status: 201 }
+        {
+          status: 401,
+        }
       );
     }
   } catch (error) {
