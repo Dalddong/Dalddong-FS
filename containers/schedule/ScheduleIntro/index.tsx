@@ -1,10 +1,10 @@
 "use client";
 import React from "react";
 
-import Login from "@/components/Login";
 import Header from "@/components/Header";
 import SVG_map from "@/public/svgs/map.svg";
 import SVG_time from "@/public/svgs/time.svg";
+import Login from "@/components/Login";
 
 const ScheduleIntro = () => {
   return (
@@ -25,6 +25,7 @@ const ScheduleIntro = () => {
         </div>
       </div>
       <div className="calendar-scheduleIntro-layout">달력위치</div>
+
       <Login />
     </div>
   );
