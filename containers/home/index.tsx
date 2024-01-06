@@ -9,13 +9,22 @@ import TimePicker from "@/components/Picker/TimePicker";
 import PlacePicker from "@/components/Picker/PlacePicker";
 import Button from "@/components/Button";
 
+import { useRecoilValue } from "recoil";
+import { dateRangeState } from "@/states/Schedule/atom";
+import { changeDateFormat } from "@/utils/moment";
+import moment from "moment";
 interface HomeContainerProps {}
 
 const HomeContainer: React.FC<HomeContainerProps> = () => {
   const router = useRouter();
+  const dateRange = useRecoilValue(dateRangeState);
+  const filterDateRange = [
+    changeDateFormat(dateRange[0]),
+    changeDateFormat(dateRange[1]),
+  ];
 
   const handleRegisterButtonClick = () => {
-    router.push("/schedule/1234");
+    console.log("등록하기 data", filterDateRange);
   };
 
   return (

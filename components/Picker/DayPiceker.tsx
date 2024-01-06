@@ -1,15 +1,36 @@
-"use client";
 import React from "react";
 import SVG_down from "@/public/svgs/down.svg";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+
+import { useRecoilState } from "recoil";
+import { dateRangeState } from "@/states/Schedule/atom";
 
 const DayPicker = () => {
+  const [dateRange, setDateRange] = useRecoilState(dateRangeState);
+  const [startDate, endDate] = dateRange;
+
   return (
     <div className="form-layout card-layout-rounded-full centered-content justify-evenly">
       <span className="w-[40px]">기간</span>
+
       <div className="centered-content w-[270px]">
-        <SVG_down /> 2020.12.12 -
         <SVG_down />
-        2020.12.12
+        <DatePicker
+          className="w-[250px] text-center"
+          dateFormat="yyyy.MM.dd"
+          selectsRange={true}
+          minDate={new Date()}
+          startDate={startDate}
+          endDate={endDate}
+          onChange={(update: any) => {
+            if (update) {
+              console.log("upate", update);
+              setDateRange(update);
+            }
+          }}
+          isClearable={false}
+        />
       </div>
     </div>
   );

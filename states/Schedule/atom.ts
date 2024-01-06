@@ -1,4 +1,5 @@
 import { atom } from "recoil";
+import { addDays } from "date-fns";
 
 export const scheduleNameValue = atom({
   key: "scheduleNameValue",
@@ -23,4 +24,9 @@ export const nomineeTimesValue = atom({
 export const playTimeValue = atom({
   key: "playTimeValue",
   default: null,
+});
+
+export const dateRangeState = atom({
+  key: "dateRangeState",
+  default: [new Date(), addDays(new Date(), 7)],
 });
