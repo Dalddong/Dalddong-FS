@@ -25,7 +25,6 @@ const Login = () => {
   );
 
   const handleLoginButtonClick = async () => {
-    console.log("로그인클릭");
     try {
       const response = await fetch("/api/login", {
         method: "POST",
@@ -82,12 +81,17 @@ const Login = () => {
     setPassword(event.target.value);
   };
 
+  const handleLogoutButtonClick = () => {
+    localStorage.removeItem("acToken");
+    setIsLogedIn(false);
+  };
+
   return (
     <>
       {isLogedIn ? (
         <>
           <p className="text-[18px]">
-            님 반갑습니다.
+            {id}님 반갑습니다.
             <br /> 시간을 입력해 주세요!
           </p>
           <Button
@@ -98,9 +102,7 @@ const Login = () => {
           </Button>
           <Button
             className="login-layout card-layout my-[10px] font-bold"
-            onClick={() => {
-              console.log("로그아웃");
-            }}
+            onClick={handleLogoutButtonClick}
           >
             LOGOUT
           </Button>
