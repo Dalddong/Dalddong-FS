@@ -1,13 +1,23 @@
 import { NextResponse } from "next/server";
+import MongoDBConnect from "@/lib/mongodb";
+import Schedule from "@/models/schedule";
 
 export async function POST(request: Request) {
-  const res = await request.json();
-  console.log(res);
-  const data = {
-    id: res.id,
-    title: "모임제목",
-    period: "2023/01/13~2023/04/25",
-    place: "장소",
+  const { nomineeDay, nomineeTimes, playTime, schedulePlace, scheduleName } =
+    await request.json();
+  const scheduleData = {
+    nomineeDay,
+    nomineeTimes,
+    playTime,
+    schedulePlace,
+    scheduleName,
   };
-  return NextResponse.json(data, res);
+  await MongoDBConnect();
+  const createdScheduleData = await Schedule.create(scheduleData);
+
+  return NextResponse.json({
+    message: "Create Schedule Success",
+    data: scheduleData,
+    id: createdScheduleData._id,
+  });
 }
