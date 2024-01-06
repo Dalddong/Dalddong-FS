@@ -2,7 +2,7 @@
 
 import { useQuery } from "@tanstack/react-query";
 import axiosInstance from "../Axiosinstance";
-import axios from "axios";
+
 import "dotenv/config";
 
 export interface Todo {
@@ -35,7 +35,7 @@ const Todos = () => {
 
   return (
     <>
-      <div className="flex flex-col gap-2">ㅇㅇ</div>
+      <div className="flex flex-col gap-2">{todoData.name}</div>
     </>
   );
 };
