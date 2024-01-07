@@ -2,6 +2,7 @@ import React from "react";
 import SVG_down from "@/public/svgs/down.svg";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import { addDays } from "date-fns";
 
 import { useRecoilState } from "recoil";
 import { dateRangeState } from "@/states/Schedule/atom";
@@ -21,6 +22,7 @@ const DayPicker = () => {
           dateFormat="yyyy.MM.dd"
           selectsRange={true}
           minDate={new Date()}
+          maxDate={addDays(new Date(), 30)}
           startDate={startDate}
           endDate={endDate}
           onChange={(update: any) => {
