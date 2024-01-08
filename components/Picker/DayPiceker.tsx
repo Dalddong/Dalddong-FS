@@ -5,10 +5,10 @@ import "react-datepicker/dist/react-datepicker.css";
 import { addDays } from "date-fns";
 
 import { useRecoilState } from "recoil";
-import { dateRangeState } from "@/states/Schedule/atom";
+import { nomineeDayValue } from "@/states/Schedule/atom";
 
 const DayPicker = () => {
-  const [dateRange, setDateRange] = useRecoilState(dateRangeState);
+  const [dateRange, setDateRange] = useRecoilState(nomineeDayValue);
   const [startDate, endDate] = dateRange;
 
   return (

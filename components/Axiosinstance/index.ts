@@ -24,12 +24,13 @@ axiosInstance.interceptors.request.use(
 );
 axiosInstance.interceptors.response.use(
   (response) => {
-    //응답에 대한 로직
-    console.log("가로채기,res", response);
+    const responseData = response.data;
+    console.log("가로채기 responseData", responseData);
 
-    return response;
+    return responseData;
   },
   (err) => {
+    console.log("axiosInstance res Error", err);
     return Promise.reject(err);
   }
 );

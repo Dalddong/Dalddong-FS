@@ -1,28 +1,41 @@
 "use client";
 import React from "react";
 
-import { useRouter } from "next/navigation";
-
 import Header from "@/components/Header";
 import DayPicker from "@/components/Picker/DayPiceker";
 import TimePicker from "@/components/Picker/TimePicker";
 import PlacePicker from "@/components/Picker/PlacePicker";
 import Button from "@/components/Button";
 
+import { usePostSchedule } from "@/hooks/schedule/usePostSchedule";
+
 import { useRecoilValue } from "recoil";
-import { dateRangeState } from "@/states/Schedule/atom";
+import {
+  nomineeDayValue,
+  nomineePlayTimeValue,
+  scheduleNameValue,
+  schedulePlaceValue,
+} from "@/states/Schedule/atom";
 import { changeDateFormat } from "@/utils/moment";
 
 interface HomeContainerProps {}
 
 const HomeContainer: React.FC<HomeContainerProps> = () => {
-  const router = useRouter();
-  const dateRange = useRecoilValue(dateRangeState);
-
+  const dateRange = useRecoilValue(nomineeDayValue);
   const filterDateRange = dateRange.map((item) => changeDateFormat(item));
+  const scheduleName = useRecoilValue(scheduleNameValue);
+  const schedulePlace = useRecoilValue(schedulePlaceValue);
+  const nomineePlaytime = useRecoilValue(nomineePlayTimeValue);
+
+  const postSchedule = usePostSchedule(
+    filterDateRange,
+    nomineePlaytime,
+    scheduleName,
+    schedulePlace
+  );
 
   const handleRegisterButtonClick = () => {
-    console.log("등록하기 data", filterDateRange);
+    postSchedule();
   };
 
   return (
