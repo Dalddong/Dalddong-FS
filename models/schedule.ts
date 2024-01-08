@@ -1,10 +1,9 @@
 import { Schema, model, models } from "mongoose";
 
 const scheduleSchema = new Schema({
-  nomineeDay: String,
-  nomineeTimes: [String],
-  playTime: String,
-  schedulPlace: String,
+  nomineeDays: [String],
+  nomineePlayTime: { type: String, required: true },
+  schedulePlace: String,
   scheduleName: String,
   selectDays: [
     {
