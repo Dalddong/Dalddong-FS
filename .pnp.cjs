@@ -56,6 +56,7 @@ const RAW_RUNTIME_STATE =
           ["react-datepicker", "virtual:5fcaa3fe9e689768cc991b9fea8732f53d296e979fc076bd0168c7df011d53e468c399ba2e9ae8932fcccc0518e29c644f58515940b861684510690f7f046175#npm:4.25.0"],\
           ["react-dom", "virtual:5fcaa3fe9e689768cc991b9fea8732f53d296e979fc076bd0168c7df011d53e468c399ba2e9ae8932fcccc0518e29c644f58515940b861684510690f7f046175#npm:18.2.0"],\
           ["recoil", "virtual:5fcaa3fe9e689768cc991b9fea8732f53d296e979fc076bd0168c7df011d53e468c399ba2e9ae8932fcccc0518e29c644f58515940b861684510690f7f046175#npm:0.7.7"],\
+          ["recoil-persist", "virtual:5fcaa3fe9e689768cc991b9fea8732f53d296e979fc076bd0168c7df011d53e468c399ba2e9ae8932fcccc0518e29c644f58515940b861684510690f7f046175#npm:5.1.0"],\
           ["swagger-ui-react", "virtual:5fcaa3fe9e689768cc991b9fea8732f53d296e979fc076bd0168c7df011d53e468c399ba2e9ae8932fcccc0518e29c644f58515940b861684510690f7f046175#npm:5.10.5"],\
           ["tailwind-scrollbar-hide", "npm:1.1.7"],\
           ["tailwindcss", "npm:3.4.0"],\
@@ -5566,6 +5567,7 @@ const RAW_RUNTIME_STATE =
           ["react-datepicker", "virtual:5fcaa3fe9e689768cc991b9fea8732f53d296e979fc076bd0168c7df011d53e468c399ba2e9ae8932fcccc0518e29c644f58515940b861684510690f7f046175#npm:4.25.0"],\
           ["react-dom", "virtual:5fcaa3fe9e689768cc991b9fea8732f53d296e979fc076bd0168c7df011d53e468c399ba2e9ae8932fcccc0518e29c644f58515940b861684510690f7f046175#npm:18.2.0"],\
           ["recoil", "virtual:5fcaa3fe9e689768cc991b9fea8732f53d296e979fc076bd0168c7df011d53e468c399ba2e9ae8932fcccc0518e29c644f58515940b861684510690f7f046175#npm:0.7.7"],\
+          ["recoil-persist", "virtual:5fcaa3fe9e689768cc991b9fea8732f53d296e979fc076bd0168c7df011d53e468c399ba2e9ae8932fcccc0518e29c644f58515940b861684510690f7f046175#npm:5.1.0"],\
           ["swagger-ui-react", "virtual:5fcaa3fe9e689768cc991b9fea8732f53d296e979fc076bd0168c7df011d53e468c399ba2e9ae8932fcccc0518e29c644f58515940b861684510690f7f046175#npm:5.10.5"],\
           ["tailwind-scrollbar-hide", "npm:1.1.7"],\
           ["tailwindcss", "npm:3.4.0"],\
@@ -10320,6 +10322,28 @@ const RAW_RUNTIME_STATE =
           "react-dom",\
           "react-native",\
           "react"\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["recoil-persist", [\
+      ["npm:5.1.0", {\
+        "packageLocation": "../../../AppData/Local/Yarn/Berry/cache/recoil-persist-npm-5.1.0-6c9c3d1452-10c0.zip/node_modules/recoil-persist/",\
+        "packageDependencies": [\
+          ["recoil-persist", "npm:5.1.0"]\
+        ],\
+        "linkType": "SOFT"\
+      }],\
+      ["virtual:5fcaa3fe9e689768cc991b9fea8732f53d296e979fc076bd0168c7df011d53e468c399ba2e9ae8932fcccc0518e29c644f58515940b861684510690f7f046175#npm:5.1.0", {\
+        "packageLocation": "./.yarn/__virtual__/recoil-persist-virtual-2a28c7f545/4/AppData/Local/Yarn/Berry/cache/recoil-persist-npm-5.1.0-6c9c3d1452-10c0.zip/node_modules/recoil-persist/",\
+        "packageDependencies": [\
+          ["recoil-persist", "virtual:5fcaa3fe9e689768cc991b9fea8732f53d296e979fc076bd0168c7df011d53e468c399ba2e9ae8932fcccc0518e29c644f58515940b861684510690f7f046175#npm:5.1.0"],\
+          ["@types/recoil", null],\
+          ["recoil", "virtual:5fcaa3fe9e689768cc991b9fea8732f53d296e979fc076bd0168c7df011d53e468c399ba2e9ae8932fcccc0518e29c644f58515940b861684510690f7f046175#npm:0.7.7"]\
+        ],\
+        "packagePeers": [\
+          "@types/recoil",\
+          "recoil"\
         ],\
         "linkType": "HARD"\
       }]\

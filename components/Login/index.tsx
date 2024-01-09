@@ -14,6 +14,7 @@ import {
   signupAndLoginToggleState,
   loginState,
 } from "@/states/Login/atom";
+import { usePostLogin } from "@/hooks/login/usePostLogin";
 
 const Login = () => {
   const [id, setId] = useRecoilState(loginIdValue);
@@ -23,31 +24,10 @@ const Login = () => {
   const [signUpState, setSignUpState] = useRecoilState(
     signupAndLoginToggleState
   );
+  const postLogin = usePostLogin(id, password);
 
   const handleLoginButtonClick = async () => {
-    try {
-      const response = await fetch("/api/login", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          name: id,
-          password: password,
-        }),
-      });
-      const data = await response.json();
-
-      if (data.error) {
-        setErrorMessage(data.error);
-      }
-      if (data.message === "login success") {
-        setIsLogedIn(true);
-        localStorage.setItem("acToken", data.accessToken);
-      }
-    } catch (error) {
-      console.log("로그인 fetch실패");
-    }
+    postLogin();
   };
 
   const handleSignUpButtonClick = async () => {

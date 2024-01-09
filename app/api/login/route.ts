@@ -9,12 +9,13 @@ export async function POST(request: Request) {
     await MongoDBConnect();
 
     const { name, password } = await request.json();
+    console.log(name, password, "라우트 아디비번");
     const findUser = await User.findOne({ name });
-
+    console.log(findUser);
     if (!findUser) {
       return NextResponse.json(
         {
-          message: "유저가존재하지않습니다.",
+          message: "유저가 존재하지 않습니다.",
         },
         { status: 401 }
       );
@@ -22,20 +23,17 @@ export async function POST(request: Request) {
 
     const emailCorrect = name === findUser.name;
     const passwordCorrect = await bcrypt.compare(password, findUser.password);
-
+    console.log(emailCorrect, passwordCorrect, "일치여부");
     if (emailCorrect && passwordCorrect) {
       const { name } = findUser;
 
-      // Generate a new refresh token
       const refreshToken = signJwtRefreshToken({ name });
-
-      // Generate a new access token
       const accessToken = signJwtAccessToken({ name });
 
       return NextResponse.json(
         {
-          message: "login success",
-          name: findUser.name,
+          message: "로그인 성공",
+          name: name,
           accessToken,
           refreshToken,
         },
@@ -54,7 +52,7 @@ export async function POST(request: Request) {
   } catch (error) {
     return NextResponse.json(
       {
-        message: "로그인 Error",
+        message: "로그인 에러",
         error,
       },
       {

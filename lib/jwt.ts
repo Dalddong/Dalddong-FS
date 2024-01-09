@@ -35,7 +35,7 @@ interface RefreshTokenPayload extends JwtPayload {
 export function signJwtRefreshToken(
   payload: RefreshTokenPayload,
   options: SignOption = {
-    expiresIn: "7d", // Set the expiration time for the refresh token
+    expiresIn: "14d",
   }
 ) {
   const secret_key = process.env.REFRESH_SECRET_KEY; // Use a separate secret key for refresh tokens
