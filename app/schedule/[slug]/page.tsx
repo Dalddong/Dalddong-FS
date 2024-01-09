@@ -1,12 +1,13 @@
 "use client";
 import React from "react";
 import ScheduleContainer from "@/containers/schedule";
+
+import { useSearchParams } from "next/navigation";
+
 const page = ({ params }: { params: { slug: string } }) => {
   return (
     <>
-      {/* 주소:{params.slug} */}
-
-      <ScheduleContainer />
+      <ScheduleContainer sid={params.slug} />
     </>
   );
 };

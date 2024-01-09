@@ -27,6 +27,7 @@
     "react-datepicker": "^4.25.0",
     "react-dom": "^18",
     "recoil": "^0.7.7",
+    "recoil-persist": "^5.1.0",
     "swagger-ui-react": "^5.10.5",
     "tailwind-scrollbar-hide": "^1.1.7"
   },

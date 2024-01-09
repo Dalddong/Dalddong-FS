@@ -1,4 +1,8 @@
-import { verifyJwt } from "@/lib/jwt";
+import {
+  verifyJwt,
+  verifyJwtRefreshToken,
+  signJwtAccessToken,
+} from "@/lib/jwt";
 import MongoDBConnect from "@/lib/mongodb";
 import User from "@/models/user";
 import { NextResponse } from "next/server";
@@ -7,10 +11,22 @@ export async function GET(
   request: Request,
   { params }: { params: { id: string } }
 ) {
-  // 추가된 부분
   const accessToken = request.headers.get("authorization");
+
   if (!accessToken || !verifyJwt(accessToken)) {
-    return NextResponse.json({ error: "No Authorization" }, { status: 401 });
+    const refreshToken = request.headers.get("refresh-token");
+
+    if (!refreshToken || !verifyJwtRefreshToken(refreshToken)) {
+      return NextResponse.json({ error: "No Authorization" }, { status: 401 });
+    }
+
+    const refreshPayload = verifyJwtRefreshToken(refreshToken);
+    const newAccessToken = signJwtAccessToken({ sub: refreshPayload.sub });
+
+    return NextResponse.json(
+      { error: "Token expired", newAccessToken },
+      { status: 401 }
+    );
   }
 
   console.log(params);
@@ -19,5 +35,10 @@ export async function GET(
     _id: params.id,
   });
 
-  return NextResponse.json(user);
+  const { _id, name } = user;
+
+  return NextResponse.json({
+    message: "get User Information OK",
+    data: { name, _id },
+  });
 }
