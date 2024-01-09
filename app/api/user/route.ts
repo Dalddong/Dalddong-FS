@@ -5,8 +5,8 @@ import * as bcrypt from "bcrypt";
 
 export async function POST(request: Request) {
   try {
-    const { name, password } = await request.json();
-
+    const data = await request.json();
+    const { name, email, password } = data;
     await MongoDBConnect();
 
     const existingUser = await User.findOne({ name });
@@ -24,6 +24,7 @@ export async function POST(request: Request) {
     const newUser = {
       name,
       password: await bcrypt.hash(password, 10),
+      email,
     };
 
     await User.create(newUser);
@@ -31,6 +32,7 @@ export async function POST(request: Request) {
     return NextResponse.json(
       {
         message: "create user success",
+        data: data,
       },
       { status: 201 }
     );

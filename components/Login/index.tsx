@@ -7,6 +7,8 @@ import SVG_key from "@/public/svgs/key.svg";
 import SVG_person from "@/public/svgs/person.svg";
 
 import { useRecoilState } from "recoil";
+import { signIn, signOut, useSession } from "next-auth/react";
+
 import {
   loginIdValue,
   loginPasswordValue,
@@ -17,6 +19,7 @@ import {
 import { usePostLogin } from "@/hooks/login/usePostLogin";
 
 const Login = () => {
+  const { data: session } = useSession();
   const [id, setId] = useRecoilState(loginIdValue);
   const [password, setPassword] = useRecoilState(loginPasswordValue);
   const [errorMessage, setErrorMessage] = useRecoilState(loginErrorMessage);
