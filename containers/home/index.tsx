@@ -34,10 +34,6 @@ const HomeContainer: React.FC<HomeContainerProps> = () => {
     schedulePlace
   );
 
-  const handleRegisterButtonClick = () => {
-    postSchedule();
-  };
-
   return (
     <div className="container-main-layout flex-col-center">
       <Header />
@@ -46,7 +42,7 @@ const HomeContainer: React.FC<HomeContainerProps> = () => {
       <PlacePicker />
       <Button
         className="button-confirm card-layout centered-button"
-        onClick={handleRegisterButtonClick}
+        onClick={postSchedule}
       >
         등록하기
       </Button>

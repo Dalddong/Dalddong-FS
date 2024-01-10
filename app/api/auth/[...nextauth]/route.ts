@@ -34,7 +34,7 @@ const handler = NextAuth({
           console.log("responseData", responseData);
           return responseData;
         } catch (error) {
-          throw new Error(error);
+          throw new Error(error as string);
         }
 
         return null;

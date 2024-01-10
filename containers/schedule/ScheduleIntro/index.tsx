@@ -25,7 +25,6 @@ const ScheduleIntro = () => {
         </div>
       </div>
       <div className="calendar-scheduleIntro-layout">달력위치</div>
-
       <Login />
     </div>
   );
