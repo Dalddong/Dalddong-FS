@@ -5,7 +5,7 @@ declare module "next-auth" {
     user: {
       name: string;
       accessToken: string;
-      email: String;
+      email: string; // 수정: String 대신 string
       refreshToken: string;
     };
   }

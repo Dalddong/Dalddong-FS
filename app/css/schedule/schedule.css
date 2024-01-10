@@ -1,5 +1,5 @@
 .container-schedule-layout {
-  @apply grid grid-cols-[1fr] text-dd-green gap-0 lg:grid-cols-[350px_600px_350px] max-w-[1300px] h-[900px] mx-auto;
+  @apply grid grid-cols-[1fr] text-dd-green gap-0 lg:grid-cols-[350px_600px_350px] max-w-[1300px] h-[900px] mx-auto lg:mt-[50px];
 }
 
 .box-schedule-layout {
@@ -16,9 +16,9 @@
 }
 
 .login-layout {
-  @apply w-[330px] h-[60px] shrink-0;
+  @apply w-[280px] h-[60px] shrink-0;
 }
 
 .calendar-scheduleIntro-layout {
-  @apply w-[220px] h-[220px] my-[20px] border-[2px] rounded-lg border-black;
+  @apply w-[240px] h-[240px] my-[40px] border-[2px] rounded-lg border-black;
 }
