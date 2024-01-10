@@ -6,23 +6,23 @@ import * as bcrypt from "bcrypt";
 export async function POST(request: Request) {
   try {
     const data = await request.json();
-    const { name, email, password } = data;
+    const { email, password } = data;
     await MongoDBConnect();
 
-    const existingUser = await User.findOne({ name });
+    console.log(data, "data");
+    const existingUser = await User.findOne({ email });
 
     if (existingUser) {
       return NextResponse.json(
         {
-          error: "사용중인 이름입니다.",
-          message: "duplicated name",
+          error: "존재하는 계정입니다.",
+          message: "exist account",
         },
         { status: 400 }
       );
     }
 
     const newUser = {
-      name,
       password: await bcrypt.hash(password, 10),
       email,
     };

@@ -38,6 +38,7 @@ export function usePostSchedule(
     onError: (err) => {
       console.log(err);
     },
+    mutationKey: [queryKeys.schedule],
   });
 
   return mutate;
