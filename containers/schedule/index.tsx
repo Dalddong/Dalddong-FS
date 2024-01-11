@@ -5,19 +5,31 @@ import ScheduleIntro from "./ScheduleIntro";
 import ScheduleSummary from "@/containers/schedule/ScheduleSummary";
 import ScheduleSelector from "./ScheduleSelector";
 import { useSchedule } from "@/hooks/schedule/useSchedule";
-
-interface ScheduleContainerProps {
-  sid: string;
-}
+import { ScheduleContainerProps } from "@/types/schedule";
 
 const ScheduleContainer: React.FC<ScheduleContainerProps> = ({ sid }) => {
   const { data } = useSchedule(sid);
+  const {
+    nomineePlayTime,
+    nomineeDays,
+    scheduleName,
+    schedulePlace,
+    selectDays,
+  } = data;
+
+  console.log("data", data);
+  console.log(nomineePlayTime, nomineeDays, "nomineePlayTime");
 
   return (
     <div className="container-schedule-layout">
-      <ScheduleIntro />
-      <ScheduleSelector />
-      <ScheduleSummary />
+      <ScheduleIntro
+        schedulePlace={schedulePlace}
+        scheduleName={scheduleName}
+        nomineeDays={nomineeDays}
+        nomineePlayTime={nomineePlayTime}
+      />
+      <ScheduleSelector selectDays={selectDays} />
+      <ScheduleSummary selectDays={selectDays} />
     </div>
   );
 };
