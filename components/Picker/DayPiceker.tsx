@@ -27,7 +27,6 @@ const DayPicker = () => {
           endDate={endDate}
           onChange={(update: any) => {
             if (update) {
-              console.log("upate", update);
               setDateRange(update);
             }
           }}

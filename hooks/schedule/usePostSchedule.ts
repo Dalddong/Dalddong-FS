@@ -8,13 +8,15 @@ async function postSchedule(
   nomineeDays,
   nomineePlayTime,
   scheduleName,
-  schedulePlace
+  schedulePlace,
+  selectDays
 ) {
   const { data } = await axiosInstance.post("/api/schedule", {
     scheduleName,
     schedulePlace,
     nomineeDays,
     nomineePlayTime,
+    selectDays,
   });
   return data;
 }
@@ -23,14 +25,21 @@ export function usePostSchedule(
   nomineeDays,
   nomineePlayTime,
   scheduleName,
-  schedulePlace
+  schedulePlace,
+  selectDays
 ) {
   const router = useRouter();
   const queryClient = useQueryClient();
 
   const { mutate } = useMutation({
     mutationFn: () =>
-      postSchedule(nomineeDays, nomineePlayTime, scheduleName, schedulePlace),
+      postSchedule(
+        nomineeDays,
+        nomineePlayTime,
+        scheduleName,
+        schedulePlace,
+        selectDays
+      ),
     onSuccess: (responseData) => {
       queryClient.invalidateQueries([queryKeys.schedule]);
       router.push(`/schedule/${responseData._id}`);
