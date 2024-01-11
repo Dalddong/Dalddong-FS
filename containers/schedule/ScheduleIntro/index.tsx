@@ -6,12 +6,7 @@ import SVG_map from "@/public/svgs/map.svg";
 import SVG_time from "@/public/svgs/time.svg";
 import Login from "@/components/Login";
 
-interface ScheduleIntroType {
-  nomineePlayTime: string;
-  nomineeDays: string[];
-  scheduleName: string;
-  schedulePlace: string;
-}
+import type { ScheduleIntroType } from "@/types/schedule";
 
 const ScheduleIntro: React.FC<ScheduleIntroType> = ({
   schedulePlace,

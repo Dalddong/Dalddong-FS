@@ -4,9 +4,7 @@ import React from "react";
 import SVG_left from "@/public/svgs/leftArrow.svg";
 import SVG_right from "@/public/svgs/rightArrow.svg";
 
-interface ScheduleSelectorType {
-  selectDays: object[];
-}
+import type { ScheduleSelectorType } from "@/types/schedule";
 
 const ScheduleSelector: React.FC<ScheduleSelectorType> = ({ selectDays }) => {
   console.log("selectDays 하위", selectDays);
