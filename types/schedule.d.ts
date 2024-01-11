@@ -7,9 +7,10 @@ export interface ScheduleContainerProps {
 }
 export interface ScheduleIntroType {
   nomineePlayTime: string;
-  nomineeDays: string[];
+  nomineeDays: any;
   scheduleName: string;
   schedulePlace: string;
+  isLoading: boolean;
 }
 
 export interface ScheduleSelectorType {
