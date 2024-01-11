@@ -8,7 +8,7 @@ import PlacePicker from "@/components/Picker/PlacePicker";
 import Button from "@/components/Button";
 
 import { usePostSchedule } from "@/hooks/schedule/usePostSchedule";
-
+import { selectDaysMaker } from "@/utils/selectDaysMaker";
 import { useRecoilValue } from "recoil";
 import {
   nomineeDayValue,
@@ -23,6 +23,7 @@ interface HomeContainerProps {}
 const HomeContainer: React.FC<HomeContainerProps> = () => {
   const dateRange = useRecoilValue(nomineeDayValue);
   const filterDateRange = dateRange.map((item) => changeDateFormat(item));
+  const selectDays = selectDaysMaker(dateRange);
   const scheduleName = useRecoilValue(scheduleNameValue);
   const schedulePlace = useRecoilValue(schedulePlaceValue);
   const nomineePlaytime = useRecoilValue(nomineePlayTimeValue);
@@ -31,7 +32,8 @@ const HomeContainer: React.FC<HomeContainerProps> = () => {
     filterDateRange,
     nomineePlaytime,
     scheduleName,
-    schedulePlace
+    schedulePlace,
+    selectDays
   );
 
   return (

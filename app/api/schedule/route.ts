@@ -4,6 +4,7 @@ import Schedule from "@/models/schedule";
 
 export async function POST(request: Request) {
   const scheduleData = await request.json();
+  console.log("scheduleData", scheduleData);
 
   await MongoDBConnect();
   const createdScheduleData = await Schedule.create(scheduleData);
