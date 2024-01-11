@@ -4,7 +4,10 @@ import React from "react";
 import SVG_left from "@/public/svgs/leftArrow.svg";
 import SVG_right from "@/public/svgs/rightArrow.svg";
 
-const ScheduleSelector = () => {
+import type { ScheduleSelectorType } from "@/types/schedule";
+
+const ScheduleSelector: React.FC<ScheduleSelectorType> = ({ selectDays }) => {
+  console.log("selectDays 하위", selectDays);
   return (
     <div className="box-schedule-middle-layout flex-col-center box-border">
       <p className=" mt-[5px] w-[350px] font-bold text-[14px] lg:w-[600px] lg:text-left lg:ml-[10px] lg:text-[16px]">

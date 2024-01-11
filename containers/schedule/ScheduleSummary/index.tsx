@@ -8,8 +8,9 @@ import SVG_calendar from "@/public/svgs/calendar.svg";
 import SVG_share from "@/public/svgs/share.svg";
 import SVG_chart from "@/public/svgs/barchart.svg";
 import Button from "@/components/Button";
+import type { ScheduleSummaryType } from "@/types/schedule";
 
-const ScheduleSummary = () => {
+const ScheduleSummary: React.FC<ScheduleSummaryType> = () => {
   return (
     <div className="box-schedule-side-layout flex-col-center">
       <div className="w-[340px] mt-[5px]">
