@@ -21,7 +21,7 @@ export async function GET(
     }
 
     const refreshPayload = verifyJwtRefreshToken(refreshToken);
-    const newAccessToken = signJwtAccessToken({ sub: refreshPayload.sub });
+    const newAccessToken = signJwtAccessToken({ sub: refreshPayload?.sub });
 
     return NextResponse.json(
       { error: "Token expired", newAccessToken },
