@@ -1,6 +1,7 @@
 export interface ScheduleSummaryType {
   selectDays: object[];
   isLoading: boolean;
+  sid: string;
 }
 
 export interface ScheduleContainerProps {
@@ -16,5 +17,4 @@ export interface ScheduleIntroType {
 
 export interface ScheduleSelectorType {
   selectDays: any;
-  isLoading: boolean;
 }

@@ -9,8 +9,24 @@ import SVG_share from "@/public/svgs/share.svg";
 import SVG_chart from "@/public/svgs/barchart.svg";
 import Button from "@/components/Button";
 import type { ScheduleSummaryType } from "@/types/schedule";
+import axios from "axios";
 
-const ScheduleSummary: React.FC<ScheduleSummaryType> = () => {
+import { useRecoilValue } from "recoil";
+import { selectRecoilDays } from "@/states/Schedule/atom";
+
+const ScheduleSummary: React.FC<ScheduleSummaryType> = ({ sid }) => {
+  const RecoilDays = useRecoilValue(selectRecoilDays);
+
+  const patchData = async () => {
+    const response = await axios.patch(`/api/schedule/${sid}`, {
+      selectDays: RecoilDays,
+    });
+    const responseData = await response.data;
+
+    console.log("패치성공", responseData);
+    console.log(RecoilDays, "patch할꺼여");
+  };
+
   return (
     <div className="box-schedule-side-layout flex-col-center">
       <div className="w-[340px] mt-[5px]">
@@ -21,9 +37,7 @@ const ScheduleSummary: React.FC<ScheduleSummaryType> = () => {
       </div>
       <Button
         className="card-layout centered-content w-[250px] h-[60px] mt-[5px] mb-[25px] text-[20px]"
-        onClick={() => {
-          console.log("일정등록 버튼");
-        }}
+        onClick={patchData}
       >
         <SVG_calendar />
         <span className="ml-[4px]">일정 등록</span>

@@ -1,44 +1,36 @@
 "use client";
-import React from "react";
+import React, { useEffect } from "react";
 
 import SVG_left from "@/public/svgs/leftArrow.svg";
 import SVG_right from "@/public/svgs/rightArrow.svg";
-
 import type { ScheduleSelectorType } from "@/types/schedule";
-import ScheduleSelectorSkeleton from "@/components/Skeleton/ScheduleSelectorSkeleton";
+import { timeTable } from "@/utils/timeTable";
+import { useRecoilState } from "recoil";
+import { selectRecoilDays } from "@/states/Schedule/atom";
 
-const ScheduleSelector: React.FC<ScheduleSelectorType> = ({
-  selectDays,
-  isLoading,
-}) => {
-  const timeTable = [
-    "9:00",
-    "10:00",
-    "11:00",
-    "12:00",
-    "13:00",
-    "14:00",
-    "15:00",
-    "16:00",
-    "17:00",
-    "18:00",
-    "19:00",
-    "20:00",
-    "21:00",
-    "22:00",
-    "23:00",
-    "24:00",
-    "1:00",
-    "2:00",
-    "3:00",
-    "4:00",
-    "5:00",
-    "6:00",
-    "7:00",
-    "8:00",
-  ];
+const ScheduleSelector: React.FC<ScheduleSelectorType> = ({ selectDays }) => {
+  const [abc, setAbc] = useRecoilState(selectRecoilDays);
 
-  if (isLoading) return <ScheduleSelectorSkeleton />;
+  useEffect(() => {
+    setAbc(selectDays);
+  }, []);
+
+  const selectTimesClicked = (dayIdx: number, timeIndex: number) => {
+    const updatedAbc = JSON.parse(JSON.stringify(abc));
+
+    if (!updatedAbc[dayIdx].times[timeIndex].includes("등록")) {
+      updatedAbc[dayIdx].times[timeIndex].push("등록");
+
+      setAbc(updatedAbc);
+    } else {
+      updatedAbc[dayIdx].times[timeIndex] = updatedAbc[dayIdx].times[
+        timeIndex
+      ].filter((item: any) => item !== "등록");
+      setAbc(updatedAbc);
+    }
+
+    console.log(updatedAbc, "Updated abc");
+  };
 
   return (
     <div className="box-schedule-middle-layout flex-col-center box-border">
@@ -46,20 +38,20 @@ const ScheduleSelector: React.FC<ScheduleSelectorType> = ({
         가능한 시간을 모두 선택후 일정을 등록해주세요.
       </p>
       <div className="relative w-[350px] h-[800px] py-[8px]  overflow-scroll scrollbar-hide   lg:w-[600px] px-[10px] lg:py-[10px] flex justify-around">
-        {selectDays.map((item: any) => (
+        {abc.map((item: any, dayIdx: number) => (
           <div className="flex-col-center" key={item._id}>
             <div className="schedule-selector-day-layout">
               <span>{item.day}</span>
             </div>
-            {item.times.map((time: any, index: number) => (
+            {item.times.map((time: any, timeIndex: number) => (
               <div
-                key={index}
-                onClick={() => console.log(index, item.day, "으하하")}
-                className="schedule-selector-time-layout"
+                key={timeIndex}
+                onClick={() => selectTimesClicked(dayIdx, timeIndex)}
+                className={`schedule-selector-time-layout ${
+                  time.includes("등록") ? "border-dd-green" : ""
+                }`}
               >
-                {time.length > 0
-                  ? time.length
-                  : `${timeTable[index]} (${time.length})`}
+                {timeTable[timeIndex]}({time.length})
               </div>
             ))}
           </div>

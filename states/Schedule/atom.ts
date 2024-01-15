@@ -25,3 +25,8 @@ export const nomineeDayValue = atom({
   key: "nomineeDayValue",
   default: [new Date(), addDays(new Date(), 7)],
 });
+
+export const selectRecoilDays = atom({
+  key: "selectRecoilDays",
+  default: [] as any,
+});
