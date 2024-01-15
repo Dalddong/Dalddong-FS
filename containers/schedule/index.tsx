@@ -17,6 +17,8 @@ const ScheduleContainer: React.FC<ScheduleContainerProps> = ({ sid }) => {
     selectDays,
   } = data;
 
+  if (isLoading) return <>로딩중</>;
+
   return (
     <div className="container-schedule-layout">
       <ScheduleIntro
@@ -26,8 +28,12 @@ const ScheduleContainer: React.FC<ScheduleContainerProps> = ({ sid }) => {
         nomineePlayTime={nomineePlayTime}
         isLoading={isLoading}
       />
-      <ScheduleSelector selectDays={selectDays} isLoading={isLoading} />
-      <ScheduleSummary selectDays={selectDays} isLoading={isLoading} />
+      <ScheduleSelector selectDays={selectDays} />
+      <ScheduleSummary
+        selectDays={selectDays}
+        isLoading={isLoading}
+        sid={sid}
+      />
     </div>
   );
 };

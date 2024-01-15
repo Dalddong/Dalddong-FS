@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     "달동,달똥,달력동그라미,달력똥그라미,약속 매칭 서비스, 약속 잡아주는",
   creator: "youngduck kim",
   generator: "Next.js",
+  icons: "/favicion.ico",
 };
 
 export default function RootLayout({

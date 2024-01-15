@@ -41,7 +41,6 @@ const handler = NextAuth({
           );
 
           const responseData = await response.data;
-          console.log("responseData", responseData);
           return responseData;
         } catch (error) {
           throw new Error(error as string);
@@ -53,16 +52,11 @@ const handler = NextAuth({
   ],
   callbacks: {
     async jwt({ token, user, account }) {
-      console.log("account값", account);
-      console.log("user값", user);
-      console.log("token값", token);
       return { ...token, ...user };
     },
 
     async session({ session, token }) {
-      console.log("session,token", session, token);
       session.user = token as any;
-      console.log("session.user", session.user);
       return session;
     },
   },
