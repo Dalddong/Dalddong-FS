@@ -15,8 +15,9 @@ const ScheduleIntro: React.FC<ScheduleIntroType> = ({
   scheduleName,
   isLoading,
 }) => {
-  const days = isLoading ? "" : `${nomineeDays[0]} ~ ${nomineeDays[1]}`;
   const skeletonName = isLoading ? "skeleton" : "";
+
+  const days = isLoading ? "" : `${nomineeDays[0]} ~ ${nomineeDays[1]}`;
   const playTimeText = isLoading ? "" : `${nomineePlayTime}시간`;
 
   return (
