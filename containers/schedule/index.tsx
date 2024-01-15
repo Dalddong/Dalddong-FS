@@ -6,7 +6,7 @@ import ScheduleSummary from "@/containers/schedule/ScheduleSummary";
 import ScheduleSelector from "./ScheduleSelector";
 import { useSchedule } from "@/hooks/schedule/useSchedule";
 import { ScheduleContainerProps } from "@/types/schedule";
-import ScheduleSkeleton from "@/components/Skeleton";
+
 const ScheduleContainer: React.FC<ScheduleContainerProps> = ({ sid }) => {
   const { data, isLoading } = useSchedule(sid);
   const {
@@ -17,8 +17,6 @@ const ScheduleContainer: React.FC<ScheduleContainerProps> = ({ sid }) => {
     selectDays,
   } = data;
 
-  // if (isLoading) return <ScheduleSkeleton skeleton={'s'}/>;
-
   return (
     <div className="container-schedule-layout">
       <ScheduleIntro
@@ -28,8 +26,8 @@ const ScheduleContainer: React.FC<ScheduleContainerProps> = ({ sid }) => {
         nomineePlayTime={nomineePlayTime}
         isLoading={isLoading}
       />
-      <ScheduleSelector selectDays={selectDays} />
-      <ScheduleSummary selectDays={selectDays} />
+      <ScheduleSelector selectDays={selectDays} isLoading={isLoading} />
+      <ScheduleSummary selectDays={selectDays} isLoading={isLoading} />
     </div>
   );
 };

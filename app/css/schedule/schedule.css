@@ -22,3 +22,10 @@
 .calendar-scheduleIntro-layout {
   @apply w-[240px] h-[240px] my-[40px] border-[2px] rounded-lg border-black;
 }
+
+.schedule-selector-day-layout {
+  @apply w-[50px] h-[30px] shrink-0 lg:w-[100px] lg:h-[40px] border-2 border-dd-green rounded-xl mb-[5px] flex justify-center items-center font-bold;
+}
+.schedule-selector-time-layout {
+  @apply w-[50px] h-[30px] shrink-0 border-2 text-[10px] lg:text-[12px] border-dd-light-yellow rounded-xl mb-[3px] flex justify-center items-center lg:w-[90px] lg:h-[35px];
+}

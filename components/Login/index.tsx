@@ -15,12 +15,8 @@ const Login = () => {
   if (session && session.user) {
     return (
       <>
-        <div
-          className="login-layout centered-content h-[200px] card-layout my-[10px] font-bold"
-          onClick={() => console.log("정보변경로직")}
-        >
-          {session.user.name}님 반갑습니다.
-          <br /> 시간을 입력해 주세요!
+        <div className="login-layout centered-content h-[60px] card-layout my-[10px] font-bold">
+          {session.user.name}님
         </div>
         <Button
           className="login-layout card-layout my-[10px] font-bold"
