@@ -1,5 +1,6 @@
 //@ts-nocheck
 import axiosInstance from "@/components/Axiosinstance";
+import axiosSessionInstance from "@/components/Axiosinstance/axiosSessionInstance";
 import { queryKeys } from "@/components/Providers/querykey";
 import { useQuery, useQueryClient, useMutation } from "@tanstack/react-query";
 import { useRouter } from "next/navigation";
@@ -71,7 +72,7 @@ export function usePostSchedule(
 }
 
 async function patchSchedule(selectDays, sid) {
-  const { data } = await axiosInstance.patch(`/api/schedule/${sid}`, {
+  const { data } = await axiosSessionInstance.patch(`/api/schedule/${sid}`, {
     selectDays,
   });
   return data;
