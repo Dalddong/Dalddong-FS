@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 
 import SVG_left from "@/public/svgs/leftArrow.svg";
 import SVG_right from "@/public/svgs/rightArrow.svg";
@@ -9,27 +9,47 @@ import { useRecoilState } from "recoil";
 import { selectRecoilDays } from "@/states/Schedule/atom";
 
 const ScheduleSelector: React.FC<ScheduleSelectorType> = ({ selectDays }) => {
-  const [abc, setAbc] = useRecoilState(selectRecoilDays);
+  const [selectDaysBoard, setSelectDaysBoard] =
+    useRecoilState<any>(selectRecoilDays);
+  const [currentPage, setCurrentPage] = useState<number>(0);
+  const itemsPerPage = 5;
+  const totalPages = Math.ceil(selectDaysBoard.length / itemsPerPage);
+  const startIndex = currentPage * itemsPerPage;
+  const visibleItems = selectDaysBoard.slice(
+    startIndex,
+    startIndex + itemsPerPage
+  );
 
   useEffect(() => {
-    setAbc(selectDays);
-  }, []);
+    setSelectDaysBoard(selectDays);
+    setCurrentPage(0);
+  }, [selectDays]);
+
+  const handlePageChange = (newPage: number) => {
+    if (newPage > -1 && newPage < totalPages) setCurrentPage(newPage);
+    else console.log("안돼");
+  };
 
   const selectTimesClicked = (dayIdx: number, timeIndex: number) => {
-    const updatedAbc = JSON.parse(JSON.stringify(abc));
+    const updatedSelctDaysBoard = JSON.parse(JSON.stringify(selectDaysBoard));
 
-    if (!updatedAbc[dayIdx].times[timeIndex].includes("등록")) {
-      updatedAbc[dayIdx].times[timeIndex].push("등록");
+    console.log(dayIdx, timeIndex, currentPage * itemsPerPage, "인덱스값");
+    const targetDayIdx = currentPage * itemsPerPage + dayIdx;
+    if (
+      !updatedSelctDaysBoard[targetDayIdx].times[timeIndex].includes("등록")
+    ) {
+      updatedSelctDaysBoard[targetDayIdx].times[timeIndex].push("등록");
 
-      setAbc(updatedAbc);
+      setSelectDaysBoard(updatedSelctDaysBoard);
     } else {
-      updatedAbc[dayIdx].times[timeIndex] = updatedAbc[dayIdx].times[
-        timeIndex
-      ].filter((item: any) => item !== "등록");
-      setAbc(updatedAbc);
+      updatedSelctDaysBoard[targetDayIdx].times[timeIndex] =
+        updatedSelctDaysBoard[targetDayIdx].times[timeIndex].filter(
+          (item: any) => item !== "등록"
+        );
+      setSelectDaysBoard(updatedSelctDaysBoard);
     }
 
-    console.log(updatedAbc, "Updated abc");
+    console.log(updatedSelctDaysBoard, "Updated selectDaysBoard");
   };
 
   return (
@@ -38,7 +58,7 @@ const ScheduleSelector: React.FC<ScheduleSelectorType> = ({ selectDays }) => {
         가능한 시간을 모두 선택후 일정을 등록해주세요.
       </p>
       <div className="relative w-[350px] h-[800px] py-[8px]  overflow-scroll scrollbar-hide   lg:w-[600px] px-[10px] lg:py-[10px] flex justify-around">
-        {abc.map((item: any, dayIdx: number) => (
+        {visibleItems.map((item: any, dayIdx: number) => (
           <div className="flex-col-center" key={item._id}>
             <div className="schedule-selector-day-layout">
               <span>{item.day}</span>
@@ -56,10 +76,16 @@ const ScheduleSelector: React.FC<ScheduleSelectorType> = ({ selectDays }) => {
             ))}
           </div>
         ))}
-        <div className="absolute top-[16px] lg:top-[20px] left-0">
+        <div
+          className="absolute top-[16px] lg:top-[20px] left-0"
+          onClick={() => handlePageChange(currentPage - 1)}
+        >
           <SVG_left />
         </div>
-        <div className="absolute top-[16px] lg:top-[20px] right-0">
+        <div
+          className="absolute top-[16px] lg:top-[20px] right-0"
+          onClick={() => handlePageChange(currentPage + 1)}
+        >
           <SVG_right />
         </div>
       </div>

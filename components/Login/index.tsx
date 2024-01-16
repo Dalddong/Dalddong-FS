@@ -38,6 +38,7 @@ const Login = () => {
             src={KAKAOLOGIN}
             alt="kakaologin"
             fill
+            sizes="280px"
             style={{ objectFit: "cover", borderRadius: "10px" }}
             priority
           />
@@ -49,6 +50,7 @@ const Login = () => {
             src={NAVERLOGIN}
             alt="kakaologin"
             fill
+            sizes="280px"
             style={{ objectFit: "cover", borderRadius: "10px" }}
             priority
           />
