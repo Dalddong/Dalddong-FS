@@ -13,37 +13,25 @@ const ScheduleIntro: React.FC<ScheduleIntroType> = ({
   nomineePlayTime,
   nomineeDays,
   scheduleName,
-  isLoading,
 }) => {
-  const skeletonName = isLoading ? "skeleton" : "";
-
-  const days = isLoading ? "" : `${nomineeDays[0]} ~ ${nomineeDays[1]}`;
-  const playTimeText = isLoading ? "" : `${nomineePlayTime}시간`;
+  const days = nomineeDays ? `${nomineeDays[0]} ~ ${nomineeDays[1]}` : "";
 
   return (
     <div className="box-schedule-side-layout flex-col-center">
       <Header />
       <div className="w-[300px]">
-        <h2
-          className={`${skeletonName} text-[40px] h-[60px] mb-2 font-bold text-center`}
-        >
+        <h2 className={`text-[40px] h-[60px] mb-2 font-bold text-center`}>
           {scheduleName}
         </h2>
-        <p className={`${skeletonName} h-[27px] text-center text-[18px]`}>
-          {days}
-        </p>
+        <p className={`h-[27px] text-center text-[18px]`}>{days}</p>
         <div className="ml-2 mt-[10px] text-[18px]">
           <div className={"flex items-center mb-2"}>
             <SVG_time />
-            <span className={`${skeletonName} ml-2  w-full h-[30px]`}>
-              {playTimeText}
-            </span>
+            <span className={`ml-2  w-full h-[30px]`}>{nomineePlayTime}</span>
           </div>
           <div className="flex items-center">
             <SVG_map />
-            <span className={`${skeletonName} ml-2 w-full h-[30px]`}>
-              {schedulePlace}
-            </span>
+            <span className={`ml-2 w-full h-[30px]`}>{schedulePlace}</span>
           </div>
         </div>
       </div>

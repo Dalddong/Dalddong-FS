@@ -1,12 +1,12 @@
 import { atom } from "recoil";
 import { addDays } from "date-fns";
 
-export const scheduleNameValue = atom({
+export const scheduleNameValue = atom<string>({
   key: "scheduleNameValue",
   default: "",
 });
 
-export const schedulePlaceValue = atom({
+export const schedulePlaceValue = atom<string>({
   key: "schedulePlaceValue",
   default: "",
 });
@@ -16,7 +16,7 @@ export const nomineeTimesValue = atom({
   default: null,
 });
 
-export const nomineePlayTimeValue = atom({
+export const nomineePlayTimeValue = atom<string>({
   key: "nomineePlayTimeValue",
   default: "1",
 });
@@ -29,4 +29,9 @@ export const nomineeDayValue = atom({
 export const selectRecoilDays = atom({
   key: "selectRecoilDays",
   default: [] as any,
+});
+
+export const selectIndex = atom({
+  key: "selectIndex",
+  default: "",
 });

@@ -26,14 +26,9 @@ const ScheduleContainer: React.FC<ScheduleContainerProps> = ({ sid }) => {
         scheduleName={scheduleName}
         nomineeDays={nomineeDays}
         nomineePlayTime={nomineePlayTime}
-        isLoading={isLoading}
       />
       <ScheduleSelector selectDays={selectDays} />
-      <ScheduleSummary
-        selectDays={selectDays}
-        isLoading={isLoading}
-        sid={sid}
-      />
+      <ScheduleSummary selectDays={selectDays} sid={sid} />
     </div>
   );
 };

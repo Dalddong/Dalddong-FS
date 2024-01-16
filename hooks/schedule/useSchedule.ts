@@ -79,12 +79,14 @@ async function patchSchedule(selectDays, sid) {
 }
 
 export function usePatchSchedule(selectDays, sid) {
+  const router = useRouter();
   const queryClient = useQueryClient();
 
   const { mutate } = useMutation({
     mutationFn: () => patchSchedule(selectDays, sid),
     onSuccess: () => {
       queryClient.invalidateQueries([queryKeys.schedule]);
+      router.push(`/schedule/${sid}`);
     },
     onError: (err) => {
       console.log(err);

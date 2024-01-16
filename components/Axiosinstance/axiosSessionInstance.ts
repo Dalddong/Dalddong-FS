@@ -28,11 +28,11 @@ axiosSessionInstance.interceptors.response.use(
   (response) => {
     const responseData = response.data;
     console.log("가로채기 responseData", responseData);
-
+    alert("성공");
     return responseData;
   },
   (err) => {
-    console.log("axiosSessionInstance res Error", err);
+    alert(err);
     return Promise.reject(err);
   }
 );

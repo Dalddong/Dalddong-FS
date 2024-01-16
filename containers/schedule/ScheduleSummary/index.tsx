@@ -12,23 +12,16 @@ import type { ScheduleSummaryType } from "@/types/schedule";
 
 import { useRecoilValue } from "recoil";
 import { selectRecoilDays } from "@/states/Schedule/atom";
-import { useUserName } from "@/hooks/user/useUser";
+
 import { usePatchSchedule } from "@/hooks/schedule/useSchedule";
 
-const ScheduleSummary: React.FC<ScheduleSummaryType> = ({ sid }) => {
+const ScheduleSummary: React.FC<ScheduleSummaryType> = ({
+  selectDays,
+  sid,
+}) => {
   const RecoilDays = useRecoilValue(selectRecoilDays);
 
   const patchSchedule = usePatchSchedule(RecoilDays, sid);
-
-  const patchData = async () => {
-    const resData = await useUserName();
-    if (resData?.user.name) {
-      patchSchedule();
-      alert("패치성공");
-    } else {
-      alert("로그인을 해주세요");
-    }
-  };
 
   return (
     <div className="box-schedule-side-layout flex-col-center">
@@ -40,7 +33,7 @@ const ScheduleSummary: React.FC<ScheduleSummaryType> = ({ sid }) => {
       </div>
       <Button
         className="card-layout centered-content w-[250px] h-[60px] mt-[5px] mb-[25px] text-[20px]"
-        onClick={patchData}
+        onClick={patchSchedule}
       >
         <SVG_calendar />
         <span className="ml-[4px]">일정 등록</span>

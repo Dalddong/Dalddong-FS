@@ -28,32 +28,26 @@ const ScheduleSelector: React.FC<ScheduleSelectorType> = ({ selectDays }) => {
 
   const handlePageChange = (newPage: number) => {
     if (newPage > -1 && newPage < totalPages) setCurrentPage(newPage);
-    else console.log("안돼");
+    else alert("존재하지않는 페이지입니다.");
   };
 
   const selectTimesClicked = async (dayIdx: number, timeIndex: number) => {
     const updatedSelctDaysBoard = JSON.parse(JSON.stringify(selectDaysBoard));
     const targetDayIdx = currentPage * itemsPerPage + dayIdx;
-    const userName = await useUserName();
-    if (
-      !updatedSelctDaysBoard[targetDayIdx].times[timeIndex].includes(
-        userName?.user.name
-      )
-    ) {
-      updatedSelctDaysBoard[targetDayIdx].times[timeIndex].push(
-        userName?.user.name
-      );
+    const userName = (await useUserName())?.user.name;
+    const times = updatedSelctDaysBoard[targetDayIdx].times[timeIndex];
 
-      setSelectDaysBoard(updatedSelctDaysBoard);
+    console.log("깞:", timeIndex, dayIdx);
+
+    if (!times.includes(userName)) {
+      times.push(userName);
     } else {
-      updatedSelctDaysBoard[targetDayIdx].times[timeIndex] =
-        updatedSelctDaysBoard[targetDayIdx].times[timeIndex].filter(
-          (item: any) => item !== userName?.user.name
-        );
-      setSelectDaysBoard(updatedSelctDaysBoard);
+      updatedSelctDaysBoard[targetDayIdx].times[timeIndex] = times.filter(
+        (item: any) => item !== userName
+      );
     }
 
-    console.log(updatedSelctDaysBoard, "Updated selectDaysBoard");
+    setSelectDaysBoard(updatedSelctDaysBoard);
   };
 
   return (
