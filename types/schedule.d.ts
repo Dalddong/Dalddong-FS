@@ -1,12 +1,17 @@
-export interface ScheduleSummaryType {
-  selectDays: object[];
-
-  sid: string;
-}
-
 export interface ScheduleContainerProps {
   sid: string;
 }
+
+type selectDaysType = {
+  day: string;
+  times: string[];
+};
+
+export interface ScheduleSummaryType {
+  selectDays: selectDaysType[];
+  sid: string;
+}
+
 export interface ScheduleIntroType {
   nomineePlayTime: string;
   nomineeDays: any;
@@ -15,5 +20,5 @@ export interface ScheduleIntroType {
 }
 
 export interface ScheduleSelectorType {
-  selectDays: any;
+  selectDays: selectDaysType[];
 }

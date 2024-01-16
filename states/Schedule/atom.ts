@@ -31,7 +31,10 @@ export const selectRecoilDays = atom({
   default: [] as any,
 });
 
-export const selectIndex = atom({
+export const selectSummaryIndex = atom({
   key: "selectIndex",
-  default: "",
+  default: {
+    dayIdx: 0,
+    timeIdx: 0,
+  },
 });

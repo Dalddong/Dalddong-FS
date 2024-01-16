@@ -5,13 +5,14 @@ import SVG_left from "@/public/svgs/leftArrow.svg";
 import SVG_right from "@/public/svgs/rightArrow.svg";
 import type { ScheduleSelectorType } from "@/types/schedule";
 import { timeTable } from "@/utils/timeTable";
-import { useRecoilState } from "recoil";
-import { selectRecoilDays } from "@/states/Schedule/atom";
+import { useRecoilState, useSetRecoilState } from "recoil";
+import { selectRecoilDays, selectSummaryIndex } from "@/states/Schedule/atom";
 import { useUserName } from "@/hooks/user/useUser";
 
 const ScheduleSelector: React.FC<ScheduleSelectorType> = ({ selectDays }) => {
   const [selectDaysBoard, setSelectDaysBoard] =
     useRecoilState<any>(selectRecoilDays);
+  const setSelectSummaryIndex = useSetRecoilState(selectSummaryIndex);
   const [currentPage, setCurrentPage] = useState<number>(0);
   const itemsPerPage = 5;
   const totalPages = Math.ceil(selectDaysBoard.length / itemsPerPage);
@@ -31,23 +32,36 @@ const ScheduleSelector: React.FC<ScheduleSelectorType> = ({ selectDays }) => {
     else alert("존재하지않는 페이지입니다.");
   };
 
-  const selectTimesClicked = async (dayIdx: number, timeIndex: number) => {
+  const handleSelectTimesClicked = async (
+    dayIdx: number,
+    timeIndex: number
+  ) => {
     const updatedSelctDaysBoard = JSON.parse(JSON.stringify(selectDaysBoard));
     const targetDayIdx = currentPage * itemsPerPage + dayIdx;
-    const userName = (await useUserName())?.user.name;
     const times = updatedSelctDaysBoard[targetDayIdx].times[timeIndex];
 
-    console.log("깞:", timeIndex, dayIdx);
-
-    if (!times.includes(userName)) {
-      times.push(userName);
+    const userName = (await useUserName())?.user.name;
+    if (userName) {
+      if (!times.includes(userName)) {
+        times.push(userName);
+      } else {
+        updatedSelctDaysBoard[targetDayIdx].times[timeIndex] = times.filter(
+          (item: any) => item !== userName
+        );
+      }
     } else {
-      updatedSelctDaysBoard[targetDayIdx].times[timeIndex] = times.filter(
-        (item: any) => item !== userName
-      );
+      alert("로그인을 해주세요!");
     }
 
     setSelectDaysBoard(updatedSelctDaysBoard);
+  };
+
+  const handleSelectTimesHover = (dayIdx: number, timeIndex: number) => {
+    const targetDayIdx = currentPage * itemsPerPage + dayIdx;
+    setSelectSummaryIndex({
+      dayIdx: targetDayIdx,
+      timeIdx: timeIndex,
+    });
   };
 
   return (
@@ -64,10 +78,11 @@ const ScheduleSelector: React.FC<ScheduleSelectorType> = ({ selectDays }) => {
             {item.times.map((time: any, timeIndex: number) => (
               <div
                 key={timeIndex}
-                onClick={() => selectTimesClicked(dayIdx, timeIndex)}
+                onClick={() => handleSelectTimesClicked(dayIdx, timeIndex)}
                 className={`schedule-selector-time-layout ${
                   time.length > 0 ? "border-dd-green" : ""
                 }`}
+                onMouseOver={() => handleSelectTimesHover(dayIdx, timeIndex)}
               >
                 {timeTable[timeIndex]}({time.length})
               </div>
