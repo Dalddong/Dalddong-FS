@@ -14,17 +14,17 @@ import axios from "axios";
 import { useRecoilValue } from "recoil";
 import { selectRecoilDays } from "@/states/Schedule/atom";
 import { useUserName } from "@/hooks/user/useUser";
+import { usePatchSchedule } from "@/hooks/schedule/useSchedule";
 
 const ScheduleSummary: React.FC<ScheduleSummaryType> = ({ sid }) => {
   const RecoilDays = useRecoilValue(selectRecoilDays);
 
+  const patchSchedule = usePatchSchedule(RecoilDays, sid);
+
   const patchData = async () => {
     const resData = await useUserName();
     if (resData?.user.name) {
-      const response = await axios.patch(`/api/schedule/${sid}`, {
-        selectDays: RecoilDays,
-      });
-      const responseData = await response.data;
+      patchSchedule();
       alert("패치성공");
     } else {
       alert("로그인을 해주세요");

@@ -7,6 +7,7 @@ import type { ScheduleSelectorType } from "@/types/schedule";
 import { timeTable } from "@/utils/timeTable";
 import { useRecoilState } from "recoil";
 import { selectRecoilDays } from "@/states/Schedule/atom";
+import { useUserName } from "@/hooks/user/useUser";
 
 const ScheduleSelector: React.FC<ScheduleSelectorType> = ({ selectDays }) => {
   const [selectDaysBoard, setSelectDaysBoard] =
@@ -30,21 +31,24 @@ const ScheduleSelector: React.FC<ScheduleSelectorType> = ({ selectDays }) => {
     else console.log("안돼");
   };
 
-  const selectTimesClicked = (dayIdx: number, timeIndex: number) => {
+  const selectTimesClicked = async (dayIdx: number, timeIndex: number) => {
     const updatedSelctDaysBoard = JSON.parse(JSON.stringify(selectDaysBoard));
-
-    console.log(dayIdx, timeIndex, currentPage * itemsPerPage, "인덱스값");
     const targetDayIdx = currentPage * itemsPerPage + dayIdx;
+    const userName = await useUserName();
     if (
-      !updatedSelctDaysBoard[targetDayIdx].times[timeIndex].includes("등록")
+      !updatedSelctDaysBoard[targetDayIdx].times[timeIndex].includes(
+        userName?.user.name
+      )
     ) {
-      updatedSelctDaysBoard[targetDayIdx].times[timeIndex].push("등록");
+      updatedSelctDaysBoard[targetDayIdx].times[timeIndex].push(
+        userName?.user.name
+      );
 
       setSelectDaysBoard(updatedSelctDaysBoard);
     } else {
       updatedSelctDaysBoard[targetDayIdx].times[timeIndex] =
         updatedSelctDaysBoard[targetDayIdx].times[timeIndex].filter(
-          (item: any) => item !== "등록"
+          (item: any) => item !== userName?.user.name
         );
       setSelectDaysBoard(updatedSelctDaysBoard);
     }
@@ -57,7 +61,7 @@ const ScheduleSelector: React.FC<ScheduleSelectorType> = ({ selectDays }) => {
       <p className=" mt-[5px] w-[350px] font-bold text-[14px] lg:w-[600px] lg:text-left lg:ml-[10px] lg:text-[16px]">
         가능한 시간을 모두 선택후 일정을 등록해주세요.
       </p>
-      <div className="relative w-[350px] h-[800px] py-[8px]  overflow-scroll scrollbar-hide   lg:w-[600px] px-[10px] lg:py-[10px] flex justify-around">
+      <div className="relative w-[350px] h-[800px] py-[8px]  overflow-scroll scrollbar-hide   lg:w-[600px] px-[10px] lg:py-[10px] flex">
         {visibleItems.map((item: any, dayIdx: number) => (
           <div className="flex-col-center" key={item._id}>
             <div className="schedule-selector-day-layout">
@@ -68,7 +72,7 @@ const ScheduleSelector: React.FC<ScheduleSelectorType> = ({ selectDays }) => {
                 key={timeIndex}
                 onClick={() => selectTimesClicked(dayIdx, timeIndex)}
                 className={`schedule-selector-time-layout ${
-                  time.includes("등록") ? "border-dd-green" : ""
+                  time.length > 0 ? "border-dd-green" : ""
                 }`}
               >
                 {timeTable[timeIndex]}({time.length})
