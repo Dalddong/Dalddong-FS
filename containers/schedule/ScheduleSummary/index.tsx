@@ -22,9 +22,7 @@ const ScheduleSummary: React.FC<ScheduleSummaryType> = ({ sid }) => {
       selectDays: RecoilDays,
     });
     const responseData = await response.data;
-
-    console.log("패치성공", responseData);
-    console.log(RecoilDays, "patch할꺼여");
+    alert("패치성공");
   };
 
   return (
