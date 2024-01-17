@@ -1,5 +1,5 @@
 //@ts-nocheck
-import axiosInstance from "@/components/Axiosinstance";
+import axiosInstance from "@/components/Axiosinstance/axiosInstance";
 import { queryKeys } from "@/components/Providers/querykey";
 import { useQueryClient, useMutation } from "@tanstack/react-query";
 import { useRouter } from "next/navigation";

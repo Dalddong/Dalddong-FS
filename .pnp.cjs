@@ -39,7 +39,6 @@ const RAW_RUNTIME_STATE =
           ["autoprefixer", "virtual:5fcaa3fe9e689768cc991b9fea8732f53d296e979fc076bd0168c7df011d53e468c399ba2e9ae8932fcccc0518e29c644f58515940b861684510690f7f046175#npm:10.4.16"],\
           ["axios", "npm:1.6.4"],\
           ["bcrypt", "npm:5.1.1"],\
-          ["daisyui", "npm:4.4.23"],\
           ["date-fns", "npm:3.1.0"],\
           ["dotenv", "npm:16.3.1"],\
           ["eslint", "npm:8.56.0"],\
@@ -4629,17 +4628,6 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
-    ["css-selector-tokenizer", [\
-      ["npm:0.8.0", {\
-        "packageLocation": "../../../AppData/Local/Yarn/Berry/cache/css-selector-tokenizer-npm-0.8.0-b6bad298a3-10c0.zip/node_modules/css-selector-tokenizer/",\
-        "packageDependencies": [\
-          ["css-selector-tokenizer", "npm:0.8.0"],\
-          ["cssesc", "npm:3.0.0"],\
-          ["fastparse", "npm:1.1.2"]\
-        ],\
-        "linkType": "HARD"\
-      }]\
-    ]],\
     ["css-tree", [\
       ["npm:2.2.1", {\
         "packageLocation": "../../../AppData/Local/Yarn/Berry/cache/css-tree-npm-2.2.1-ee98ac48a8-10c0.zip/node_modules/css-tree/",\
@@ -4697,28 +4685,6 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
-    ["culori", [\
-      ["npm:3.3.0", {\
-        "packageLocation": "../../../AppData/Local/Yarn/Berry/cache/culori-npm-3.3.0-75ee2b3b84-10c0.zip/node_modules/culori/",\
-        "packageDependencies": [\
-          ["culori", "npm:3.3.0"]\
-        ],\
-        "linkType": "HARD"\
-      }]\
-    ]],\
-    ["daisyui", [\
-      ["npm:4.4.23", {\
-        "packageLocation": "../../../AppData/Local/Yarn/Berry/cache/daisyui-npm-4.4.23-4e56315138-10c0.zip/node_modules/daisyui/",\
-        "packageDependencies": [\
-          ["daisyui", "npm:4.4.23"],\
-          ["css-selector-tokenizer", "npm:0.8.0"],\
-          ["culori", "npm:3.3.0"],\
-          ["picocolors", "npm:1.0.0"],\
-          ["postcss-js", "virtual:4e5631513808ef99b07aa3c22584eadc5d76c63508f8341dbbb3eb662849f518ecd2c122a7b5c7d7edcccf555fc4c4a87c04624d4d2d714d9ce1a98f21232110#npm:4.0.1"]\
-        ],\
-        "linkType": "HARD"\
-      }]\
-    ]],\
     ["damerau-levenshtein", [\
       ["npm:1.0.8", {\
         "packageLocation": "../../../AppData/Local/Yarn/Berry/cache/damerau-levenshtein-npm-1.0.8-bda7311c69-10c0.zip/node_modules/damerau-levenshtein/",\
@@ -4763,7 +4729,6 @@ const RAW_RUNTIME_STATE =
           ["autoprefixer", "virtual:5fcaa3fe9e689768cc991b9fea8732f53d296e979fc076bd0168c7df011d53e468c399ba2e9ae8932fcccc0518e29c644f58515940b861684510690f7f046175#npm:10.4.16"],\
           ["axios", "npm:1.6.4"],\
           ["bcrypt", "npm:5.1.1"],\
-          ["daisyui", "npm:4.4.23"],\
           ["date-fns", "npm:3.1.0"],\
           ["dotenv", "npm:16.3.1"],\
           ["eslint", "npm:8.56.0"],\
@@ -5733,15 +5698,6 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "../../../AppData/Local/Yarn/Berry/cache/fast-levenshtein-npm-2.0.6-fcd74b8df5-10c0.zip/node_modules/fast-levenshtein/",\
         "packageDependencies": [\
           ["fast-levenshtein", "npm:2.0.6"]\
-        ],\
-        "linkType": "HARD"\
-      }]\
-    ]],\
-    ["fastparse", [\
-      ["npm:1.1.2", {\
-        "packageLocation": "../../../AppData/Local/Yarn/Berry/cache/fastparse-npm-1.1.2-6a35154770-10c0.zip/node_modules/fastparse/",\
-        "packageDependencies": [\
-          ["fastparse", "npm:1.1.2"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -8173,20 +8129,6 @@ const RAW_RUNTIME_STATE =
           ["postcss-js", "npm:4.0.1"]\
         ],\
         "linkType": "SOFT"\
-      }],\
-      ["virtual:4e5631513808ef99b07aa3c22584eadc5d76c63508f8341dbbb3eb662849f518ecd2c122a7b5c7d7edcccf555fc4c4a87c04624d4d2d714d9ce1a98f21232110#npm:4.0.1", {\
-        "packageLocation": "./.yarn/__virtual__/postcss-js-virtual-161d7d8188/4/AppData/Local/Yarn/Berry/cache/postcss-js-npm-4.0.1-2c4ee70bf3-10c0.zip/node_modules/postcss-js/",\
-        "packageDependencies": [\
-          ["postcss-js", "virtual:4e5631513808ef99b07aa3c22584eadc5d76c63508f8341dbbb3eb662849f518ecd2c122a7b5c7d7edcccf555fc4c4a87c04624d4d2d714d9ce1a98f21232110#npm:4.0.1"],\
-          ["@types/postcss", null],\
-          ["camelcase-css", "npm:2.0.1"],\
-          ["postcss", null]\
-        ],\
-        "packagePeers": [\
-          "@types/postcss",\
-          "postcss"\
-        ],\
-        "linkType": "HARD"\
       }],\
       ["virtual:e59fbdee04a5e29c95e6a0a37cd49fbf30625c6d8bf5307dd71527c0fa2f9233fe75a52a538547de099dacf107d7b0840400d6dbfafb630d60b56650f42e3efe#npm:4.0.1", {\
         "packageLocation": "./.yarn/__virtual__/postcss-js-virtual-291bd6f2e3/4/AppData/Local/Yarn/Berry/cache/postcss-js-npm-4.0.1-2c4ee70bf3-10c0.zip/node_modules/postcss-js/",\

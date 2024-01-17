@@ -20,7 +20,7 @@
 }
 
 .calendar-scheduleIntro-layout {
-  @apply w-[240px] h-[240px] my-[40px] border-[2px] rounded-lg border-black;
+  @apply w-[200px] h-[200px] my-[40px];
 }
 
 .schedule-selector-day-layout {

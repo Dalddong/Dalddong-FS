@@ -2,7 +2,7 @@
 import React from "react";
 
 import Header from "@/components/Header";
-import DayPicker from "@/components/Picker/DayPiceker";
+import DayPicker from "@/components/Picker/DayPicker";
 import TimePicker from "@/components/Picker/TimePicker";
 import PlacePicker from "@/components/Picker/PlacePicker";
 import Button from "@/components/Button";
@@ -36,6 +36,18 @@ const HomeContainer: React.FC<HomeContainerProps> = () => {
     selectDays
   );
 
+  const handlePostScheduleClick = () => {
+    if (
+      scheduleName &&
+      schedulePlace &&
+      filterDateRange[1] !== "Invalid date"
+    ) {
+      postSchedule();
+    } else {
+      alert("양식을 올바르게 입력해주세요");
+    }
+  };
+
   return (
     <div className="container-main-layout flex-col-center">
       <Header />
@@ -44,7 +56,7 @@ const HomeContainer: React.FC<HomeContainerProps> = () => {
       <PlacePicker />
       <Button
         className="button-confirm card-layout centered-button"
-        onClick={postSchedule}
+        onClick={handlePostScheduleClick}
       >
         등록하기
       </Button>
