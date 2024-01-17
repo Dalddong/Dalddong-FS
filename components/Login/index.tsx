@@ -10,8 +10,6 @@ import Image from "next/image";
 const Login = () => {
   const { data: session } = useSession();
 
-  console.log(session, "session");
-
   if (session && session.user) {
     return (
       <>

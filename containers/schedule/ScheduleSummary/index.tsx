@@ -5,8 +5,6 @@ import React from "react";
 import Chart from "@/components/Chart";
 
 import SVG_calendar from "@/public/svgs/calendar.svg";
-import SVG_share from "@/public/svgs/share.svg";
-import SVG_chart from "@/public/svgs/barchart.svg";
 import Button from "@/components/Button";
 import type { ScheduleSummaryType } from "@/types/schedule";
 
@@ -15,6 +13,7 @@ import { selectRecoilDays } from "@/states/Schedule/atom";
 import { usePatchSchedule } from "@/hooks/schedule/useSchedule";
 import { timeTable } from "@/utils/timeTable";
 import { selectSummaryIndex } from "@/states/Schedule/atom";
+import { findMostTimeAvailable } from "@/utils/findMostTimeAvailable";
 
 const ScheduleSummary: React.FC<ScheduleSummaryType> = ({
   selectDays,
@@ -23,6 +22,12 @@ const ScheduleSummary: React.FC<ScheduleSummaryType> = ({
   const RecoilDays = useRecoilValue(selectRecoilDays);
   const selectSummaryIndexObj = useRecoilValue(selectSummaryIndex);
   const { dayIdx, timeIdx } = selectSummaryIndexObj;
+  const a = [
+    { day: "11/2", times: [["fasf", "sfaf"], [], []] },
+    { day: "11/3", times: [[], [], [], ["kim", "lee", "park", "seo"]] },
+    { day: "11/4", times: [["fasf", "sfaf"], [], ["kim"]] },
+  ];
+  const array = findMostTimeAvailable(selectDays);
 
   const patchSchedule = usePatchSchedule(RecoilDays, sid);
 
@@ -47,27 +52,7 @@ const ScheduleSummary: React.FC<ScheduleSummaryType> = ({
         <SVG_calendar />
         <span className="ml-[4px]">일정 등록</span>
       </Button>
-      <Chart />
-      <div className="flex">
-        <Button
-          className="card-layout w-[120px] h-[50px] mr-[10px] centered-content"
-          onClick={() => {
-            console.log("공유버튼클릭");
-          }}
-        >
-          <SVG_share />
-          <span>링크 공유</span>
-        </Button>
-        <Button
-          className="card-layout w-[120px] h-[50px] centered-content"
-          onClick={() => {
-            console.log("공유버튼클릭");
-          }}
-        >
-          <SVG_chart />
-          <span>그래프 공유</span>
-        </Button>
-      </div>
+      <Chart array={array} />
     </div>
   );
 };
