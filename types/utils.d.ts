@@ -1,7 +1,7 @@
 export interface ButtonProps {
-  children: React.ReactNode;
+  children?: React.ReactNode;
   className: string;
-  onClick: () => void;
+  onClick?: () => void;
 }
 
 export interface InputProps {

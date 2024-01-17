@@ -22,11 +22,7 @@ const ScheduleSummary: React.FC<ScheduleSummaryType> = ({
   const RecoilDays = useRecoilValue(selectRecoilDays);
   const selectSummaryIndexObj = useRecoilValue(selectSummaryIndex);
   const { dayIdx, timeIdx } = selectSummaryIndexObj;
-  const a = [
-    { day: "11/2", times: [["fasf", "sfaf"], [], []] },
-    { day: "11/3", times: [[], [], [], ["kim", "lee", "park", "seo"]] },
-    { day: "11/4", times: [["fasf", "sfaf"], [], ["kim"]] },
-  ];
+
   const array = findMostTimeAvailable(selectDays);
 
   const patchSchedule = usePatchSchedule(RecoilDays, sid);

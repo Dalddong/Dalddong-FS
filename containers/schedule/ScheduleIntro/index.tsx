@@ -27,11 +27,11 @@ const ScheduleIntro: React.FC<ScheduleIntroType> = ({
         <div className="ml-2 mt-[10px] text-[18px]">
           <div className={"flex items-center mb-2"}>
             <SVG_time />
-            <span className={`ml-2  w-full h-[30px]`}>{nomineePlayTime}</span>
+            <span className={`ml-2 h-[30px]`}>{nomineePlayTime}시간</span>
           </div>
           <div className="flex items-center">
             <SVG_map />
-            <span className={`ml-2 w-full h-[30px]`}>{schedulePlace}</span>
+            <span className={`ml-2 h-[30px]`}>{schedulePlace}</span>
           </div>
         </div>
       </div>
