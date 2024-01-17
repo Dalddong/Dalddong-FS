@@ -1,5 +1,4 @@
 import type { Config } from "tailwindcss";
-import daisyui from "daisyui";
 import { colors } from "./styles/colors";
 import { keyframes, animations } from "./styles/animations";
 
@@ -17,6 +16,6 @@ const config: Config = {
       animation: animations,
     },
   },
-  plugins: [daisyui, require("tailwind-scrollbar-hide")],
+  plugins: [require("tailwind-scrollbar-hide")],
 };
 export default config;

@@ -7,8 +7,6 @@ interface ChartBarType {
 }
 
 const ChartBar: React.FC<ChartBarType> = ({ data, tailwindStyle }) => {
-  console.log(data, "data임");
-
   const responseData = data ? data : [];
   return (
     <div className="w-[100px] border-2px border-black flex-col-center">

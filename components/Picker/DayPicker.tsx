@@ -22,7 +22,7 @@ const DayPicker = () => {
           dateFormat="yyyy.MM.dd"
           selectsRange={true}
           minDate={new Date()}
-          maxDate={addDays(new Date(), 30)}
+          maxDate={addDays(new Date(), 14)}
           startDate={startDate}
           endDate={endDate}
           onChange={(update: any) => {

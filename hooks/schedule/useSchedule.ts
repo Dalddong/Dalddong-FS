@@ -1,5 +1,5 @@
 //@ts-nocheck
-import axiosInstance from "@/components/Axiosinstance";
+import axiosInstance from "@/components/Axiosinstance/axiosInstance";
 import axiosSessionInstance from "@/components/Axiosinstance/axiosSessionInstance";
 import { queryKeys } from "@/components/Providers/querykey";
 import { useQuery, useQueryClient, useMutation } from "@tanstack/react-query";

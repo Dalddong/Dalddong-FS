@@ -4,7 +4,7 @@ export interface ScheduleContainerProps {
 
 type selectDaysType = {
   day: string;
-  times: string[];
+  times: [][];
 };
 
 export interface ScheduleSummaryType {

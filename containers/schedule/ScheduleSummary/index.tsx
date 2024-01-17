@@ -37,7 +37,7 @@ const ScheduleSummary: React.FC<ScheduleSummaryType> = ({
         </p>
         <div className="card-layout centered-content h-[160px] p-[20px]">
           {selectDays[dayIdx].times[timeIdx].length > 0
-            ? selectDays[dayIdx].times[timeIdx]
+            ? [...selectDays[dayIdx].times[timeIdx]].join(",")
             : "아직 희망자가 없어요!"}
         </div>
       </div>
