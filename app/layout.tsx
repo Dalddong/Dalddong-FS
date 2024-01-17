@@ -4,6 +4,7 @@ import "./globals.css";
 import TanstackProvider from "@/components/Providers/TanstackProvider";
 import RecoilRootProvider from "@/components/Providers/RecoilRootProvider";
 import NextAuthSessionProvider from "@/components/Providers/NextAuthSessionProvider";
+
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {

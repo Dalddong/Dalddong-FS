@@ -7,7 +7,7 @@ import TimePicker from "@/components/Picker/TimePicker";
 import PlacePicker from "@/components/Picker/PlacePicker";
 import Button from "@/components/Button";
 
-import { usePostSchedule } from "@/hooks/schedule/usePostSchedule";
+import { usePostSchedule } from "@/hooks/schedule/useSchedule";
 import { selectDaysMaker } from "@/utils/selectDaysMaker";
 import { useRecoilValue } from "recoil";
 import {

@@ -2,13 +2,13 @@
 import React from "react";
 
 import ScheduleIntro from "./ScheduleIntro";
-import ScheduleSummary from "@/containers/schedule/ScheduleSummary";
 import ScheduleSelector from "./ScheduleSelector";
-import { useSchedule } from "@/hooks/schedule/useSchedule";
+import ScheduleSummary from "@/containers/schedule/ScheduleSummary";
+import { useGetSchedule } from "@/hooks/schedule/useSchedule";
 import { ScheduleContainerProps } from "@/types/schedule";
 
 const ScheduleContainer: React.FC<ScheduleContainerProps> = ({ sid }) => {
-  const { data, isLoading } = useSchedule(sid);
+  const { data, isLoading } = useGetSchedule(sid);
   const {
     nomineePlayTime,
     nomineeDays,
@@ -26,14 +26,9 @@ const ScheduleContainer: React.FC<ScheduleContainerProps> = ({ sid }) => {
         scheduleName={scheduleName}
         nomineeDays={nomineeDays}
         nomineePlayTime={nomineePlayTime}
-        isLoading={isLoading}
       />
       <ScheduleSelector selectDays={selectDays} />
-      <ScheduleSummary
-        selectDays={selectDays}
-        isLoading={isLoading}
-        sid={sid}
-      />
+      <ScheduleSummary selectDays={selectDays} sid={sid} />
     </div>
   );
 };
