@@ -7,6 +7,7 @@ import Button from "@/components/Button";
 
 import { copyClipboard } from "@/utils/copyClipboard";
 import { usePathname } from "next/navigation";
+import ChartBar from "./ChartBar";
 
 interface ChartType {
   array: [][];
@@ -19,29 +20,18 @@ const Chart: React.FC<ChartType> = ({ array }) => {
   return (
     <>
       <div className="w-[340px] h-[340px] card-layout flex justify-between p-[10px] text-[13px] font-bold">
-        {array.map((items, index) => (
-          <div
-            key={index}
-            className={`w-[100px] border-2px border-black flex-col-center`}
-          >
-            <div
-              className={`w-[70px] h-[${200 - index * 30}px] mt-[${
-                index * 30
-              }px] rounded-xl bg-dd-${colors[index]}-yellow`}
-            ></div>
-            <ul
-              className={`flex-col-center h-[100px] mt-[10px] overflow-scroll scrollbar-hide`}
-            >
-              {items
-                ? items.map((item) => (
-                    <li key={item} className="h-[15px] text-[13px] shrink-0">
-                      {item}
-                    </li>
-                  ))
-                : ""}
-            </ul>
-          </div>
-        ))}
+        <ChartBar
+          data={first}
+          tailwindStyle="h-[200px] mt-[0px] bg-dd-deep-yellow"
+        />
+        <ChartBar
+          data={second}
+          tailwindStyle="h-[170px] mt-[30px] bg-dd-medium-yellow"
+        />
+        <ChartBar
+          data={third}
+          tailwindStyle="h-[140px] mt-[60px] bg-dd-light-yellow"
+        />
       </div>
       <div className="flex">
         <Button

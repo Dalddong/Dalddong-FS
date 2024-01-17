@@ -20,9 +20,9 @@ export const findMostTimeAvailable = (a: any) => {
   const sortedKeys = [...result3.keys()].sort((a, b) => b - a);
 
   const result = [
-    result3.get(sortedKeys[0]),
-    result3.get(sortedKeys[1]),
-    result3.get(sortedKeys[2]),
+    result3.get(sortedKeys[0]) || ["1st Data..."],
+    result3.get(sortedKeys[1]) || ["2nd Data..."],
+    result3.get(sortedKeys[2]) || ["3rd Data..."],
   ];
   return result;
 };

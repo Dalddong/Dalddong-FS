@@ -6,6 +6,7 @@ import ScheduleSelector from "./ScheduleSelector";
 import ScheduleSummary from "@/containers/schedule/ScheduleSummary";
 import { useGetSchedule } from "@/hooks/schedule/useSchedule";
 import { ScheduleContainerProps } from "@/types/schedule";
+import ScheduleSkeleton from "@/components/Skeleton/index";
 
 const ScheduleContainer: React.FC<ScheduleContainerProps> = ({ sid }) => {
   const { data, isLoading } = useGetSchedule(sid);
@@ -17,7 +18,7 @@ const ScheduleContainer: React.FC<ScheduleContainerProps> = ({ sid }) => {
     selectDays,
   } = data;
 
-  if (isLoading) return <>로딩중</>;
+  if (isLoading) return <ScheduleSkeleton />;
 
   return (
     <div className="container-schedule-layout">
