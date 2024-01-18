@@ -7,7 +7,7 @@ import type { ScheduleSelectorType } from "@/types/schedule";
 import { timeTable } from "@/utils/timeTable";
 import { useRecoilState, useSetRecoilState } from "recoil";
 import { selectRecoilDays, selectSummaryIndex } from "@/states/Schedule/atom";
-import { useUserName } from "@/hooks/user/useUser";
+import { useSessionUser } from "@/hooks/user/useSessionUser";
 
 const ScheduleSelector: React.FC<ScheduleSelectorType> = ({ selectDays }) => {
   const [selectDaysBoard, setSelectDaysBoard] =
@@ -21,6 +21,8 @@ const ScheduleSelector: React.FC<ScheduleSelectorType> = ({ selectDays }) => {
     startIndex,
     startIndex + itemsPerPage
   );
+
+  const { userName } = useSessionUser();
 
   useEffect(() => {
     setSelectDaysBoard(selectDays);
@@ -40,7 +42,6 @@ const ScheduleSelector: React.FC<ScheduleSelectorType> = ({ selectDays }) => {
     const targetDayIdx = currentPage * itemsPerPage + dayIdx;
     const times = updatedSelctDaysBoard[targetDayIdx].times[timeIndex];
 
-    const userName = (await useUserName())?.user.name;
     if (userName) {
       if (!times.includes(userName)) {
         times.push(userName);

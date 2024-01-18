@@ -1,8 +1,7 @@
 // @ts-nocheck
 
 import axios, { AxiosRequestConfig } from "axios";
-import { useUserName } from "@/hooks/user/useUser";
-
+import { useUserName } from "@/hooks/user/useSessionUser";
 const config: AxiosRequestConfig = {
   headers: {
     "Content-Type": "application/json",
@@ -27,8 +26,8 @@ axiosSessionInstance.interceptors.request.use(
 axiosSessionInstance.interceptors.response.use(
   (response) => {
     const responseData = response.data;
-    console.log("가로채기 responseData", responseData);
-    alert("성공");
+    console.log("responseData", responseData);
+    alert("성공적으로 등록이 완료 되었습니다.");
     return responseData;
   },
   (err) => {
