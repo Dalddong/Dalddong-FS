@@ -2,19 +2,19 @@
 import React from "react";
 
 import Button from "../Button";
-import { signIn, signOut, useSession } from "next-auth/react";
+import { useSessionUser } from "@/hooks/user/useSessionUser";
 import KAKAOLOGIN from "@/public/images/kakaologin.png";
 import NAVERLOGIN from "@/public/images/naverlogin.png";
 import Image from "next/image";
 
 const Login = () => {
-  const { data: session } = useSession();
+  const { userName, kakaoLogin, naverLogin, signOut } = useSessionUser();
 
-  if (session && session.user) {
+  if (userName) {
     return (
       <>
         <div className="login-layout centered-content h-[60px] card-layout my-[10px] font-bold">
-          {session.user.name}님
+          {userName}님
         </div>
         <Button
           className="login-layout card-layout my-[10px] font-bold"
@@ -27,10 +27,7 @@ const Login = () => {
   }
   return (
     <>
-      <Button
-        className="login-layout my-[5px] "
-        onClick={() => signIn("kakao")}
-      >
+      <Button className="login-layout my-[5px] " onClick={kakaoLogin}>
         <div className="login-layout rounded-xl relative shrink-0">
           <Image
             src={KAKAOLOGIN}
@@ -42,11 +39,11 @@ const Login = () => {
           />
         </div>
       </Button>
-      <Button className="login-layout my-[5px]" onClick={() => signIn("naver")}>
+      <Button className="login-layout my-[5px]" onClick={naverLogin}>
         <div className="login-layout rounded-xl relative shrink-0">
           <Image
             src={NAVERLOGIN}
-            alt="kakaologin"
+            alt="naverlogin"
             fill
             sizes="280px"
             style={{ objectFit: "cover", borderRadius: "10px" }}
