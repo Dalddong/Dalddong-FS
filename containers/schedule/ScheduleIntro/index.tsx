@@ -17,27 +17,25 @@ const ScheduleIntro: React.FC<ScheduleIntroType> = ({
   const days = nomineeDays ? `${nomineeDays[0]} ~ ${nomineeDays[1]}` : "";
 
   return (
-    <div className="box-schedule-side-layout flex-col-center">
+    <div className="schedule-intro-component-layout">
       <Header />
       <div className="w-[300px]">
-        <h2 className={`text-[40px] h-[60px] mb-2 font-bold text-center`}>
-          {scheduleName}
-        </h2>
-        <p className={`h-[27px] text-center text-[18px]`}>{days}</p>
-        <div className="ml-2 mt-[10px] text-[18px]">
-          <div className={"flex items-center mb-2"}>
-            <SVG_time />
-            <span className={`ml-2 h-[30px] leading-[30px]`}>
-              {nomineePlayTime}시간
-            </span>
-          </div>
-          <div className="flex items-center leading-[30px]">
-            <SVG_map />
-            <span className={`ml-2 h-[30px]`}>{schedulePlace}</span>
-          </div>
+        <h2 className="scheudle-intro-header">{scheduleName}</h2>
+        <p className="scheudle-intro-day-span">{days.replaceAll(".", "/")}</p>
+        <div className={"ml-2 flex items-center"}>
+          <SVG_time />
+          <span className="schedule-intro-place-time-span">
+            {nomineePlayTime}시간
+          </span>
+        </div>
+        <div className="ml-2 flex items-center ">
+          <SVG_map />
+          <span className="schedule-intro-place-time-span">
+            {schedulePlace}
+          </span>
         </div>
       </div>
-      <div className="calendar-scheduleIntro-layout"></div>
+      <div className="schedule-intro-calendar-layout card-layout"></div>
 
       <Login />
     </div>

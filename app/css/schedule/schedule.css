@@ -1,31 +1,95 @@
+/*schedule-container*/
 .container-schedule-layout {
   @apply grid grid-cols-[1fr] text-dd-green gap-0 lg:grid-cols-[350px_600px_350px] max-w-[1300px] h-[900px] mx-auto lg:mt-[50px];
 }
 
-.box-schedule-layout {
-  @apply w-full h-[800px];
+.schedule-component-layout {
+  @apply w-full h-[900px] flex flex-col items-center;
 }
 
-.box-schedule-side-layout {
-  @apply box-schedule-layout;
+/*schedule-intro*/
+.schedule-intro-component-layout {
+  @apply schedule-component-layout;
   @apply lg:w-[350px];
 }
-.box-schedule-middle-layout {
-  @apply w-full h-[800px];
-  @apply lg:w-[600px];
+
+.scheudle-intro-header {
+  @apply text-[36px] h-[60px] font-bold text-center;
 }
 
-.login-layout {
+.schedule-intro-place-time-span {
+  @apply ml-2 h-[30px] leading-[30px] text-[18px];
+}
+
+.scheudle-intro-day-span {
+  @apply h-[27px] text-center text-[20px] my-[5px];
+}
+
+.schedule-intro-calendar-layout {
+  @apply w-[240px] h-[240px] my-[40px];
+}
+.schedule-intro-login-layout {
   @apply w-[280px] h-[60px] shrink-0;
 }
 
-.calendar-scheduleIntro-layout {
-  @apply w-[200px] h-[200px] my-[40px];
+/*schedule-selector*/
+
+.schedule-selector-component-layout {
+  @apply schedule-component-layout box-border;
+  @apply lg:w-[600px];
 }
 
-.schedule-selector-day-layout {
+.schedule-selector-scroll-component {
+  @apply relative w-[350px] h-[800px] py-[8px] overflow-scroll scrollbar-hide lg:w-[600px] px-[10px] lg:py-[10px] flex;
+}
+
+.schedule-selector-day-wrapper {
+  @apply flex flex-col items-center;
+}
+
+.schedule-selector-day-button {
   @apply w-[50px] h-[30px] mx-[8px] shrink-0 lg:w-[100px] lg:h-[40px] border-2 border-dd-green rounded-xl mb-[5px] flex justify-center items-center font-bold;
 }
+
 .schedule-selector-time-layout {
   @apply w-[50px] h-[30px] shrink-0 border-2 text-[10px] lg:text-[12px] border-dd-light-yellow rounded-xl mb-[3px] flex justify-center items-center lg:w-[90px] lg:h-[35px];
+}
+
+.schedule-selector-explain-text {
+  @apply mt-[5px] w-[350px] font-bold text-[14px] lg:w-[600px] lg:text-left lg:ml-[10px] lg:text-[16px];
+}
+
+.schedule-selector-pagination-button {
+  @apply absolute top-[16px] lg:top-[20px];
+}
+
+/*schedule-summary*/
+
+.schedule-summary-component-layout {
+  @apply schedule-component-layout;
+  @apply lg:w-[350px];
+}
+
+.schedule-summary-peoples-layout {
+  @apply w-[340px] mt-[5px];
+}
+
+.schedule-summary-peoples-text {
+  @apply text-left font-bold h-[22px] leading-[22px];
+}
+
+.schedule-summary-peoples-list {
+  @apply flex justify-center items-center h-[160px] p-[20px];
+}
+
+.schedule-summary-post-button {
+  @apply w-[250px] h-[60px] mt-[5px] mb-[25px] text-[20px];
+}
+
+.schedule-summary-chart-layout {
+  @apply w-[340px] h-[340px] flex justify-between p-[10px] text-[13px] font-bold;
+}
+
+.schedule-summary-chart-share-button {
+  @apply w-[120px] h-[50px] mr-[10px];
 }

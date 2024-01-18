@@ -13,11 +13,11 @@ const Login = () => {
   if (userName) {
     return (
       <>
-        <div className="login-layout centered-content h-[60px] card-layout my-[10px] font-bold">
+        <div className="schedule-intro-login-layout centered-content h-[60px] card-layout my-[10px] font-bold">
           {userName}님
         </div>
         <Button
-          className="login-layout card-layout my-[10px] font-bold"
+          className="schedule-intro-login-layout card-layout my-[10px] font-bold"
           onClick={() => signOut()}
         >
           LOGOUT
@@ -27,8 +27,11 @@ const Login = () => {
   }
   return (
     <>
-      <Button className="login-layout my-[5px] " onClick={kakaoLogin}>
-        <div className="login-layout rounded-xl relative shrink-0">
+      <Button
+        className="schedule-intro-login-layout my-[5px] "
+        onClick={kakaoLogin}
+      >
+        <div className="schedule-intro-login-layout rounded-xl relative shrink-0">
           <Image
             src={KAKAOLOGIN}
             alt="kakaologin"
@@ -39,8 +42,11 @@ const Login = () => {
           />
         </div>
       </Button>
-      <Button className="login-layout my-[5px]" onClick={naverLogin}>
-        <div className="login-layout rounded-xl relative shrink-0">
+      <Button
+        className="schedule-intro-login-layout my-[5px]"
+        onClick={naverLogin}
+      >
+        <div className="schedule-intro-login-layout rounded-xl relative shrink-0">
           <Image
             src={NAVERLOGIN}
             alt="naverlogin"

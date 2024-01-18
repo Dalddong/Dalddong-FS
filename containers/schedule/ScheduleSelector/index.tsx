@@ -61,14 +61,14 @@ const ScheduleSelector: React.FC<ScheduleSelectorType> = ({ selectDays }) => {
   };
 
   return (
-    <div className="box-schedule-middle-layout flex-col-center box-border">
-      <p className=" mt-[5px] w-[350px] font-bold text-[14px] lg:w-[600px] lg:text-left lg:ml-[10px] lg:text-[16px]">
+    <div className="schedule-selector-component-layout">
+      <p className="schedule-selector-explain-text">
         가능한 시간을 모두 선택후 일정을 등록해주세요.
       </p>
-      <div className="relative w-[350px] h-[800px] py-[8px]  overflow-scroll scrollbar-hide   lg:w-[600px] px-[10px] lg:py-[10px] flex">
+      <div className="schedule-selector-scroll-component">
         {visibleItems.map((item: any, dayIdx: number) => (
-          <div className="flex-col-center" key={item._id}>
-            <div className="schedule-selector-day-layout">
+          <div className="schedule-selector-day-wrapper" key={item._id}>
+            <div className="schedule-selector-day-button">
               <span>{item.day}</span>
             </div>
             {item.times.map((time: any, timeIndex: number) => (
@@ -86,13 +86,13 @@ const ScheduleSelector: React.FC<ScheduleSelectorType> = ({ selectDays }) => {
           </div>
         ))}
         <div
-          className="absolute top-[16px] lg:top-[20px] left-0"
+          className="schedule-selector-pagination-button left-0"
           onClick={() => handlePageChange(currentPage - 1)}
         >
           <SVG_left />
         </div>
         <div
-          className="absolute top-[16px] lg:top-[20px] right-0"
+          className="schedule-selector-pagination-button right-0"
           onClick={() => handlePageChange(currentPage + 1)}
         >
           <SVG_right />

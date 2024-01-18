@@ -16,10 +16,9 @@ interface ChartType {
 const Chart: React.FC<ChartType> = ({ array }) => {
   const pathname = usePathname();
   const [first, second, third] = array;
-  const colors = ["deep", "medium", "light"];
   return (
     <>
-      <div className="w-[340px] h-[340px] card-layout flex justify-between p-[10px] text-[13px] font-bold">
+      <div className="schedule-summary-chart-layout card-layout">
         <ChartBar
           data={first}
           tailwindStyle="h-[200px] mt-[0px] bg-dd-deep-yellow"
@@ -35,7 +34,7 @@ const Chart: React.FC<ChartType> = ({ array }) => {
       </div>
       <div className="flex">
         <Button
-          className="card-layout w-[120px] h-[50px] mr-[10px] centered-content"
+          className="schedule-summary-chart-share-button card-layout centered-content"
           onClick={() =>
             copyClipboard(`${process.env.NEXT_PUBLIC_HOME_URL}${pathname}`)
           }
