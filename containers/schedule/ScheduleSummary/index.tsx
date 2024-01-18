@@ -31,9 +31,9 @@ const ScheduleSummary: React.FC<ScheduleSummaryType> = ({
     <div className="box-schedule-side-layout flex-col-center">
       <div className="w-[340px] mt-[5px]">
         <p className="text-left font-bold">
-          <span className="mr-[8px]">{selectDays[dayIdx].day}</span>
-          <span className="mr-[8px]">{timeTable[timeIdx]}</span>
-          <span className="mr-[8px]">희망자</span>
+          <span>
+            {selectDays[dayIdx].day} {timeTable[timeIdx]} 희망자
+          </span>
         </p>
         <div className="card-layout centered-content h-[160px] p-[20px]">
           {selectDays[dayIdx].times[timeIdx].length > 0

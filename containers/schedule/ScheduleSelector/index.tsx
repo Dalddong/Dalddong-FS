@@ -14,6 +14,8 @@ const ScheduleSelector: React.FC<ScheduleSelectorType> = ({ selectDays }) => {
   const [selectDaysBoard, setSelectDaysBoard] =
     useRecoilState<any>(selectRecoilDays);
   const setSelectSummaryIndex = useSetRecoilState(selectSummaryIndex);
+  const { userName } = useSessionUser();
+
   const [currentPage, setCurrentPage] = useState<number>(0);
   const itemsPerPage = 5;
   const totalPages = Math.ceil(selectDaysBoard.length / itemsPerPage);
@@ -23,11 +25,8 @@ const ScheduleSelector: React.FC<ScheduleSelectorType> = ({ selectDays }) => {
     startIndex + itemsPerPage
   );
 
-  const { userName } = useSessionUser();
-
   useEffect(() => {
     setSelectDaysBoard(selectDays);
-    setCurrentPage(0);
   }, [selectDays]);
 
   const handlePageChange = (newPage: number) => {
@@ -44,13 +43,11 @@ const ScheduleSelector: React.FC<ScheduleSelectorType> = ({ selectDays }) => {
     const times = updatedSelctDaysBoard[targetDayIdx].times[timeIndex];
 
     if (userName) {
-      if (!times.includes(userName)) {
-        times.push(userName);
-      } else {
-        updatedSelctDaysBoard[targetDayIdx].times[timeIndex] = times.filter(
-          (item: any) => item !== userName
-        );
-      }
+      times.includes(userName)
+        ? (updatedSelctDaysBoard[targetDayIdx].times[timeIndex] = times.filter(
+            (item: any) => item !== userName
+          ))
+        : times.push(userName);
     } else {
       alert(UNAUTHORIZE_LOGIN);
     }
@@ -60,10 +57,7 @@ const ScheduleSelector: React.FC<ScheduleSelectorType> = ({ selectDays }) => {
 
   const handleSelectTimesHover = (dayIdx: number, timeIndex: number) => {
     const targetDayIdx = currentPage * itemsPerPage + dayIdx;
-    setSelectSummaryIndex({
-      dayIdx: targetDayIdx,
-      timeIdx: timeIndex,
-    });
+    setSelectSummaryIndex({ dayIdx: targetDayIdx, timeIdx: timeIndex });
   };
 
   return (
