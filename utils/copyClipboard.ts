@@ -1,18 +1,22 @@
-import { SUCCESS_COPY } from "@/utils/toastMessages";
+import {
+  BROWSER_NOT_APPLY_COPY,
+  RETRY_COPY,
+  SUCCESS_COPY,
+} from "@/utils/alertMessages";
 
 export const copyClipboard = (text: string) => {
   if (navigator.clipboard) {
     navigator.clipboard
       .writeText(text)
       .then(() => {
-        alert("클립보드에 복사되었습니다.");
+        alert(SUCCESS_COPY);
       })
       .catch(() => {
-        alert("복사를 다시 시도해주세요.");
+        alert(RETRY_COPY);
       });
   } else {
     if (!document.queryCommandSupported("copy")) {
-      return alert("복사하기가 지원되지 않는 브라우저입니다.");
+      return alert(BROWSER_NOT_APPLY_COPY);
     }
 
     const textarea = document.createElement("textarea");

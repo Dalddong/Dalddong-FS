@@ -8,6 +8,7 @@ import { timeTable } from "@/utils/timeTable";
 import { useRecoilState, useSetRecoilState } from "recoil";
 import { selectRecoilDays, selectSummaryIndex } from "@/states/Schedule/atom";
 import { useSessionUser } from "@/hooks/user/useSessionUser";
+import { NOT_EXIST_PAGE, UNAUTHORIZE_LOGIN } from "@/utils/alertMessages";
 
 const ScheduleSelector: React.FC<ScheduleSelectorType> = ({ selectDays }) => {
   const [selectDaysBoard, setSelectDaysBoard] =
@@ -31,7 +32,7 @@ const ScheduleSelector: React.FC<ScheduleSelectorType> = ({ selectDays }) => {
 
   const handlePageChange = (newPage: number) => {
     if (newPage > -1 && newPage < totalPages) setCurrentPage(newPage);
-    else alert("존재하지않는 페이지입니다.");
+    else alert(NOT_EXIST_PAGE);
   };
 
   const handleSelectTimesClicked = async (
@@ -51,7 +52,7 @@ const ScheduleSelector: React.FC<ScheduleSelectorType> = ({ selectDays }) => {
         );
       }
     } else {
-      alert("로그인을 해주세요!");
+      alert(UNAUTHORIZE_LOGIN);
     }
 
     setSelectDaysBoard(updatedSelctDaysBoard);
