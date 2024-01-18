@@ -11,9 +11,9 @@ import type { ScheduleSummaryType } from "@/types/schedule";
 import { useRecoilValue } from "recoil";
 import { selectRecoilDays } from "@/states/Schedule/atom";
 import { usePatchSchedule } from "@/hooks/schedule/useSchedule";
-import { timeTable } from "@/utils/timeTable";
+import { timeTable } from "@/utils/constants/timeTable";
 import { selectSummaryIndex } from "@/states/Schedule/atom";
-import { findMostTimeAvailable } from "@/utils/findMostTimeAvailable";
+import { findMostTimeAvailable } from "@/utils/functions/findMostTimeAvailable";
 
 const ScheduleSummary: React.FC<ScheduleSummaryType> = ({
   selectDays,
@@ -28,21 +28,21 @@ const ScheduleSummary: React.FC<ScheduleSummaryType> = ({
   const patchSchedule = usePatchSchedule(RecoilDays, sid);
 
   return (
-    <div className="box-schedule-side-layout flex-col-center">
-      <div className="w-[340px] mt-[5px]">
-        <p className="text-left font-bold">
-          <span className="mr-[8px]">{selectDays[dayIdx].day}</span>
-          <span className="mr-[8px]">{timeTable[timeIdx]}</span>
-          <span className="mr-[8px]">희망자</span>
+    <div className="schedule-summary-component-layout">
+      <div className="schedule-summary-peoples-layout">
+        <p className="schedule-summary-peoples-text">
+          <span>
+            {selectDays[dayIdx].day} {timeTable[timeIdx]} 희망자
+          </span>
         </p>
-        <div className="card-layout centered-content h-[160px] p-[20px]">
+        <div className="schedule-summary-peoples-list card-layout">
           {selectDays[dayIdx].times[timeIdx].length > 0
             ? [...selectDays[dayIdx].times[timeIdx]].join(",")
             : "아직 희망자가 없어요!"}
         </div>
       </div>
       <Button
-        className="card-layout centered-content w-[250px] h-[60px] mt-[5px] mb-[25px] text-[20px]"
+        className="schedule-summary-post-button card-layout centered-content "
         onClick={patchSchedule}
       >
         <SVG_calendar />

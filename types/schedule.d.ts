@@ -14,7 +14,7 @@ export interface ScheduleSummaryType {
 
 export interface ScheduleIntroType {
   nomineePlayTime: string;
-  nomineeDays: any;
+  nomineeDays: string[];
   scheduleName: string;
   schedulePlace: string;
 }
@@ -22,3 +22,14 @@ export interface ScheduleIntroType {
 export interface ScheduleSelectorType {
   selectDays: selectDaysType[];
 }
+
+export type selectRecoilDaysType = {
+  day: string;
+  times: string[];
+};
+
+export type visibleItemsType = {
+  _id: string;
+  day: string;
+  times: string[];
+};

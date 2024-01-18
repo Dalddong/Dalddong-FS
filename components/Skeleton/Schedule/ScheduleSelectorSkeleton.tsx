@@ -6,15 +6,15 @@ import SVG_right from "@/public/svgs/rightArrow.svg";
 
 const ScheduleSelectorSkeleton = () => {
   return (
-    <div className="box-schedule-middle-layout flex-col-center box-border">
-      <p className="mt-[5px] w-[350px] font-bold text-[14px] lg:w-[600px] lg:text-left lg:ml-[10px] lg:text-[16px]">
+    <div className="schedule-selector-component-layout">
+      <p className="schedule-selector-explain-text">
         가능한 시간을 모두 선택후 일정을 등록해주세요.
       </p>
-      <div className="relative w-[350px] h-[800px] py-[8px] overflow-scroll scrollbar-hide lg:w-[600px] px-[10px] lg:py-[10px] flex justify-around">
+      <div className="schedule-selector-scroll-component">
         {[...Array(5)].map((_, index) => (
-          <div key={index} className="flex-col-center">
-            <div className="schedule-selector-day-layout"></div>
-            {[...Array(20)].map((_, timeIndex) => (
+          <div key={index} className="schedule-selector-day-wrapper">
+            <div className="schedule-selector-day-button"></div>
+            {[...Array(24)].map((_, timeIndex) => (
               <div
                 key={timeIndex}
                 className="schedule-selector-time-layout"
@@ -22,10 +22,10 @@ const ScheduleSelectorSkeleton = () => {
             ))}
           </div>
         ))}
-        <div className="absolute top-[16px] lg:top-[20px] left-0">
+        <div className="schedule-selector-pagination-button left-0">
           <SVG_left />
         </div>
-        <div className="absolute top-[16px] lg:top-[20px] right-0">
+        <div className="schedule-selector-pagination-button right-0">
           <SVG_right />
         </div>
       </div>

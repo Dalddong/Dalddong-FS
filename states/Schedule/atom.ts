@@ -21,14 +21,14 @@ export const nomineePlayTimeValue = atom<string>({
   default: "1",
 });
 
-export const nomineeDayValue = atom({
+export const nomineeDayValue = atom<Date[]>({
   key: "nomineeDayValue",
   default: [new Date(), addDays(new Date(), 7)],
 });
 
-export const selectRecoilDays = atom({
+export const selectRecoilDays = atom<any>({
   key: "selectRecoilDays",
-  default: [] as any,
+  default: [],
 });
 
 export const selectSummaryIndex = atom({

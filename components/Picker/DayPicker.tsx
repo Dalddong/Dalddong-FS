@@ -8,12 +8,12 @@ import { useRecoilState } from "recoil";
 import { nomineeDayValue } from "@/states/Schedule/atom";
 
 const DayPicker = () => {
-  const [dateRange, setDateRange] = useRecoilState(nomineeDayValue);
+  const [dateRange, setDateRange] = useRecoilState<Date[]>(nomineeDayValue);
   const [startDate, endDate] = dateRange;
 
   return (
     <div className="form-layout card-layout-rounded-full centered-content justify-evenly">
-      <span className="w-[40px]">기간</span>
+      <span className="form-input-width">기간</span>
 
       <div className="centered-content w-[270px]">
         <SVG_down />
@@ -25,7 +25,7 @@ const DayPicker = () => {
           maxDate={addDays(new Date(), 14)}
           startDate={startDate}
           endDate={endDate}
-          onChange={(update: any) => {
+          onChange={(update: [Date, Date]) => {
             if (update) {
               setDateRange(update);
             }

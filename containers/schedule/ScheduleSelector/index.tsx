@@ -4,16 +4,22 @@ import React, { useEffect, useState } from "react";
 import SVG_left from "@/public/svgs/leftArrow.svg";
 import SVG_right from "@/public/svgs/rightArrow.svg";
 import type { ScheduleSelectorType } from "@/types/schedule";
-import { timeTable } from "@/utils/timeTable";
+import { timeTable } from "@/utils/constants/timeTable";
 import { useRecoilState, useSetRecoilState } from "recoil";
 import { selectRecoilDays, selectSummaryIndex } from "@/states/Schedule/atom";
 import { useSessionUser } from "@/hooks/user/useSessionUser";
-import { NOT_EXIST_PAGE, UNAUTHORIZE_LOGIN } from "@/utils/alertMessages";
+import {
+  NOT_EXIST_PAGE,
+  UNAUTHORIZE_LOGIN,
+} from "@/utils/constants/alertMessages";
+import type { visibleItemsType } from "@/types/schedule";
 
 const ScheduleSelector: React.FC<ScheduleSelectorType> = ({ selectDays }) => {
   const [selectDaysBoard, setSelectDaysBoard] =
-    useRecoilState<any>(selectRecoilDays);
+    useRecoilState(selectRecoilDays);
   const setSelectSummaryIndex = useSetRecoilState(selectSummaryIndex);
+  const { userName } = useSessionUser();
+
   const [currentPage, setCurrentPage] = useState<number>(0);
   const itemsPerPage = 5;
   const totalPages = Math.ceil(selectDaysBoard.length / itemsPerPage);
@@ -23,11 +29,8 @@ const ScheduleSelector: React.FC<ScheduleSelectorType> = ({ selectDays }) => {
     startIndex + itemsPerPage
   );
 
-  const { userName } = useSessionUser();
-
   useEffect(() => {
     setSelectDaysBoard(selectDays);
-    setCurrentPage(0);
   }, [selectDays]);
 
   const handlePageChange = (newPage: number) => {
@@ -44,13 +47,11 @@ const ScheduleSelector: React.FC<ScheduleSelectorType> = ({ selectDays }) => {
     const times = updatedSelctDaysBoard[targetDayIdx].times[timeIndex];
 
     if (userName) {
-      if (!times.includes(userName)) {
-        times.push(userName);
-      } else {
-        updatedSelctDaysBoard[targetDayIdx].times[timeIndex] = times.filter(
-          (item: any) => item !== userName
-        );
-      }
+      times.includes(userName)
+        ? (updatedSelctDaysBoard[targetDayIdx].times[timeIndex] = times.filter(
+            (item: string) => item !== userName
+          ))
+        : times.push(userName);
     } else {
       alert(UNAUTHORIZE_LOGIN);
     }
@@ -60,24 +61,21 @@ const ScheduleSelector: React.FC<ScheduleSelectorType> = ({ selectDays }) => {
 
   const handleSelectTimesHover = (dayIdx: number, timeIndex: number) => {
     const targetDayIdx = currentPage * itemsPerPage + dayIdx;
-    setSelectSummaryIndex({
-      dayIdx: targetDayIdx,
-      timeIdx: timeIndex,
-    });
+    setSelectSummaryIndex({ dayIdx: targetDayIdx, timeIdx: timeIndex });
   };
 
   return (
-    <div className="box-schedule-middle-layout flex-col-center box-border">
-      <p className=" mt-[5px] w-[350px] font-bold text-[14px] lg:w-[600px] lg:text-left lg:ml-[10px] lg:text-[16px]">
+    <div className="schedule-selector-component-layout">
+      <p className="schedule-selector-explain-text">
         가능한 시간을 모두 선택후 일정을 등록해주세요.
       </p>
-      <div className="relative w-[350px] h-[800px] py-[8px]  overflow-scroll scrollbar-hide   lg:w-[600px] px-[10px] lg:py-[10px] flex">
-        {visibleItems.map((item: any, dayIdx: number) => (
-          <div className="flex-col-center" key={item._id}>
-            <div className="schedule-selector-day-layout">
+      <div className="schedule-selector-scroll-component">
+        {visibleItems.map((item: visibleItemsType, dayIdx: number) => (
+          <div className="schedule-selector-day-wrapper" key={item._id}>
+            <div className="schedule-selector-day-button">
               <span>{item.day}</span>
             </div>
-            {item.times.map((time: any, timeIndex: number) => (
+            {item.times.map((time: string, timeIndex: number) => (
               <div
                 key={timeIndex}
                 onClick={() => handleSelectTimesClicked(dayIdx, timeIndex)}
@@ -92,13 +90,13 @@ const ScheduleSelector: React.FC<ScheduleSelectorType> = ({ selectDays }) => {
           </div>
         ))}
         <div
-          className="absolute top-[16px] lg:top-[20px] left-0"
+          className="schedule-selector-pagination-button left-0"
           onClick={() => handlePageChange(currentPage - 1)}
         >
           <SVG_left />
         </div>
         <div
-          className="absolute top-[16px] lg:top-[20px] right-0"
+          className="schedule-selector-pagination-button right-0"
           onClick={() => handlePageChange(currentPage + 1)}
         >
           <SVG_right />
