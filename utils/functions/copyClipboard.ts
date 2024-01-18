@@ -2,7 +2,7 @@ import {
   BROWSER_NOT_APPLY_COPY,
   RETRY_COPY,
   SUCCESS_COPY,
-} from "@/utils/alertMessages";
+} from "@/utils/constants/alertMessages";
 
 export const copyClipboard = (text: string) => {
   if (navigator.clipboard) {
