@@ -2,13 +2,8 @@ export interface ScheduleContainerProps {
   sid: string;
 }
 
-type selectDaysType = {
-  day: string;
-  times: [][];
-};
-
 export interface ScheduleSummaryType {
-  selectDays: selectDaysType[];
+  selectDays: any;
   sid: string;
 }
 
@@ -20,7 +15,7 @@ export interface ScheduleIntroType {
 }
 
 export interface ScheduleSelectorType {
-  selectDays: selectDaysType[];
+  selectDays: any[];
 }
 
 export type selectRecoilDaysType = {
