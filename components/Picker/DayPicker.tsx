@@ -8,7 +8,7 @@ import { useRecoilState } from "recoil";
 import { nomineeDayValue } from "@/states/Schedule/atom";
 
 const DayPicker = () => {
-  const [dateRange, setDateRange] = useRecoilState(nomineeDayValue);
+  const [dateRange, setDateRange] = useRecoilState<Date[]>(nomineeDayValue);
   const [startDate, endDate] = dateRange;
 
   return (
@@ -25,7 +25,7 @@ const DayPicker = () => {
           maxDate={addDays(new Date(), 14)}
           startDate={startDate}
           endDate={endDate}
-          onChange={(update: any) => {
+          onChange={(update: [Date, Date]) => {
             if (update) {
               setDateRange(update);
             }

@@ -12,7 +12,7 @@ async function getSchedule(id: string) {
 }
 
 export function useGetSchedule(id: string) {
-  const fallback: any = [];
+  const fallback: [] = [];
 
   const { data = fallback, isLoading } = useQuery({
     queryKey: [queryKeys.schedule],

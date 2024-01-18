@@ -12,10 +12,11 @@ import {
   NOT_EXIST_PAGE,
   UNAUTHORIZE_LOGIN,
 } from "@/utils/constants/alertMessages";
+import type { visibleItemsType } from "@/types/schedule";
 
 const ScheduleSelector: React.FC<ScheduleSelectorType> = ({ selectDays }) => {
   const [selectDaysBoard, setSelectDaysBoard] =
-    useRecoilState<any>(selectRecoilDays);
+    useRecoilState(selectRecoilDays);
   const setSelectSummaryIndex = useSetRecoilState(selectSummaryIndex);
   const { userName } = useSessionUser();
 
@@ -48,7 +49,7 @@ const ScheduleSelector: React.FC<ScheduleSelectorType> = ({ selectDays }) => {
     if (userName) {
       times.includes(userName)
         ? (updatedSelctDaysBoard[targetDayIdx].times[timeIndex] = times.filter(
-            (item: any) => item !== userName
+            (item: string) => item !== userName
           ))
         : times.push(userName);
     } else {
@@ -69,12 +70,12 @@ const ScheduleSelector: React.FC<ScheduleSelectorType> = ({ selectDays }) => {
         가능한 시간을 모두 선택후 일정을 등록해주세요.
       </p>
       <div className="schedule-selector-scroll-component">
-        {visibleItems.map((item: any, dayIdx: number) => (
+        {visibleItems.map((item: visibleItemsType, dayIdx: number) => (
           <div className="schedule-selector-day-wrapper" key={item._id}>
             <div className="schedule-selector-day-button">
               <span>{item.day}</span>
             </div>
-            {item.times.map((time: any, timeIndex: number) => (
+            {item.times.map((time: string, timeIndex: number) => (
               <div
                 key={timeIndex}
                 onClick={() => handleSelectTimesClicked(dayIdx, timeIndex)}

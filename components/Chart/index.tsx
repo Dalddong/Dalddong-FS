@@ -10,7 +10,7 @@ import { usePathname } from "next/navigation";
 import ChartBar from "./ChartBar";
 
 interface ChartType {
-  array: [][];
+  array: string[][];
 }
 
 const Chart: React.FC<ChartType> = ({ array }) => {
@@ -26,7 +26,7 @@ const Chart: React.FC<ChartType> = ({ array }) => {
     <>
       <div className="schedule-summary-chart-layout card-layout">
         {rankedArray.map((item, idx) => (
-          <ChartBar data={item} tailwindStyle={tailwindarray[idx]} />
+          <ChartBar key={idx} data={item} tailwindStyle={tailwindarray[idx]} />
         ))}
       </div>
       <div className="flex">
