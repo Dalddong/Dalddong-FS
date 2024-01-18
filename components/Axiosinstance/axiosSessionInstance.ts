@@ -2,6 +2,7 @@
 
 import axios, { AxiosRequestConfig } from "axios";
 import { useUserName } from "@/hooks/user/useSessionUser";
+import { UNAUTHORIZE_LOGIN, SUCCESS_PATCH } from "@/utils/alertMessages";
 const config: AxiosRequestConfig = {
   headers: {
     "Content-Type": "application/json",
@@ -16,7 +17,7 @@ axiosSessionInstance.interceptors.request.use(
     if (data?.user.name) {
       return config;
     } else {
-      throw "로그인이 필요합니다.";
+      throw UNAUTHORIZE_LOGIN;
     }
   },
   (err) => {
@@ -26,8 +27,7 @@ axiosSessionInstance.interceptors.request.use(
 axiosSessionInstance.interceptors.response.use(
   (response) => {
     const responseData = response.data;
-    console.log("responseData", responseData);
-    alert("성공적으로 등록이 완료 되었습니다.");
+    alert(SUCCESS_PATCH);
     return responseData;
   },
   (err) => {

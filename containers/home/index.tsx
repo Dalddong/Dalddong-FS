@@ -17,6 +17,7 @@ import {
   schedulePlaceValue,
 } from "@/states/Schedule/atom";
 import { changeDateFormat } from "@/utils/moment";
+import { UNFILLED_FORM } from "@/utils/alertMessages";
 
 interface HomeContainerProps {}
 
@@ -44,7 +45,7 @@ const HomeContainer: React.FC<HomeContainerProps> = () => {
     ) {
       postSchedule();
     } else {
-      alert("양식을 올바르게 입력해주세요");
+      alert(UNFILLED_FORM);
     }
   };
 
