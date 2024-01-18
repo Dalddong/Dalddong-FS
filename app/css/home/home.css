@@ -5,6 +5,10 @@
   @apply w-[370px] h-[60px] lg:w-[480px];
 }
 
+.form-input-width {
+  @apply w-[40px];
+}
+
 .button-confirm {
   @apply w-[200px] h-[50px];
 }

@@ -12,7 +12,7 @@ const Input: React.FC<InputProps> = ({
 }) => {
   return (
     <div className={`${className} centered-content justify-evenly`}>
-      <span className="w-[40px]">{content}</span>
+      <span className="form-input-width">{content}</span>
       <input
         type={type}
         className="w-[270px] reset-all placeholder:text-gray-200"

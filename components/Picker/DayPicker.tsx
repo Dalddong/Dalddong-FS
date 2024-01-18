@@ -13,7 +13,7 @@ const DayPicker = () => {
 
   return (
     <div className="form-layout card-layout-rounded-full centered-content justify-evenly">
-      <span className="w-[40px]">기간</span>
+      <span className="form-input-width">기간</span>
 
       <div className="centered-content w-[270px]">
         <SVG_down />
