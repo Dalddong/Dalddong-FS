@@ -8,7 +8,7 @@ import PlacePicker from "@/components/Picker/PlacePicker";
 import Button from "@/components/Button";
 
 import { usePostSchedule } from "@/hooks/schedule/useSchedule";
-import { selectDaysMaker } from "@/utils/selectDaysMaker";
+import { selectDaysMaker } from "@/utils/functions/selectDaysMaker";
 import { useRecoilValue } from "recoil";
 import {
   nomineeDayValue,
@@ -16,8 +16,8 @@ import {
   scheduleNameValue,
   schedulePlaceValue,
 } from "@/states/Schedule/atom";
-import { changeDateFormat } from "@/utils/moment";
-import { UNFILLED_FORM } from "@/utils/alertMessages";
+import { changeDateFormat } from "@/utils/functions/moment";
+import { UNFILLED_FORM } from "@/utils/constants/alertMessages";
 
 interface HomeContainerProps {}
 

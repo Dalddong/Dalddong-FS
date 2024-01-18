@@ -4,11 +4,14 @@ import React, { useEffect, useState } from "react";
 import SVG_left from "@/public/svgs/leftArrow.svg";
 import SVG_right from "@/public/svgs/rightArrow.svg";
 import type { ScheduleSelectorType } from "@/types/schedule";
-import { timeTable } from "@/utils/timeTable";
+import { timeTable } from "@/utils/constants/timeTable";
 import { useRecoilState, useSetRecoilState } from "recoil";
 import { selectRecoilDays, selectSummaryIndex } from "@/states/Schedule/atom";
 import { useSessionUser } from "@/hooks/user/useSessionUser";
-import { NOT_EXIST_PAGE, UNAUTHORIZE_LOGIN } from "@/utils/alertMessages";
+import {
+  NOT_EXIST_PAGE,
+  UNAUTHORIZE_LOGIN,
+} from "@/utils/constants/alertMessages";
 
 const ScheduleSelector: React.FC<ScheduleSelectorType> = ({ selectDays }) => {
   const [selectDaysBoard, setSelectDaysBoard] =

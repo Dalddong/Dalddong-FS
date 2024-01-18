@@ -2,7 +2,10 @@
 
 import axios, { AxiosRequestConfig } from "axios";
 import { useUserName } from "@/hooks/user/useSessionUser";
-import { UNAUTHORIZE_LOGIN, SUCCESS_PATCH } from "@/utils/alertMessages";
+import {
+  UNAUTHORIZE_LOGIN,
+  SUCCESS_PATCH,
+} from "@/utils/constants/alertMessages";
 const config: AxiosRequestConfig = {
   headers: {
     "Content-Type": "application/json",

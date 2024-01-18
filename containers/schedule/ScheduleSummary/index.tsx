@@ -11,9 +11,9 @@ import type { ScheduleSummaryType } from "@/types/schedule";
 import { useRecoilValue } from "recoil";
 import { selectRecoilDays } from "@/states/Schedule/atom";
 import { usePatchSchedule } from "@/hooks/schedule/useSchedule";
-import { timeTable } from "@/utils/timeTable";
+import { timeTable } from "@/utils/constants/timeTable";
 import { selectSummaryIndex } from "@/states/Schedule/atom";
-import { findMostTimeAvailable } from "@/utils/findMostTimeAvailable";
+import { findMostTimeAvailable } from "@/utils/functions/findMostTimeAvailable";
 
 const ScheduleSummary: React.FC<ScheduleSummaryType> = ({
   selectDays,
