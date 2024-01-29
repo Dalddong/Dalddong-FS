@@ -1,3 +1,53 @@
+/**
+ * @swagger
+ * /api/schedule:
+ *   post:
+ *     summary: 일정 만들기
+ *     description: Creates a new schedule based on the provided data.
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               nomineeDays:
+ *                 type: array
+ *                 items:
+ *                   type: string
+ *                 minItems: 2
+ *                 maxItems: 2
+ *               nomineePlayTime:
+ *                 type: string
+ *               schedulePlace:
+ *                 type: string
+ *               scheduleName:
+ *                 type: string
+ *               selectDays:
+ *                 type: array
+ *                 items:
+ *                   type: object
+ *                   properties:
+ *                     day:
+ *                       type: string
+ *                     times:
+ *                       type: array
+ *                       items:
+ *                         type: array
+ *                         items:
+ *                           type: string
+ *     responses:
+ *       200:
+ *         description: Schedule created successfully
+ *         content:
+ *           application/json:
+ *             example:
+ *               message: Create Schedule Success!
+ *               data:
+ *                 _id:
+ *                   type: string
+ */
+
 import { NextResponse } from "next/server";
 import MongoDBConnect from "@/lib/mongodb";
 import Schedule from "@/models/schedule";
