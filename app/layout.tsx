@@ -15,6 +15,9 @@ export const metadata: Metadata = {
   creator: "youngduck kim",
   generator: "Next.js",
   icons: "/favicion.ico",
+  verification: {
+    google: "lybtoBCBf6isHIGdGbYxTHG7N2dUanHjWahiXMgKtXY",
+  },
 };
 
 export default function RootLayout({
