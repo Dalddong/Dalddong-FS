@@ -17,6 +17,22 @@ export const metadata: Metadata = {
   icons: "/favicion.ico",
   verification: {
     google: "lybtoBCBf6isHIGdGbYxTHG7N2dUanHjWahiXMgKtXY",
+    other: {
+      "naver-site-verification": "10bc601bd9c85b7aa84e21028a264af1f4d74359",
+    },
+  },
+  openGraph: {
+    title: "달동 : 달력 동그라미",
+    description: "간편한 터치로 손쉽게 일정을 정하는 기술",
+    url: "https://daldong.vercel.app/",
+    locale: "ko-KR",
+    type: "website",
+    images: [
+      {
+        url: "https://daldong.vercel.app/public/images/img_logo_text.png",
+        type: "image/png",
+      },
+    ],
   },
 };
 
