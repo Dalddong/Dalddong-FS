@@ -22,8 +22,17 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "",
+    title: "달동 : 달력 동그라미",
     description: "간편한 터치로 손쉽게 일정을 정하는 기술",
+    url: "https://daldong.vercel.app/",
+    locale: "ko-KR",
+    type: "website",
+    images: [
+      {
+        url: "https://daldong.vercel.app/public/images/img_logo_text.png",
+        type: "image/png",
+      },
+    ],
   },
 };
 
