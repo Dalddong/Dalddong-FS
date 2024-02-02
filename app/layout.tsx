@@ -17,6 +17,13 @@ export const metadata: Metadata = {
   icons: "/favicion.ico",
   verification: {
     google: "lybtoBCBf6isHIGdGbYxTHG7N2dUanHjWahiXMgKtXY",
+    other: {
+      "naver-site-verification": "10bc601bd9c85b7aa84e21028a264af1f4d74359",
+    },
+  },
+  openGraph: {
+    title: "",
+    description: "간편한 터치로 손쉽게 일정을 정하는 기술",
   },
 };
 
