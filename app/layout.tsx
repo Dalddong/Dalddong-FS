@@ -21,6 +21,7 @@ export const metadata: Metadata = {
       "naver-site-verification": "10bc601bd9c85b7aa84e21028a264af1f4d74359",
     },
   },
+  metadataBase: new URL("https://daldong.vercel.app/"),
   openGraph: {
     title: "달동 : 달력 동그라미",
     description: "간편한 터치로 손쉽게 일정을 정하는 기술",
