@@ -13,6 +13,7 @@ import {
   UNAUTHORIZE_LOGIN,
 } from "@/utils/constants/alertMessages";
 import type { visibleItemsType } from "@/types/schedule";
+import usePagination from "@/hooks/util/usePagination";
 
 const ScheduleSelector: React.FC<ScheduleSelectorType> = ({ selectDays }) => {
   const [selectDaysBoard, setSelectDaysBoard] =
@@ -20,23 +21,21 @@ const ScheduleSelector: React.FC<ScheduleSelectorType> = ({ selectDays }) => {
   const setSelectSummaryIndex = useSetRecoilState(selectSummaryIndex);
   const { userName } = useSessionUser();
 
-  const [currentPage, setCurrentPage] = useState<number>(0);
-  const itemsPerPage = 5;
-  const totalPages = Math.ceil(selectDaysBoard.length / itemsPerPage);
-  const startIndex = currentPage * itemsPerPage;
-  const visibleItems = selectDaysBoard.slice(
+  const {
+    currentPage,
+    itemsPerPage,
     startIndex,
-    startIndex + itemsPerPage
-  );
+    sliceNumber,
+    handlePageChange,
+  } = usePagination({
+    totalItems: selectDaysBoard.length,
+  });
+
+  const visibleItems = selectDaysBoard.slice(startIndex, sliceNumber);
 
   useEffect(() => {
     setSelectDaysBoard(selectDays);
   }, [selectDays]);
-
-  const handlePageChange = (newPage: number) => {
-    if (newPage > -1 && newPage < totalPages) setCurrentPage(newPage);
-    else alert(NOT_EXIST_PAGE);
-  };
 
   const handleSelectTimesClicked = async (
     dayIdx: number,
