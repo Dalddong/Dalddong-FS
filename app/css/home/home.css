@@ -1,5 +1,5 @@
 .container-main-layout {
-  @apply w-full h-[700px] mx-auto mt-[100px] text-[20px] font-bold lg:w-[500px];
+  @apply w-full h-[700px] mx-auto pt-[60px] text-[20px] font-bold lg:w-[500px] lg:pt-[100px];
 }
 .form-layout {
   @apply w-[370px] h-[60px] lg:w-[480px];
