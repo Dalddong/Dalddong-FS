@@ -32,6 +32,7 @@ const RAW_RUNTIME_STATE =
           ["@testing-library/react", "virtual:5fcaa3fe9e689768cc991b9fea8732f53d296e979fc076bd0168c7df011d53e468c399ba2e9ae8932fcccc0518e29c644f58515940b861684510690f7f046175#npm:14.1.2"],\
           ["@types/bcrypt", "npm:5.0.2"],\
           ["@types/jest", "npm:29.5.11"],\
+          ["@types/lodash", "npm:4.14.202"],\
           ["@types/node", "npm:20.10.5"],\
           ["@types/react", "npm:18.2.45"],\
           ["@types/react-datepicker", "npm:4.19.5"],\
@@ -46,6 +47,7 @@ const RAW_RUNTIME_STATE =
           ["eslint", "npm:8.56.0"],\
           ["eslint-config-next", "virtual:5fcaa3fe9e689768cc991b9fea8732f53d296e979fc076bd0168c7df011d53e468c399ba2e9ae8932fcccc0518e29c644f58515940b861684510690f7f046175#npm:14.0.4"],\
           ["jsdom", "virtual:5fcaa3fe9e689768cc991b9fea8732f53d296e979fc076bd0168c7df011d53e468c399ba2e9ae8932fcccc0518e29c644f58515940b861684510690f7f046175#npm:24.0.0"],\
+          ["lodash", "npm:4.17.21"],\
           ["moment", "npm:2.30.1"],\
           ["mongodb", "virtual:5fcaa3fe9e689768cc991b9fea8732f53d296e979fc076bd0168c7df011d53e468c399ba2e9ae8932fcccc0518e29c644f58515940b861684510690f7f046175#npm:6.3.0"],\
           ["mongoose", "npm:8.0.3"],\
@@ -4608,6 +4610,15 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
+    ["@types/lodash", [\
+      ["npm:4.14.202", {\
+        "packageLocation": "../../../AppData/Local/Yarn/Berry/cache/@types-lodash-npm-4.14.202-76de3e302b-10c0.zip/node_modules/@types/lodash/",\
+        "packageDependencies": [\
+          ["@types/lodash", "npm:4.14.202"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
     ["@types/node", [\
       ["npm:20.10.5", {\
         "packageLocation": "../../../AppData/Local/Yarn/Berry/cache/@types-node-npm-20.10.5-9464a4540b-10c0.zip/node_modules/@types/node/",\
@@ -6204,6 +6215,7 @@ const RAW_RUNTIME_STATE =
           ["@testing-library/react", "virtual:5fcaa3fe9e689768cc991b9fea8732f53d296e979fc076bd0168c7df011d53e468c399ba2e9ae8932fcccc0518e29c644f58515940b861684510690f7f046175#npm:14.1.2"],\
           ["@types/bcrypt", "npm:5.0.2"],\
           ["@types/jest", "npm:29.5.11"],\
+          ["@types/lodash", "npm:4.14.202"],\
           ["@types/node", "npm:20.10.5"],\
           ["@types/react", "npm:18.2.45"],\
           ["@types/react-datepicker", "npm:4.19.5"],\
@@ -6218,6 +6230,7 @@ const RAW_RUNTIME_STATE =
           ["eslint", "npm:8.56.0"],\
           ["eslint-config-next", "virtual:5fcaa3fe9e689768cc991b9fea8732f53d296e979fc076bd0168c7df011d53e468c399ba2e9ae8932fcccc0518e29c644f58515940b861684510690f7f046175#npm:14.0.4"],\
           ["jsdom", "virtual:5fcaa3fe9e689768cc991b9fea8732f53d296e979fc076bd0168c7df011d53e468c399ba2e9ae8932fcccc0518e29c644f58515940b861684510690f7f046175#npm:24.0.0"],\
+          ["lodash", "npm:4.17.21"],\
           ["moment", "npm:2.30.1"],\
           ["mongodb", "virtual:5fcaa3fe9e689768cc991b9fea8732f53d296e979fc076bd0168c7df011d53e468c399ba2e9ae8932fcccc0518e29c644f58515940b861684510690f7f046175#npm:6.3.0"],\
           ["mongoose", "npm:8.0.3"],\
