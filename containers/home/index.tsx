@@ -50,14 +50,6 @@ const HomeContainer: React.FC<HomeContainerProps> = () => {
     }
   };
 
-  if (isPending)
-    return (
-      <div className="container-main-layout flex-col-center">
-        <Header />
-        <Loading />
-      </div>
-    );
-
   return (
     <div className="container-main-layout flex-col-center">
       <Header />
@@ -70,6 +62,8 @@ const HomeContainer: React.FC<HomeContainerProps> = () => {
       >
         등록하기
       </Button>
+      <Loading />
+      {isPending ? <Loading /> : ""}
     </div>
   );
 };
