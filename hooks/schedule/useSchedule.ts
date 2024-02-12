@@ -17,6 +17,9 @@ export function useGetSchedule(id: string) {
   const { data = fallback, isLoading } = useQuery({
     queryKey: [queryKeys.schedule],
     queryFn: () => getSchedule(id),
+    gcTime: 5 * 60 * 1000,
+    staleTime: 1 * 60 * 1000,
+    retry: 1,
   });
 
   return { data, isLoading };
@@ -49,7 +52,7 @@ export function usePostSchedule(
   const router = useRouter();
   const queryClient = useQueryClient();
 
-  const { mutate } = useMutation({
+  const { mutate, isPending } = useMutation({
     mutationFn: () =>
       postSchedule(
         nomineeDays,
@@ -59,8 +62,8 @@ export function usePostSchedule(
         selectDays
       ),
     onSuccess: (responseData) => {
-      queryClient.invalidateQueries([queryKeys.schedule]);
       router.push(`/schedule/${responseData._id}`);
+      queryClient.invalidateQueries([queryKeys.schedule]);
     },
     onError: (err) => {
       console.log(err);
@@ -68,7 +71,7 @@ export function usePostSchedule(
     mutationKey: [queryKeys.schedule],
   });
 
-  return mutate;
+  return { mutate, isPending };
 }
 
 async function patchSchedule(selectDays, sid) {

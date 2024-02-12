@@ -9,7 +9,6 @@ import { nomineeDayValue } from "@/states/Schedule/atom";
 
 const DayPicker = () => {
   const [dateRange, setDateRange] = useRecoilState<Date[]>(nomineeDayValue);
-  console.log(dateRange);
   const [startDate, endDate] = dateRange;
 
   return (

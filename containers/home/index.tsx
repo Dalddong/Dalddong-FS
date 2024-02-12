@@ -18,6 +18,7 @@ import {
 } from "@/states/Schedule/atom";
 import { changeDateFormat } from "@/utils/functions/moment";
 import { UNFILLED_FORM } from "@/utils/constants/alertMessages";
+import Loading from "@/components/Loading";
 
 interface HomeContainerProps {}
 
@@ -29,7 +30,7 @@ const HomeContainer: React.FC<HomeContainerProps> = () => {
   const schedulePlace = useRecoilValue(schedulePlaceValue);
   const nomineePlaytime = useRecoilValue(nomineePlayTimeValue);
 
-  const postSchedule = usePostSchedule(
+  const { mutate, isPending } = usePostSchedule(
     filterDateRange,
     nomineePlaytime,
     scheduleName,
@@ -43,7 +44,7 @@ const HomeContainer: React.FC<HomeContainerProps> = () => {
       schedulePlace &&
       filterDateRange[1] !== "Invalid date"
     ) {
-      postSchedule();
+      mutate();
     } else {
       alert(UNFILLED_FORM);
     }
@@ -61,6 +62,8 @@ const HomeContainer: React.FC<HomeContainerProps> = () => {
       >
         등록하기
       </Button>
+      <Loading />
+      {isPending ? <Loading /> : ""}
     </div>
   );
 };
