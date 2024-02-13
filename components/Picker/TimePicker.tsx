@@ -16,11 +16,7 @@ const TimePicker = () => {
   return (
     <div className="form-layout card-layout-rounded-full centered-content justify-evenly">
       <span className="form-input-width">시간</span>
-      <div className="centered-content w-[270px]">
-        <SVG_down />
-        <span>00:00 -</span>
-        <SVG_down />
-        <span className="">24:00</span>
+      <div className="flex items-center w-[270px]">
         <SVG_down />
         <select
           className="appearance-none border-none"
