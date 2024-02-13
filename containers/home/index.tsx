@@ -62,7 +62,6 @@ const HomeContainer: React.FC<HomeContainerProps> = () => {
       >
         등록하기
       </Button>
-      <Loading />
       {isPending ? <Loading /> : ""}
     </div>
   );
