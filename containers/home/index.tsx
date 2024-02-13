@@ -62,7 +62,7 @@ const HomeContainer: React.FC<HomeContainerProps> = () => {
       >
         등록하기
       </Button>
-      {isPending ? <Loading /> : ""}
+      {isPending ? <Loading text="일정이 만들어지고 있습니다." /> : ""}
     </div>
   );
 };
