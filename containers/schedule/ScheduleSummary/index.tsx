@@ -24,7 +24,7 @@ const ScheduleSummary: React.FC<ScheduleSummaryType> = ({
   const patchSchedule = usePatchSchedule(RecoilDays, sid);
 
   return (
-    <div className="schedule-summary-component-layout">
+    <section className="schedule-summary-component-layout">
       <div className="schedule-summary-peoples-layout">
         <p className="schedule-summary-peoples-text">
           <span>
@@ -45,7 +45,7 @@ const ScheduleSummary: React.FC<ScheduleSummaryType> = ({
         <span className="ml-[4px]">일정 등록</span>
       </Button>
       <Chart array={rankedDays} />
-    </div>
+    </section>
   );
 };
 

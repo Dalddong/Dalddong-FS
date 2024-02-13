@@ -23,7 +23,7 @@ const ScheduleIntro: React.FC<ScheduleIntroType> = ({
   const days = nomineeDays ? `${nomineeDays[0]} ~ ${nomineeDays[1]}` : "";
 
   return (
-    <div className="schedule-intro-component-layout">
+    <section className="schedule-intro-component-layout">
       <Header />
       <div className="w-[300px]">
         <h2 className="scheudle-intro-header">{scheduleName}</h2>
@@ -55,7 +55,7 @@ const ScheduleIntro: React.FC<ScheduleIntroType> = ({
       </div>
 
       <Login />
-    </div>
+    </section>
   );
 };
 

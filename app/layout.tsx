@@ -47,9 +47,7 @@ export default function RootLayout({
       <body className={inter.className}>
         <NextAuthSessionProvider>
           <TanstackProvider>
-            <RecoilRootProvider>
-              <main>{children}</main>
-            </RecoilRootProvider>
+            <RecoilRootProvider>{children}</RecoilRootProvider>
           </TanstackProvider>
         </NextAuthSessionProvider>
       </body>
