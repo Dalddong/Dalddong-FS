@@ -1,6 +1,10 @@
 import React from "react";
 
-const Loading = () => {
+type Tloading = {
+  text: string;
+};
+
+const Loading: React.FC<Tloading> = ({ text }) => {
   return (
     <>
       <div className="fixed top-0 left-0 w-full h-full flex flex-col justify-center items-center bg-gray-900 bg-opacity-50">
@@ -9,7 +13,7 @@ const Loading = () => {
           <div className="h-8 w-8 bg-dd-deep-yellow rounded-full animate-bounce [animation-delay:-0.15s]"></div>
           <div className="h-8 w-8 bg-dd-deep-yellow rounded-full animate-bounce"></div>
         </div>
-        <span className="text-dd-deep-yellow">로딩중입니다.</span>
+        <span className="text-dd-deep-yellow">{text}</span>
       </div>
     </>
   );
