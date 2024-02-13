@@ -51,6 +51,11 @@
 import { NextResponse } from "next/server";
 import MongoDBConnect from "@/lib/mongodb";
 import Schedule from "@/models/schedule";
+import {
+  UNFILLED_FORM,
+  TOO_LONGNAME_FORM,
+  TOO_LONGPLACE_FORM,
+} from "@/utils/constants/alertMessages";
 
 export async function POST(request: Request) {
   const scheduleData = await request.json();
@@ -58,10 +63,37 @@ export async function POST(request: Request) {
 
   await MongoDBConnect();
   const createdScheduleData = await Schedule.create(scheduleData);
+  let formStatus: string | boolean = "";
 
-  return NextResponse.json({
-    message: "Create Schedule Success!",
-    data: createdScheduleData,
-    _id: createdScheduleData._id,
-  });
+  if (scheduleData.scheduleName.length > 8) {
+    formStatus = TOO_LONGNAME_FORM;
+  } else if (scheduleData.schedulePlace.length > 10) {
+    formStatus = TOO_LONGPLACE_FORM;
+  } else if (
+    scheduleData.scheduleName &&
+    scheduleData.schedulePlace &&
+    scheduleData.nomineeDays[1] !== "Invalid date"
+  ) {
+    formStatus = true;
+  } else {
+    formStatus = UNFILLED_FORM;
+  }
+
+  if (formStatus === true)
+    return NextResponse.json(
+      {
+        message: "Create Schedule Success!",
+        data: createdScheduleData,
+        _id: createdScheduleData._id,
+      },
+      { status: 200 }
+    );
+  else {
+    return NextResponse.json(
+      {
+        message: formStatus,
+      },
+      { status: 400 }
+    );
+  }
 }

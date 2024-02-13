@@ -157,15 +157,22 @@ export async function GET(
     _id: id,
   });
 
-  // Check if schedule is not found, then redirect to '/'
   if (!schedule) {
-    return NextResponse.error();
+    return NextResponse.json(
+      {
+        message: "일정데이터값이 없습니다.",
+      },
+      { status: 404 }
+    );
   }
 
-  return NextResponse.json({
-    message: "OK",
-    data: schedule,
-  });
+  return NextResponse.json(
+    {
+      message: "OK",
+      data: schedule,
+    },
+    { status: 200 }
+  );
 }
 
 export async function PATCH(
@@ -175,11 +182,10 @@ export async function PATCH(
   const patchData = await request.json();
 
   try {
-    // Assuming Schedule is your Mongoose model
     const updatedSchedule = await Schedule.findByIdAndUpdate(
       id,
       { selectDays: patchData.selectDays },
-      { new: true } // This option returns the updated document
+      { new: true }
     );
 
     if (!updatedSchedule) {
