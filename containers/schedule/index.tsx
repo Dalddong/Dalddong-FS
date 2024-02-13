@@ -21,7 +21,7 @@ const ScheduleContainer: React.FC<ScheduleContainerProps> = ({ sid }) => {
   if (isLoading) return <ScheduleSkeleton />;
 
   return (
-    <div className="container-schedule-layout">
+    <main className="container-schedule-layout">
       <ScheduleIntro
         schedulePlace={schedulePlace}
         scheduleName={scheduleName}
@@ -30,7 +30,7 @@ const ScheduleContainer: React.FC<ScheduleContainerProps> = ({ sid }) => {
       />
       <ScheduleSelector selectDays={selectDays} />
       <ScheduleSummary selectDays={selectDays} sid={sid} />
-    </div>
+    </main>
   );
 };
 

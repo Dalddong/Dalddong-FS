@@ -61,7 +61,7 @@ const ScheduleSelector: React.FC<ScheduleSelectorType> = ({ selectDays }) => {
   };
 
   return (
-    <div className="schedule-selector-component-layout">
+    <section className="schedule-selector-component-layout">
       <p className="schedule-selector-explain-text">
         가능한 시간을 모두 선택후 일정을 등록해주세요.
       </p>
@@ -98,7 +98,7 @@ const ScheduleSelector: React.FC<ScheduleSelectorType> = ({ selectDays }) => {
           <SVG_right />
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

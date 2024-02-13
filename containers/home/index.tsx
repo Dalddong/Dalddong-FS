@@ -50,19 +50,21 @@ const HomeContainer = () => {
   };
 
   return (
-    <div className="container-main-layout flex-col-center">
+    <>
       <Header />
-      <DayPicker />
-      <TimePicker />
-      <PlacePicker />
-      <Button
-        className="button-confirm card-layout centered-button"
-        onClick={handlePostScheduleClick}
-      >
-        등록하기
-      </Button>
-      {isPending ? <Loading text="일정이 만들어지고 있습니다." /> : ""}
-    </div>
+      <main className="container-main-layout flex-col-center">
+        <DayPicker />
+        <TimePicker />
+        <PlacePicker />
+        <Button
+          className="button-confirm card-layout centered-button"
+          onClick={handlePostScheduleClick}
+        >
+          등록하기
+        </Button>
+        {isPending ? <Loading text="일정이 만들어지고 있습니다." /> : ""}
+      </main>
+    </>
   );
 };
 
