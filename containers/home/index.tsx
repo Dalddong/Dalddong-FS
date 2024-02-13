@@ -51,8 +51,8 @@ const HomeContainer = () => {
 
   return (
     <>
-      <Header />
       <main className="container-main-layout flex-col-center">
+        <Header />
         <DayPicker />
         <TimePicker />
         <PlacePicker />
