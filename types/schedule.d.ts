@@ -1,27 +1,27 @@
-export interface ScheduleContainerProps {
+export type ScheduleContainerProps = {
   sid: string;
-}
+};
 export type ScheduleItem = {
   day: string;
-  times: string[][]; // 빈 배열이라면 어떤 값이 들어올 수 있는지 정확히 알 수 없으므로 any[]로 지정합니다.
+  times: string[][];
   _id: string;
 };
 
-export interface ScheduleSummaryType {
+export type ScheduleSummaryType = {
   selectDays: ScheduleItem[];
   sid: string;
-}
+};
 
-export interface ScheduleIntroType {
+export type ScheduleIntroType = {
   nomineePlayTime: string;
   nomineeDays: string[];
   scheduleName: string;
   schedulePlace: string;
-}
+};
 
-export interface ScheduleSelectorType {
+export type ScheduleSelectorType = {
   selectDays: ScheduleItem[][];
-}
+};
 
 export type selectRecoilDaysType = {
   day: string;
