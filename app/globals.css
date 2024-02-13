@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@import "./css/common/common.css";
-@import "./css/home/home.css";
-@import "./css/schedule/schedule.css";
+@import "./css/common.css";
+@import "./css/home.css";
+@import "./css/schedule.css";
 @import "./css/reactDatePicker.css";

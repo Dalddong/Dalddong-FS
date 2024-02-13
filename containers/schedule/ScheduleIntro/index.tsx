@@ -5,6 +5,11 @@ import Header from "@/components/Header";
 import SVG_map from "@/public/svgs/map.svg";
 import SVG_time from "@/public/svgs/time.svg";
 import Login from "@/components/Login";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+import ko from "date-fns/locale/ko";
+import { useRecoilValue } from "recoil";
+import { nomineeDayValue } from "@/states/Schedule/atom";
 
 import type { ScheduleIntroType } from "@/types/schedule";
 
@@ -14,6 +19,7 @@ const ScheduleIntro: React.FC<ScheduleIntroType> = ({
   nomineeDays,
   scheduleName,
 }) => {
+  const dateRange = useRecoilValue<Date[]>(nomineeDayValue);
   const days = nomineeDays ? `${nomineeDays[0]} ~ ${nomineeDays[1]}` : "";
 
   return (
@@ -35,7 +41,18 @@ const ScheduleIntro: React.FC<ScheduleIntroType> = ({
           </span>
         </div>
       </div>
-      <div className="schedule-intro-calendar-layout card-layout"></div>
+      <div className="schedule-intro-calendar-layout">
+        <DatePicker
+          className="w-[250px]"
+          startDate={dateRange[0]}
+          endDate={dateRange[1]}
+          onChange={() => {}}
+          selectsRange
+          locale={ko}
+          inline
+          disabled
+        />
+      </div>
 
       <Login />
     </div>
