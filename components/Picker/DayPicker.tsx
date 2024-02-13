@@ -3,6 +3,7 @@ import SVG_down from "@/public/svgs/down.svg";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { addDays } from "date-fns";
+import ko from "date-fns/locale/ko";
 
 import { useRecoilState } from "recoil";
 import { nomineeDayValue } from "@/states/Schedule/atom";
@@ -25,6 +26,7 @@ const DayPicker = () => {
           maxDate={addDays(new Date(), 14)}
           startDate={startDate}
           endDate={endDate}
+          locale={ko}
           onChange={(update: [Date, Date]) => {
             if (update) {
               setDateRange(update);
