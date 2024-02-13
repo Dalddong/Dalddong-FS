@@ -5,30 +5,23 @@ import Header from "@/components/Header";
 import DayPicker from "@/components/Picker/DayPicker";
 import TimePicker from "@/components/Picker/TimePicker";
 import PlacePicker from "@/components/Picker/PlacePicker";
-import Button from "@/components/Button";
-
-import { usePostSchedule } from "@/hooks/schedule/useSchedule";
-import { selectDaysMaker } from "@/utils/functions/selectDaysMaker";
 import { useRecoilValue } from "recoil";
-import {
-  nomineeDayValue,
-  nomineePlayTimeValue,
-  scheduleNameValue,
-  schedulePlaceValue,
-} from "@/states/Schedule/atom";
-import { changeDateFormat } from "@/utils/functions/moment";
-import { UNFILLED_FORM } from "@/utils/constants/alertMessages";
+import Button from "@/components/Button";
+import { nomineeDayValue } from "@/states/Schedule/atom";
+import { usePostSchedule } from "@/hooks/schedule/useSchedule";
 import Loading from "@/components/Loading";
+import useCheckForm from "@/hooks/util/useCheckForm";
 
 const HomeContainer = () => {
   const dateRange = useRecoilValue(nomineeDayValue);
-  const scheduleName = useRecoilValue(scheduleNameValue);
-  const schedulePlace = useRecoilValue(schedulePlaceValue);
-  const nomineePlaytime = useRecoilValue(nomineePlayTimeValue);
-
-  const filterDateRange = dateRange.map((item) => changeDateFormat(item));
-  const selectDays = selectDaysMaker(dateRange);
-
+  const {
+    scheduleName,
+    schedulePlace,
+    nomineePlaytime,
+    filterDateRange,
+    selectDays,
+    formStatus,
+  } = useCheckForm({ dateRange: dateRange });
   const { mutate, isPending } = usePostSchedule(
     filterDateRange,
     nomineePlaytime,
@@ -38,14 +31,10 @@ const HomeContainer = () => {
   );
 
   const handlePostScheduleClick = () => {
-    if (
-      scheduleName &&
-      schedulePlace &&
-      filterDateRange[1] !== "Invalid date"
-    ) {
+    if (formStatus === true) {
       mutate();
     } else {
-      alert(UNFILLED_FORM);
+      alert(formStatus);
     }
   };
 
