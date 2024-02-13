@@ -16,7 +16,7 @@ interface ChartType {
 const Chart: React.FC<ChartType> = ({ array }) => {
   const pathname = usePathname();
 
-  const rankedArray = array;
+  const rankedDays = array;
   const tailwindarray = [
     "h-[200px] mt-[0px] bg-dd-deep-yellow",
     "h-[170px] mt-[30px] bg-dd-medium-yellow",
@@ -25,7 +25,7 @@ const Chart: React.FC<ChartType> = ({ array }) => {
   return (
     <>
       <div className="schedule-summary-chart-layout card-layout">
-        {rankedArray.map((item, idx) => (
+        {rankedDays.map((item, idx) => (
           <ChartBar key={idx} data={item} tailwindStyle={tailwindarray[idx]} />
         ))}
       </div>

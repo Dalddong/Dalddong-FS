@@ -8,11 +8,8 @@ import { timeTable } from "@/utils/constants/timeTable";
 import { useRecoilState, useSetRecoilState } from "recoil";
 import { selectRecoilDays, selectSummaryIndex } from "@/states/Schedule/atom";
 import { useSessionUser } from "@/hooks/user/useSessionUser";
-import {
-  NOT_EXIST_PAGE,
-  UNAUTHORIZE_LOGIN,
-} from "@/utils/constants/alertMessages";
-import type { visibleItemsType } from "@/types/schedule";
+import { UNAUTHORIZE_LOGIN } from "@/utils/constants/alertMessages";
+import type { ScheduleItem } from "@/types/schedule";
 import usePagination from "@/hooks/util/usePagination";
 
 const ScheduleSelector: React.FC<ScheduleSelectorType> = ({ selectDays }) => {
@@ -69,12 +66,12 @@ const ScheduleSelector: React.FC<ScheduleSelectorType> = ({ selectDays }) => {
         가능한 시간을 모두 선택후 일정을 등록해주세요.
       </p>
       <div className="schedule-selector-scroll-component">
-        {visibleItems.map((item: visibleItemsType, dayIdx: number) => (
+        {visibleItems.map((item: ScheduleItem, dayIdx: number) => (
           <div className="schedule-selector-day-wrapper" key={item._id}>
             <div className="schedule-selector-day-button">
               <span>{item.day}</span>
             </div>
-            {item.times.map((time: string, timeIndex: number) => (
+            {item.times.map((time: string[], timeIndex: number) => (
               <div
                 key={timeIndex}
                 onClick={() => handleSelectTimesClicked(dayIdx, timeIndex)}

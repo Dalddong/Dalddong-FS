@@ -1,9 +1,7 @@
 "use client";
 
 import React from "react";
-
 import Chart from "@/components/Chart";
-
 import SVG_calendar from "@/public/svgs/calendar.svg";
 import Button from "@/components/Button";
 import type { ScheduleSummaryType } from "@/types/schedule";
@@ -22,9 +20,7 @@ const ScheduleSummary: React.FC<ScheduleSummaryType> = ({
   const RecoilDays = useRecoilValue(selectRecoilDays);
   const selectSummaryIndexObj = useRecoilValue(selectSummaryIndex);
   const { dayIdx, timeIdx } = selectSummaryIndexObj;
-
-  const array = findMostTimeAvailable(selectDays);
-
+  const rankedDays = findMostTimeAvailable(selectDays);
   const patchSchedule = usePatchSchedule(RecoilDays, sid);
 
   return (
@@ -37,7 +33,7 @@ const ScheduleSummary: React.FC<ScheduleSummaryType> = ({
         </p>
         <div className="schedule-summary-peoples-list card-layout">
           {selectDays[dayIdx].times[timeIdx].length > 0
-            ? [...selectDays[dayIdx].times[timeIdx]].join(",")
+            ? selectDays[dayIdx].times[timeIdx].join(",")
             : "아직 희망자가 없어요!"}
         </div>
       </div>
@@ -48,7 +44,7 @@ const ScheduleSummary: React.FC<ScheduleSummaryType> = ({
         <SVG_calendar />
         <span className="ml-[4px]">일정 등록</span>
       </Button>
-      <Chart array={array} />
+      <Chart array={rankedDays} />
     </div>
   );
 };

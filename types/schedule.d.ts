@@ -1,30 +1,29 @@
-export interface ScheduleContainerProps {
+export type ScheduleContainerProps = {
   sid: string;
-}
+};
+export type ScheduleItem = {
+  day: string;
+  times: string[][];
+  _id: string;
+};
 
-export interface ScheduleSummaryType {
-  selectDays: any;
+export type ScheduleSummaryType = {
+  selectDays: ScheduleItem[];
   sid: string;
-}
+};
 
-export interface ScheduleIntroType {
+export type ScheduleIntroType = {
   nomineePlayTime: string;
   nomineeDays: string[];
   scheduleName: string;
   schedulePlace: string;
-}
-
-export interface ScheduleSelectorType {
-  selectDays: any[];
-}
-
-export type selectRecoilDaysType = {
-  day: string;
-  times: string[];
 };
 
-export type visibleItemsType = {
-  _id: string;
+export type ScheduleSelectorType = {
+  selectDays: ScheduleItem[][];
+};
+
+export type selectRecoilDaysType = {
   day: string;
   times: string[];
 };

@@ -1,11 +1,10 @@
 //@ts-nocheck
 
 import { timeTable } from "../constants/timeTable";
-import type { visibleItemsType } from "@/types/schedule";
+import type { ScheduleItem } from "@/types/schedule";
 
-export const findMostTimeAvailable = (timeBoard: visibleItemsType) => {
+export const findMostTimeAvailable = (timeBoard: ScheduleItem[]) => {
   const timeBoardMap = new Map();
-  console.log(timeBoard, "tiemboard");
 
   for (let i = 0; i < timeBoard.length; i++) {
     for (let j = 0; j < timeBoard[i].times.length; j++) {

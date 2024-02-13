@@ -20,15 +20,14 @@ import { changeDateFormat } from "@/utils/functions/moment";
 import { UNFILLED_FORM } from "@/utils/constants/alertMessages";
 import Loading from "@/components/Loading";
 
-interface HomeContainerProps {}
-
-const HomeContainer: React.FC<HomeContainerProps> = () => {
+const HomeContainer = () => {
   const dateRange = useRecoilValue(nomineeDayValue);
-  const filterDateRange = dateRange.map((item) => changeDateFormat(item));
-  const selectDays = selectDaysMaker(dateRange);
   const scheduleName = useRecoilValue(scheduleNameValue);
   const schedulePlace = useRecoilValue(schedulePlaceValue);
   const nomineePlaytime = useRecoilValue(nomineePlayTimeValue);
+
+  const filterDateRange = dateRange.map((item) => changeDateFormat(item));
+  const selectDays = selectDaysMaker(dateRange);
 
   const { mutate, isPending } = usePostSchedule(
     filterDateRange,
