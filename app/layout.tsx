@@ -8,7 +8,7 @@ import NextAuthSessionProvider from "@/components/Providers/NextAuthSessionProvi
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "달동 : 달력 동그라미",
+  title: "달동,달력동그라미",
   description: "달력에 스케쥴을 체크하여 약속을 정하는 간편한 기술",
   keywords:
     "달동,달똥,달력동그라미,달력똥그라미,약속 매칭 서비스, 약속 잡아주는",
@@ -23,14 +23,14 @@ export const metadata: Metadata = {
   },
   metadataBase: new URL("https://daldong.vercel.app/"),
   openGraph: {
-    title: "달동 : 달력 동그라미",
+    title: "달동,달력동그라미",
     description: "간편한 터치로 손쉽게 일정을 정하는 기술",
     url: "https://daldong.vercel.app/",
     locale: "ko-KR",
     type: "website",
     images: [
       {
-        url: "https://daldong.vercel.app/public/images/img_logo_text.png",
+        url: "https://daldong.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fimg_logo_text.71f310c2.png&w=640&q=75",
         type: "image/png",
       },
     ],
