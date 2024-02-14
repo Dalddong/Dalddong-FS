@@ -2,7 +2,7 @@
 
 module.exports = {
     // 웹사이트의 기본 URL
-    siteUrl: process.env.NEXT_PUBLIC_HOME_URL || 'http://localhost:3000',
+    siteUrl: process.env.NEXT_PUBLIC_HOME_URL || 'http://localhost:30002',
     // 파일을 생성 robots.txt하고 생성된 사이트맵을 나열 (기본 false)
     generateRobotsTxt: true,
     // 사이트맵 크기를 지정하여 큰 사이트맵을 여러 파일로 분할 (기본 5000)
