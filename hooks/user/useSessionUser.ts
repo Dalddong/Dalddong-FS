@@ -3,7 +3,7 @@ import { useSession, signIn, signOut, getSession } from "next-auth/react";
 export const useSessionUser = () => {
   const { data: userData } = useSession();
 
-  const userName = userData?.user.name;
+  const userName = userData?.user?.name;
 
   const kakaoLogin = () => {
     signIn("kakao");
