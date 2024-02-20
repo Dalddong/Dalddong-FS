@@ -1,5 +1,4 @@
 "use client";
-import React from "react";
 
 import Header from "@/components/Header";
 import SVG_map from "@/public/svgs/map.svg";
