@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+
 import SVG_down from "@/public/svgs/down.svg";
 import { useRecoilState } from "recoil";
 import { nomineePlayTimeValue } from "@/states/Schedule/atom";

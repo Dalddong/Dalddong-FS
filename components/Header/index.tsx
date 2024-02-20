@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+
 import Link from "next/link";
 
 import Logo from "@/public/images/img_logo_text.png";

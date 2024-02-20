@@ -1,5 +1,4 @@
 "use client";
-import React from "react";
 
 import SVG_left from "@/public/svgs/leftArrow.svg";
 import SVG_right from "@/public/svgs/rightArrow.svg";
