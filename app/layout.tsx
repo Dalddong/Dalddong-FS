@@ -5,7 +5,7 @@ import TanstackProvider from "@/components/Providers/TanstackProvider";
 import RecoilRootProvider from "@/components/Providers/RecoilRootProvider";
 import NextAuthSessionProvider from "@/components/Providers/NextAuthSessionProvider";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ["latin"], preload: true });
 
 export const metadata: Metadata = {
   title: "달동,달력동그라미",
