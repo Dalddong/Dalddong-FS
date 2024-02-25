@@ -36,10 +36,6 @@ const useCheckForm = ({ dateRange }: any) => {
     formStatus = UNFILLED_FORM;
   }
 
-  const a =
-    scheduleName && schedulePlace && filterDateRange[1] !== "Invalid date";
-  console.log(a, "a값");
-
   return {
     scheduleName,
     schedulePlace,
