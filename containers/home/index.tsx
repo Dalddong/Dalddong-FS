@@ -1,15 +1,17 @@
 "use client";
 
-import Header from "@/components/Header";
-import DayPicker from "@/components/Picker/DayPicker";
-import TimePicker from "@/components/Picker/TimePicker";
-import PlacePicker from "@/components/Picker/PlacePicker";
-import { useRecoilValue } from "recoil";
-import Button from "@/components/Button";
-import { nomineeDayValue } from "@/states/Schedule/atom";
-import { usePostSchedule } from "@/hooks/schedule/useSchedule";
-import Loading from "@/components/Loading";
-import useCheckForm from "@/hooks/util/useCheckForm";
+import React, { Suspense, lazy } from 'react';
+import { useRecoilValue } from 'recoil';
+import { nomineeDayValue } from '@/states/Schedule/atom';
+import { usePostSchedule } from '@/hooks/schedule/useSchedule';
+import useCheckForm from '@/hooks/util/useCheckForm';
+import Loading from '@/components/Loading';
+
+const Header = lazy(() => import('@/components/Header'));
+const DayPicker = lazy(() => import('@/components/Picker/DayPicker'));
+const TimePicker = lazy(() => import('@/components/Picker/TimePicker'));
+const PlacePicker = lazy(() => import('@/components/Picker/PlacePicker'));
+const Button = lazy(() => import('@/components/Button'));
 
 const HomeContainer = () => {
   const dateRange = useRecoilValue(nomineeDayValue);
@@ -40,17 +42,19 @@ const HomeContainer = () => {
   return (
     <>
       <main className="container-main-layout flex-col-center">
-        <Header />
-        <DayPicker />
-        <TimePicker />
-        <PlacePicker />
-        <Button
-          className="button-confirm card-layout centered-button"
-          onClick={handlePostScheduleClick}
-        >
-          등록하기
-        </Button>
-        {isPending ? <Loading text="일정이 만들어지고 있습니다." /> : ""}
+        <Suspense fallback={<Loading text="Loading..." />}>
+          <Header />
+          <DayPicker />
+          <TimePicker />
+          <PlacePicker />
+          <Button
+            className="button-confirm card-layout centered-button"
+            onClick={handlePostScheduleClick}
+          >
+            등록하기
+          </Button>
+        </Suspense>
+        {isPending ? <Loading text="일정이 만들어지고 있습니다." /> : ''}
       </main>
     </>
   );
