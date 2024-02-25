@@ -14,7 +14,7 @@ const Header = () => {
           fill
           sizes="(max-width: 300px) 100vw, 300px"
           style={{ objectFit: "cover" }}
-          priority
+          priority={true}
         />
       </header>
     </Link>
