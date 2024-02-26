@@ -17,8 +17,8 @@ export function useGetSchedule(id: string) {
   const { data = fallback, isLoading } = useQuery({
     queryKey: [queryKeys.schedule],
     queryFn: () => getSchedule(id),
-    gcTime: 5 * 60 * 1000,
-    staleTime: 1 * 60 * 1000,
+    gcTime: 60 * 1000,
+    staleTime: Infinity,
     retry: 1,
   });
 
