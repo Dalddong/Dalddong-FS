@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+
 import ScheduleIntroSkeleton from "./Schedule/ScheduleIntroSkeleton";
 import ScheduleSelectorSkeleton from "./Schedule/ScheduleSelectorSkeleton";
 import ScheduleSummarySkeleton from "./Schedule/ScheduleSummarySkeleton";

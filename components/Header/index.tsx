@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+
 import Link from "next/link";
 
 import Logo from "@/public/images/img_logo_text.png";
@@ -14,7 +14,7 @@ const Header = () => {
           fill
           sizes="(max-width: 300px) 100vw, 300px"
           style={{ objectFit: "cover" }}
-          priority
+          priority={true}
         />
       </header>
     </Link>

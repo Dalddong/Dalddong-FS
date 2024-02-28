@@ -4435,6 +4435,7 @@ __metadata:
     mongoose: "npm:^8.0.3"
     next: "npm:14.0.4"
     next-auth: "npm:^4.24.5"
+    next-router-mock: "npm:^0.9.12"
     next-sitemap: "npm:^4.2.3"
     postcss: "npm:^8"
     react: "npm:^18"
@@ -7383,6 +7384,16 @@ __metadata:
     nodemailer:
       optional: true
   checksum: 3ba2cf707903af8a0571ba9e95389e8fb110308110589dfa07c7edcfc185f92b3046474991e18f63bdf990694cda7a583cd3b020f9b58243b2c0403f341cc21a
+  languageName: node
+  linkType: hard
+
+"next-router-mock@npm:^0.9.12":
+  version: 0.9.12
+  resolution: "next-router-mock@npm:0.9.12"
+  peerDependencies:
+    next: ">=10.0.0"
+    react: ">=17.0.0"
+  checksum: f07baad44b5e1c91a689ce6cbbeab9e12baa39d7a51f0f23d29581423727bae3d373b461a14fe6bd6de399e1bea507b3eb355d3da7a925c9eeec9023daa519a8
   languageName: node
   linkType: hard
 

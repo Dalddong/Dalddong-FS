@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+
 import Chart from "@/components/Chart";
 import SVG_calendar from "@/public/svgs/calendar.svg";
 

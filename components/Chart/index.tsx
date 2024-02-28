@@ -1,5 +1,4 @@
 "use client";
-import React from "react";
 
 import SVG_share from "@/public/svgs/share.svg";
 import SVG_chart from "@/public/svgs/barchart.svg";

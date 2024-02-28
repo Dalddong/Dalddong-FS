@@ -1,5 +1,4 @@
 "use client";
-import React from "react";
 
 import ScheduleIntro from "./ScheduleIntro";
 import ScheduleSelector from "./ScheduleSelector";

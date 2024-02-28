@@ -1,5 +1,5 @@
 .react-datepicker {
-  @apply border-2 border-dd-green shadow-[0_6px_12px_0px_rgba(241,201,59,1)] !important;
+  @apply border-2 rounded-lg  border-dd-green  shadow-[0_6px_12px_0px_rgba(241,201,59,1)] !important;
 }
 
 .react-datepicker__header {
