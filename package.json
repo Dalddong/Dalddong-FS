@@ -5,8 +5,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next-sitemap && next build",
-    "postbuild": "next-sitemap",
-    "sitemapbuild": "next-sitemap",
+    "postbuild": "next-sitemap --config next-sitemap.config.js",
+    "sitemapbuild": "next-sitemap --config next-sitemap.config.js",
     "start": "next start",
     "lint": "next lint",
     "test": "vitest --globals --ui"
